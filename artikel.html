@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="/lib/aos/aos.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <script src="/lib/aos/aos.js"></script>
+
+    <title>Temukan artikel menarik!</title>
+</head>
+
+<body class="">
+    <header
+        class="sticky top-0 z-1000 rounded-b-md border-b border-gray-400  flex justify-between p-4 md:px-[8%] lg:px-[15%] bg-white">
+        <div id="logo" class="flex items-center"> <img src="/assets/bw-logo.png" alt="" class="w-16 h-16 mr-2"><span class="text-2xl">Somia</span></div>
+        <div class="gap-4 flex h-12" id="wrap-auth">
+            <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
+            <a href="/views/register.html"><button
+                    class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+        </div>
+    </header>
+    <div id="container" class="w-full bg-(--sand) min-h-screen  p-8 md:px-[8%] lg:px-[12%]">
+        <div class="swiper mySwiper mb-8">
+            <div class="swiper-wrapper h-auto w-full max-h-[60vh]">
+                <div class="swiper-slide overflow-hidden rounded-2xl">
+                    <div class="swipper-zoom-container"><img src="https://placehold.net/600x400.png"
+                            class="mx-auto block object-cover w-full" alt=""></div>
+                </div>
+                <div class="swiper-slide overflow-hidden rounded-2xl ">
+                    <div class="swipper-zoom-container"><img src="https://placehold.net/600x400.png"
+                            class="mx-auto block object-cover w-full" alt=""></div>
+                </div>
+                <div class="swiper-slide overflow-hidden rounded-2xl ">
+                    <div class="swipper-zoom-container"><img src="https://placehold.net/600x400.png"
+                            class="mx-auto block object-cover w-full" alt=""></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div id="container-cards" class="swiper">
+            <div class=" swiper-wrapper gap-4">
+                <div class="card swiper-slide">
+                    <img src="https://placehold.net/600x400.png">
+                    <h3 class="md:text-md text-center font-semibold">
+                        Janur bekas jadi hiasan dinding</h3>
+                </div>
+                <div class="card swiper-slide">
+                    <img src="https://placehold.net/600x400.png">
+                    <h3 class="md:text-md text-center font-semibold">
+                        Kompos dari sisa dapur, 3 langkah</h3>
+                </div>
+                <div class="card swiper-slide">
+                    <img src="https://placehold.net/600x400.png">
+                    <h3 class="md:text-md text-center font-semibold">
+                        Pot dari botol plastik bekas</h3>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <section class="md:flex grid mt-8 gap-4">
+            <div id="drawers" class="bg-white h-fit rounded-xl p-4 border ">
+                <h2 class="font-bold text-lg m-2">Filters</h2>
+                <div class="relative w-full flex items-center">
+                    <input type="text" name="" id="" class="border rounded-2xl p-2 w-full"
+                        placeholder="Masukkan pencarian anda..">
+                    <i
+                        class="fa-solid fa-search fa-lg absolute right-1 rounded-r-2xl pl-2 py-4 pr-8 flex items-center bg-white "></i>
+                </div>
+                <div id="result" class=" grid mt-4 ">
+                    <div class="">
+                        <p class="font-semibold mb-2">Berdasarkan waktu</p>
+                        <label class="cursor-pointer" for="asc"><input checked type="radio" name="order" id="asc"
+                                class="mr-2 w-4 h-4 accent-(--moss)  " />
+                            Terbaru</label> <br>
+                        <label class="cursor-pointer" for="desc">
+                            <input type="radio" name="order" id="desc" class="mr-2 w-4 h-4 accent-(--moss)  " />
+                            Terlama</label>
+                    </div>
+                    <div class="">
+                        <p class="font-extrabold mb-2">Berdasarkan kategori</p>
+                        <label class="cursor-pointer" for="">
+                            <input type="checkbox" name="" id=""
+                                class="mr-2 w-4 h-4 accent-(--moss)  " />Upacara</label> <br>
+                        <label class="cursor-pointer" for="">
+                            <input type="checkbox" name="" id="" class="mr-2 w-4 h-4 accent-(--moss)  " />Rumah
+                            tangga</label> <br>
+                        <label class="cursor-pointer" for="">
+                            <input type="checkbox" name="" id=""
+                                class="mr-2 w-4 h-4 accent-(--moss)  " />Pertanian</label>
+                    </div>
+                </div>
+                <button class="bg-(--turmeric) font-bold mt-4 flex mx-auto">Search with filter</button>
+            </div>
+
+            <div id="result" class=" w-full flex flex-wrap gap-4 w-full">
+                <div class="card">
+                    <img src="https://placehold.net/600x400.png">
+                    <div class="card-text">
+                        <h4 class="md:text-md font-extrabold text-sm ">Janur bekas jadi hiasan dinding</h4>
+                        <p class="text-pretty text-xs md:text-sm">Ubah janur sisa upacara jadi hiasan dinding anyaman
+                            yang tahan lama.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://placehold.net/600x400.png">
+                    <div class="card-text">
+                        <h4 class="md:text-md font-extrabold text-sm ">Kompos dari sisa dapur, 3 langkah</h4>
+                        <p class="text-pretty text-xs md:text-sm">Kompos sederhana pakai ember bekas, tanpa bau, cocok
+                            untuk rumah kecil.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://picsum.photos/200/200?random=3">
+                    <div class="card-text">
+                        <h4 class="md:text-md font-extrabold text-sm ">Pot dari botol plastik bekas</h4>
+                        <p class="text-pretty text-xs md:text-sm">humbnail: "assets/img/illustrations/diy3.svg</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://picsum.photos/200/200?random=4">
+                    <div class="card-text">
+                        <h4 class="md:text-md font-extrabold text-sm ">Canang plastik bisa didaur ulang jadi apa?</h4>
+                        <p class="text-pretty text-xs md:text-sm">Alas plastik canang yang sudah tidak terpakai bisa
+                            dianyam jadi tas kecil.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="bg-(--ink) py-4 bottom-0 text-(--sand) text-center ">
+        <div>Somia &copy; 2026. All right served.</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script>
+
+        let swiper = new Swiper('.mySwiper', {
+            effect: 'fade',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                clickable: true,
+                el: '.swiper-pagination'
+            }
+        })
+
+        let cardSwiper = new Swiper('#container-cards', {
+            grabCursor: true,
+            loop: true,
+            slidesPerView: 'auto'
+        })
+    </script>
+</body>
+
+</html>

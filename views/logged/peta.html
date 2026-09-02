@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="stylesheet" href="/lib/aos/aos.css"> -->
+    <link rel="stylesheet" href="/lib/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <script src="/lib/aos/aos.js"></script>
+    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Somia - Bank sampah</title>
+</head>
+
+<body>
+    <nav
+        class="w-full bg-(--ink) text-(--sand) sticky top-0 p-2 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
+        <a href="/index.html" class="flex items-center">
+            <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+        </a>
+        <div class=" h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer"
+            onclick="modalSignOut.classList.remove('hidden')">
+            <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+        </div>
+
+    </nav>
+
+    <div class="p-4 md:px-[8%] lg:px-[12%]">
+        <div id="map" class="h-72 md:w-[80%] lg:w-[60%] mx-auto "></div>
+
+        <div id="filter-wrapper" class="w-full flex font-semibold gap-4 items-center my-2">
+            <h2 class="">Filter berdasarkan :</h2>
+            <button class="text-(--moss) bg-white border shadow-lg">Terdekat</button>
+            <button class="text-(--moss) bg-white border shadow-lg">Kesedian</button>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <div class="card" onclick="window.open('/views/logged/peta.html?id=1')">
+                <p class="badge">Tersedia</p>
+                <img src="/assets/image.webp" alt="Bank sampah 1" class="">
+                <h3 class="">Bank Sampah Kemenuh - 2.6km</h3>
+            </div>
+
+            <div class="card">
+                <p class="badge">Tersedia</p>
+                <img src="/assets/image.webp" alt="Bank sampah 1" class="">
+                <h3 class="">Bank Sampah Kemenuh - 2.6km</h3>
+            </div>
+
+            <div class="card">
+                <p class="badge">Tersedia</p>
+                <img src="/assets/image.webp" alt="Bank sampah 1" class="">
+                <h3 class="">Bank Sampah Kemenuh - 2.6km</h3>
+            </div>
+
+            <div class="card">
+                <p class="badge">Tersedia</p>
+                <img src="/assets/image.webp" alt="Bank sampah 1" class="">
+                <h3 class="">Bank Sampah Kemenuh - 2.6km</h3>
+            </div>
+
+        </div>
+    </div>
+    <footer class="bg-(--ink) py-4  bottom-0 text-(--sand) text-center ">
+        <div>Somia &copy; 2026. All right served.</div>
+    </footer>
+
+    <script>
+        let map = L.map('map').setView([-8.45, 115.1], 8.5);
+
+        // Add a tile layer
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/lib/aos/aos.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <script src="/lib/aos/aos.js"></script>
+
+    <title>Voucher</title>
+</head>
+<body>
+    <header
+        class="sticky top-0 z-1000 rounded-b-md border-b border-gray-400  flex justify-between p-4 md:px-[8%] lg:px-[15%] bg-white">
+        <div id="logo" class="flex items-center"> <img src="/assets/bw-logo.png" alt="" class="w-16 h-16 mr-2"><span class="text-2xl">Somia</span></div>
+        <div class="gap-4 flex h-12" id="wrap-auth">
+            <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
+            <a href="/views/register.html"><button
+                    class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+        </div>
+    </header>
+    <main class="p-8 md:px-[8%] lg:px-[12%] bg-(--sand)">
+        <div class="bg-white rounded-xl w-full p-4">
+            <p>Kumpulkan poin sebanyak mungkin dan claim berbagai voucher</p>
+            <h1 class="text-2xl font-bold italic">1000 <span class="text-lg">point</span></h1>
+            <div class="mt-4 bg-(--moss) text-(--sand) p-4 rounded">Anda sekarang berada di level <span class="text-(--turmeric) font-semibold">Pemula Peduli</span></div>
+        </div>
+
+        <div class="mt-8 p-4">
+            <div class="flex overflow-x-scroll w-full gap-4 py-4">
+                <button class="bg-white rounded-2xl text-bold shadow-lg p-2">Semua</button>
+                <button class="bg-white rounded-2xl text-bold shadow-lg p-2">UMKM</button>
+                <button class="bg-white rounded-2xl text-bold shadow-lg p-2">Pulsa</button>
+                <button class="bg-white rounded-2xl text-bold shadow-lg p-2">Voucher</button>
+                <button class="bg-white rounded-2xl text-bold shadow-lg p-2">Lainnya</button>
+            </div>
+        </div>
+        <div class="flex flex-wrap gap-4">
+            <div class="grid min-w-sm  bg-white rounded pl-4 pt-4">
+                <img src="/assets/hero.jpg" alt="" class="border w-16 h-16 rounded">
+                <p class="font-semibold">Diskon Warung tegal Rp15.000</p>
+
+                <div class="mt-8 flex  border-t border-stone-900/40">
+                    <div class="text-left flex-3 pb-2"><i class="fa-solid fa-star">200</i></div>
+                    <div class="flex-2 justify-center font-semibold disabled:bg-stone-400 h-12 items-center flex hover:bg-(--turmeric-dark) bg-(--turmeric) ">Claim</div>
+                </div>
+            </div>
+
+            <div class="grid min-w-sm  bg-white rounded pl-4 pt-4">
+                <img src="/assets/hero.jpg" alt="" class="border w-16 h-16 rounded">
+                <p class="font-semibold">Diskon Warung tegal Rp15.000</p>
+
+                <div class="mt-8 flex  border-t border-stone-900/40">
+                    <div class="text-left flex-3 pb-2"><i class="fa-solid fa-star">200</i></div>
+                    <div class="flex-2 justify-center font-semibold disabled:bg-stone-400 h-12 items-center flex hover:bg-(--turmeric-dark) bg-(--turmeric) ">Claim</div>
+                </div>
+            </div>
+
+            <div class="grid min-w-sm  bg-white rounded pl-4 pt-4">
+                <img src="/assets/hero.jpg" alt="" class="border w-16 h-16 rounded">
+                <p class="font-semibold">Diskon Warung tegal Rp15.000</p>
+
+                <div class="mt-8 flex  border-t border-stone-900/40">
+                    <div class="text-left flex-3 pb-2"><i class="fa-solid fa-star">200</i></div>
+                    <div class="flex-2 justify-center font-semibold disabled:bg-stone-400 h-12 items-center flex hover:bg-(--turmeric-dark) bg-(--turmeric) ">Claim</div>
+                </div>
+            </div>
+
+            <div class="grid min-w-sm  bg-white rounded pl-4 pt-4">
+                <img src="/assets/hero.jpg" alt="" class="border w-16 h-16 rounded">
+                <p class="font-semibold">Diskon Warung tegal Rp15.000</p>
+
+                <div class="mt-8 flex  border-t border-stone-900/40">
+                    <div class="text-left flex-3 pb-2"><i class="fa-solid fa-star">200</i></div>
+                    <div class="flex-2 justify-center font-semibold disabled:bg-stone-400 h-12 items-center flex hover:bg-(--turmeric-dark) bg-(--turmeric) ">Claim</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-(--ink) py-4 bottom-0 text-(--sand) text-center ">
+        <div>Somia &copy; 2026. All right served.</div>
+    </footer>
+</body>
+</html>

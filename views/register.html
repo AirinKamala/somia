@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../lib/aos/aos.css">
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <script src="/lib/aos/aos.js"></script>
+
+    <title>Somia - Daftar</title>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <main class="p-8 md:px-[8%] lg:px-[12%] grid md:grid-cols-2 gap-4 grid h-full items-center justify-items-center my-auto">
+        <div id="form-img z-4">
+            <img src="../assets/register.svg" alt="">
+        </div>
+        <div class="flex justify-items-center items-center z-5">
+            <form class="flex flex-col bg-(--ink) text-(--sand) rounded-md p-8 gap-4 min-w-sm shadow-lg">
+                <h1 class="text-4xl font-extrabold tracking-[.1rem] ">Daftar</h1>
+                <hr>
+
+                <label class="font-bold text-lg" for="nama">Nama</label>
+                <input class="bg-white px-4 py-2 rounded focus:shadow-xl text-(--ink)" required id="nama" type="text"
+                    placeholder="Masukkan nama lengkap anda.">
+
+                <label class="font-bold text-lg" for="email">Email</label>
+                <input class="bg-white px-4 py-2 rounded focus:shadow-xl text-(--ink)" required id="email" type="email"
+                    placeholder="Masukkan email anda.">
+
+                <label class="font-bold text-lg" for="pass">Password</label>
+                <input class="bg-white px-4 py-2 rounded focus:shadow-xl text-(--ink)" required id="pass" type="password" min="8"
+                    placeholder="Masukkan password anda.">
+
+                <a href="./logged/dashboard.html" class="mt-16 w-full flex"><button
+                        class=" w-full bg-(--moss) font-bold tracking-[.2rem]">Daftar</button></a>
+                <p class="">Sudah memiliki akun? <a class="text-(--turmeric) font-semibold underline"
+                        href="/views/login.html">Masuk disini.</a></p>
+
+            </form>
+        </div>
+        
+    </main>
+
+    <footer class="bg-(--ink) py-4  text-(--sand) text-center mt-auto">
+        <div>Somia &copy; 2026. All right served.</div>
+    </footer>
+    <script>
+        AOS.init({ duration: 1000, once: false, offset: 60 });
+    </script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

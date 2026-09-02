@@ -1,0 +1,134 @@
+:root {
+    --ink: #16231C;
+    --sand: #EDE3C8;
+    --moss: #3C6E4F;
+    --turmeric: #E0A33B;
+    --turmeric-dark: #cd9535;
+    --clay: #b5493b;
+    --stone: #8A8578;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    width: 100%;
+    min-height: 100vw;
+    background-color: var(--sand);
+
+}
+
+button,
+.btn {
+    padding: .5rem 1rem;
+    border-radius: 10px;
+
+    &:hover,
+    &:active {
+        transform: scale(.95);
+        transition: all .5s ease-in-out;
+        box-shadow: 0 6px 8px 2px rgba(151, 151, 151, 0.316);
+    }
+}
+
+#image-before {
+    background-image: url('https://www.citrust.id/wp-content/uploads/2020/10/Pencemaran-lingkungan-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#image-after {
+    background-image: url('https://picsum.photos/id/28/400/300');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* input[type="range"] {
+    z-index: 100;
+    appearance: 0;
+    position: absolute;
+    width: inherit;
+    background: transparent;
+    margin-top: 145px;
+    -webkit-appearance: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 50%;
+        margin-top: -10px;
+        background-color: white;
+        cursor: grab;
+        height: 1.1rem;
+        width: 1.1rem;
+    }
+
+    &::-webkit-slider-thumb:active {
+        cursor: grabbing;
+    }
+} */
+
+h1,
+h2,
+h3,
+.font-display {
+    font-family: 'Bricolage Grotesque', sans-serif
+}
+
+body,
+p,
+a,
+button {
+    font-family: 'Plus Jakarta Sans', sans-serif
+}
+
+.font-accent {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic
+}
+
+.card {
+    display: grid;
+    max-width: 24rem;
+    
+    overflow: hidden;
+    border-radius: 12px;
+    width: 100%;
+    background-color: #3C6E4F;
+    
+    z-index: 9;
+    height: 12rem;
+    position: relative;
+
+    img {
+        object-fit: cover;
+        width: inherit;
+        height: 100%;
+        object-position: top;
+    }
+
+    h3, .card-text {
+        background-color: var(--ink);
+        color: white;
+        font-size: .9rem;
+        z-index: 10;
+        bottom: 0;
+        width: 100%;
+        padding: .5rem;
+        position: absolute;
+    }
+    .badge{
+        position: absolute;
+        margin: .5rem 1rem 0 0 ;
+        padding: .2rem;
+        border-radius: 10px;
+        display: flex;
+        justify-self: end;
+        width: fit-content;
+        font: 600;
+        background-color: white;
+    }
+}

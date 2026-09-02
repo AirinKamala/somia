@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/lib/aos/aos.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <script src="/lib/aos/aos.js"></script>
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="flex-wrap md:flex-nowrap flex min-h-screen relative z-1 ">
+        <sidebar
+            class="hidden bg-(--ink) sticky h-screen top-0  w-sm text-(--sand) hidden md:flex md:flex-col py-2 px-4 ">
+            <div onclick="window.open('/', '_self')"
+                class="flex items-center cursor-pointer border-b-2 border-white/20">
+                <img src="/assets/icon.svg" alt="" class="self-center flex">
+                <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+            </div>
+            <a href="#main"
+                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer nav-link">
+                <i class="fa-solid fa-receipt fa-lg mr-4"></i> Ringkasan</a>
+            <a href="#riwayat"
+                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer nav-link">
+                <i class="fa-solid fa-history fa-lg mr-4"></i> Riwayat</a>
+            <a href="#favorit"
+                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer nav-link">
+                <i class="fa-solid fa-star fa-lg mr-4"></i> Favorit</a>
+            <a href="#profil"
+                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer nav-link">
+                <i class="fa-solid fa-user fa-lg mr-4"></i> Profil</a>
+
+            <div onclick="modalSignOut.classList.remove('hidden')"
+                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out mt-auto border-t cursor-pointer">
+                <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+            </div>
+
+        </sidebar>
+
+        <nav
+            class="w-full md:hidden bg-(--ink) text-(--sand) sticky top-0 p-2 rounded-b-lg shadow-lg flex justify-between items-center">
+            <a href="/index.html" class="flex items-center">
+                <img src="/assets/icon.svg" alt="" class="self-center flex">
+                <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+            </a>
+            <div class=" h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer"
+                onclick="modalSignOut.classList.remove('hidden')">
+                <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+            </div>
+
+        </nav>
+        <div class="bg-(--sand) w-full">
+            <main class="p-8 md:px-[8%] lg:px-[12%]" id="main">
+                <!-- nama  -->
+                <div class="flex justify-between">
+                    <div>
+                        <p>Selamat datang kembali</p>
+                        <h1 class="text-2xl">John Doe . <span class="text-amber-800">Pemilah Handal</span></h1>
+                    </div>
+                    <img class="w-20 h-20 border-2 rounded-full border-(--moss)"
+                        src="https://api.dicebear.com/10.x/lorelei/svg?seed=Felix" alt="">
+                </div>
+
+                <!-- info -->
+                <div class="flex gap-4 mt-4">
+                    <p
+                        class="text-center flex-1 bg-white rounded-md h-28 py-4 shadow-lg text-[18pt] text-amber-800 font-accent font-black">
+                        10 <br> <span class="text-(--ink) text-sm md:text-lg font-medium">kg terpilah.</span></p>
+                    <p
+                        class="text-center flex-1 bg-white rounded-md h-28 py-4 shadow-lg text-[18pt] text-amber-800 font-accent font-black">
+                        25 <br> <span class="text-(--ink) text-sm md:text-lg font-medium">hari beruntun.</span></p>
+                    <p
+                        class="text-center flex-1 bg-white rounded-md h-28 py-4 shadow-lg text-[18pt] text-amber-800 font-accent font-black">
+                        850 <br> <span class="text-(--ink) text-sm md:text-lg font-medium">poin voucher.</span></p>
+                </div>
+
+                <!-- wrapped -->
+                <div
+                    class="bg-(--ink) rounded-md p-8 min-w-64 flex h-28 justify-between items-center gap-4 mx-auto mt-8 h-fit">
+                    <div class="mb-4">
+                        <p class="text-stone-500 font-bold ">ECO WRAPPED</p>
+                        <h2 class="text-(--sand) mt-2 font-bold text-xl">Bagikan progress minnguanmu.</h2>
+                    </div>
+                    <button class="bg-(--turmeric) h-fit bg-semibold">Lihat Wrapped</button>
+                </div>
+            </main>
+
+            <section class="p-4 md:px-[8%] lg:px-[12%]" id="riwayat">
+                <h2 class="text-2xl font-bold">Riwayat pemilahan.</h2>
+                <div class="bg-white rounded-lg mt-4">
+                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+                        <div class="flex items-center">
+                            <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
+                                    class="fa-solid fa-burger fa-xl text-white"></i></div>
+                            <div class="grid">
+                                <h4 class="font-semibold md:text-lg">Rumah tangga</h4>
+                                <p class="text-xs md:text-sm text-stone-500">20 Agustus 2026</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <p class="font-semibold">4.3 kg</p>
+                            <div
+                                class="text-(--moss) w-24 h-fit font-semibold bg-emerald-300 rounded-xl px-4 text-xs md:sm py-2 ">
+                                Terverifikasi</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+                        <div class="flex items-center">
+                            <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
+                                    class="fa-solid fa-leaf fa-xl text-white"></i></div>
+                            <div class="grid">
+                                <h4 class="font-semibold md:text-lg">Upacara</h4>
+                                <p class="text-xs md:text-sm text-stone-500">13 Agustus 2026</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <p class="font-semibold">2 kg</p>
+                            <div
+                                class="text-(--turmeric) w-24 h-fit font-semibold bg-amber-100 rounded-xl px-4 text-xs md:sm py-2 ">
+                                Menunggu</div>
+                        </div>
+                    </div>
+                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+                        <div class="flex items-center">
+                            <div class="bg-(--turmeric) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
+                                    class="fa-solid fa-tree fa-xl text-white"></i></div>
+                            <div class="grid">
+                                <h4 class="font-semibold md:text-lg">Pertanian</h4>
+                                <p class="text-xs md:text-sm text-stone-500">30 July 2026</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <p class="font-semibold">4.3 kg</p>
+                            <div
+                                class="text-(--moss) w-24 h-fit font-semibold bg-emerald-300 rounded-xl px-4 text-xs md:sm py-2 ">
+                                Terverifikasi</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+                        <div class="flex items-center">
+                            <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
+                                    class="fa-solid fa-leaf fa-xl text-white"></i></div>
+                            <div class="grid">
+                                <h4 class="font-semibold md:text-lg">Upacara</h4>
+                                <p class="text-xs md:text-sm text-stone-500">29 Juli 2026</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <p class="font-semibold">1.5 kg</p>
+                            <div
+                                class="text-(--turmeric) w-24 h-fit font-semibold bg-amber-100 rounded-xl px-4 text-xs md:sm py-2 ">
+                                Menunggu</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 px-4 md:px-12 py-4 justify-between flex">
+                        <div class="flex items-center">
+                            <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
+                                    class="fa-solid fa-burger fa-xl text-white"></i></div>
+                            <div class="grid">
+                                <h4 class="font-semibold md:text-lg">Rumah tangga</h4>
+                                <p class="text-xs md:text-sm text-stone-500">29 Juli 2026</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <p class="font-semibold">2.3 kg</p>
+                            <div
+                                class="text-(--moss) w-24 h-fit font-semibold bg-emerald-300 rounded-xl px-4 text-xs md:sm py-2 ">
+                                Terverifikasi</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="p-4 md:px-[8%] lg:px-[12%] mt-8" id="favorit">
+                <h2 class="text-2xl font-bold">Artikel favorit</h2>
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
+                    <div class="rounded-xl overflow-hidden">
+                        <img src="" class="bg-(--moss) w-full h-24" alt="">
+                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
+                            <h3 class="font-semibold">Kompos dari sampah dapur, hanya 3 langkah.</h3>
+                            <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-xl overflow-hidden">
+                        <img src="" class="bg-(--moss) w-full h-24" alt="">
+                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
+                            <h3 class="font-semibold">Sulap botol bekas jadi omzet jutaan rupiah.</h3>
+                            <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-xl overflow-hidden">
+                        <img src="" class="bg-(--moss) w-full h-24" alt="">
+                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
+                            <h3 class="font-semibold">Cara membuat eco-enzym dari buah sisa.</h3>
+                            <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="p-4 md:px-[8%] lg:px-[12%] mt-8" id="profil">
+                <h2 class="text-2xl font-bold">Profil</h2>
+                <div class="bg-white flex mt-2 p-4 rounded-lg gap-4 items-center">
+                    <img class="w-20 h-20 border-2 rounded-full border-(--moss)"
+                        src="https://api.dicebear.com/10.x/lorelei/svg?seed=Felix" alt="">
+                    <h3 class="md:text-lg font-semibold">John Doe <br><span class="text-xs font-medium">bergabung sejak
+                            1 Juli 2026</span></h3>
+                    <button class="border rounded h-fit ml-auto text-sm md:text-md"
+                        onclick="modal.classList.remove('hidden')">Edit profil</button>
+                </div>
+                <div class="bg-white pt-4">
+                    <h3 class="md:text-lg"><i class="fa-solid fa-medal text-amber-600 px-4 md:px-8"></i>Lencana </h3>
+                    <hr class="text-stone-300  mx-auto">
+                    <div class="flex flex-wrap gap-4 p-4">
+                        <div class="bg-amber-100 text-amber-800 p-2 rounded-lg text-sm md:text-md font-semibold">Pemilah
+                            Handal</div>
+                        <div class="bg-emerald-100 text-emerald-800 p-2 rounded-lg text-sm md:text-md font-semibold">
+                            Rintisan Hijau</div>
+                        <div class="bg-orange-100 text-orange-800 p-2 rounded-lg text-sm md:text-md font-semibold">
+                            Pemula Peduli</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="modal-overlay" class="hidden relative">
+            <div class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex "
+                onclick="modal.classList.add('hidden')"></div>
+            <div id="modal" class="absolute z-51 bg-white rounded-lg p-4 flex w-sm grid ">
+                <h2 class="font-bold text-2xl">Edit Profile</h2>
+                <label for="" class="font-semibold mt-2">Nama</label>
+                <input type="text" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan nama anda."
+                    required>
+                <label for="" class="font-semibold mt-2">Alamat</label>
+                <input type="text" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan alamat anda."
+                    required>
+                <label for="" class="font-semibold mt-2">Email</label>
+                <input type="email" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan email anda."
+                    required>
+                <label for="" class="font-semibold mt-2">Sandi</label>
+                <input type="password" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan sandi anda."
+                    required>
+
+                <button class="bg-(--moss) font-semibold text-white mt-8"
+                    onclick="modal.classList.remove('hidden')">Simpan</button>
+
+            </div>
+        </div>
+
+        <div id="modal-out" class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex hidden"
+            onclick="modalSignOut.classList.add('hidden')">
+            <div id="modal" class="relative z-51 bg-white rounded-lg p-4 w-sm grid mx-auto self-center">
+                <h2 class="font-bold text-2xl">Anda yakin untuk keluar dari akun ini?</h2>
+                <div class="w-full grid md:grid-cols-2 mt-8 gap-4">
+                    <button class="text-(--moss) border font-semibold "
+                        onclick="modalSignOut.classList.remove('hidden')">Tidak</button>
+                    <button class="bg-(--moss) font-semibold text-white" onclick="signout()">Ya, saya yakin.</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            let modalShow = false
+            const modal = document.getElementById('modal-overlay')
+            const modalSignOut = document.getElementById('modal-out')
+
+            if (modalShow) {
+                modal.classList.remove('hidden')
+            } else {
+                modal.classList.add('hidden')
+            }
+
+
+            const signout = () => {
+                localStorage.removeItem('user-profile')
+                window.open('/', '_self')
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+   <script src="/js/tl.js"></script>
+  <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/lib/aos/aos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+    rel="stylesheet">
+  <script src="/lib/aos/aos.js"></script>
+
+  <title>Somia - Langkah kecil peduli lingkungan</title>
+</head>
+
+<body class="">
+  <header class="sticky top-0 z-1000 rounded-b-md border-b border-gray-400  flex justify-between p-4 md:px-[8%] lg:px-[15%] bg-white">
+    <div id="logo" class="flex items-center"> <i class="fa-solid fa-leaf logo"></i> <span>Somia</span></div>
+    <div class="gap-4 flex h-12" id="wrap-auth">
+      <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
+      <a href="/views/register.html"><button class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+    </div>
+  </header>
+  <!-- hero section -->
+  <main
+    class="text-(--sand)  bg-no-repeat p-8 bg-(--ink) items-center flex flex-wrap justify-between md:grid md:grid-cols-5 md:px-[8%] lg:px-[15%] gap-4 flex-wrap"
+    id="hero">
+    <div id="hero-title " class=" mb-24 grid md:col-span-3">
+      <h1 class=" font-bold text-3xl mb-4">Kebiasaan kecil, <br>
+        <span class="text-(--turmeric)">dampak yang besar.</span>
+      </h1>
+      <p class="w-[80%] text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi
+        reward</p>
+      <div class="btn-wrap mt-4 flex gap-3 flex-wrap">
+        <button class="bg-(--turmeric) text-(--ink) ">Mulai sekarang</button>
+        <button class="border">Lihat cara kerjanya</button>
+      </div>
+    </div>
+    <div id="hero-img" class="max-w-[48rem] h-auto flex md:grid md:col-span-2 my-8">
+      <img class="w-full h-auto object-cover object-center" src="/assets/hero.svg" alt="">
+    </div>
+  </main>
+  <!-- kenapa kami ada  -->
+  <section class="bg-sand-200 grid md:grid-cols-3 items-center p-4 md:px-[8%] lg:px-[15%] ">
+    <div id="hero-img" class="max-w-lg overflow-hidden h-auto flex mx-auto my-8">
+      <img class="w-full h-auto object-contain object-center" src="/assets/waste.svg" alt="">
+    </div>
+    <div class=" md:col-span-2">
+      <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Bukan salah siapa siapa</p>
+      <h2 class="text-2xl font-extrabold">Bank Sampah Penuh Bukan Salah Siapa</h2>
+      <p class="">Ini bukan soal siapa yang belum peduli, namun soal sistem yang belum terhubung dengan baik.</p>
+    </div>
+
+  </section>
+  <!-- Produk kami  -->
+  <section class="bg-(--ink) p-8 text-(--sand) md:px-[8%] lg:px-[15%] ">
+    <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Layanan unggulan kami</p>
+    <h2 class="text-2xl font-extrabold">Tiga hal yang bikin kebiasaan gampang dijaga.</h2>
+    <div class="mt-4 px-8 grid md:flex gap-4">
+      <div class="bg-emerald-950 md:-ml-8 w-full p-4 rounded-md border-l-4 border-amber-400">
+        <i class="fa-solid fa-bank text-amber-400 fa-xl mb-8"></i>
+        <h3 class="font-bold">Bank Sampah</h3>
+        <p>Cari bank sampah terdekat yang masih tersedia</p>
+      </div>
+      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-green-500">
+        <i class="fa-solid fa-star text-green-500 fa-xl mb-8"></i>
+        <h3 class="font-bold">DIY</h3>
+        <p>Cari bank sampah terdekat yang masih tersedia</p>
+      </div>
+      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-orange-500">
+        <i class="fa-solid fa-ticket text-orange-500 fa-xl mb-8"></i>
+        <h3 class="font-bold">Voucher</h3>
+        <p>Cari bank sampah terdekat yang masih tersedia</p>
+      </div>
+    </div>
+  </section>
+  <!-- bagiamana Somia membantu  -->
+  <section class="bg-(--sand) p-8 md:px-[8%] lg:px-[15%] ">
+    <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Cara kerja</p>
+    <h2 class="text-2xl font-extrabold">4 Langkah sederhana untuk menangani sampah anda.</h2>
+    <div class="mt-8  grid md:grid-cols-4 gap-4">
+      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg">
+        <p class="text-amber-800 font-accent text-4xl">01</p>
+        <h3 class="font-bold text-lg mt-2 text-lg">Pilah dari rumah</h3>
+        <p class="text-sm">Memilah sampah berdasarkan jenisnya dan potret sebagai bukti</p>
+      </div>
+
+      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg">
+        <p class="text-amber-800 font-accent text-4xl">02</p>
+        <h3 class="font-bold text-lg mt-2 text-lg">Somia mencatat</h3>
+        <p class="text-sm">Setiap kilogram akan tercatat pada profil mu</p>
+      </div>
+
+      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg">
+        <p class="text-amber-800 font-accent text-4xl">03</p>
+        <h3 class="font-bold text-lg mt-2 text-lg">Rayakan progress mu</h3>
+        <p class="text-sm">Bagikan Eco-wrapped mingguanmu ke teman-teman </p>
+      </div>
+
+      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg">
+        <p class="text-amber-800 font-accent text-4xl">04</p>
+        <h3 class="font-bold text-lg mt-2 text-lg">Claim voucher UMKM</h3>
+        <p class="text-sm">Tukar poinmu dengan voucher di UMKM mitra kami</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-8 bg-(--ink) text-(--sand) md:px-[8%] lg:px-[15%] ">
+    <!-- quatity -->
+    <div class="grid-cols-3 grid mb-8 justify-items-center gap-4">
+      <div class="py-4 w-sm rounded-md grid justify-center">
+        <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]">1000+ </h3>
+        <p class=""> kg terpilah</p>
+      </div>
+
+      <div class="py-4 w-sm rounded-md grid justify-center">
+        <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]">100+ </h3>
+        <p class=""> pengguna aktif</p>
+      </div>
+
+      <div class="py-4 w-sm rounded-md grid justify-center">
+        <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]">10+ </h3>
+        <p class="">Bank Sampah</p>
+      </div>
+    </div>
+
+    <!-- testimony -->
+    <div class="my-12">
+      <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Testimoni pengguna kami</p>
+      <h2 class="text-2xl font-extrabold">Apa yang mereka katakan tentang kami?</h2>
+      <!-- wrapper testimony -->
+      <div class="flex overflow-x-auto w-auto py-2 gap-4 mt-4">
+        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
+            such mefilled linking.</p>
+          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
+        </div>
+
+        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
+            such mefilled linking.</p>
+          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
+        </div>
+
+        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
+            such mefilled linking.</p>
+          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
+        </div>
+
+        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
+            such mefilled linking.</p>
+          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
+        </div>
+
+        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
+            such mefilled linking.</p>
+          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
+        </div>
+
+        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
+            such mefilled linking.</p>
+          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
+        </div>
+
+        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
+            such mefilled linking.</p>
+          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="bg-stone-300 h-auto grid md:grid-cols-5 justify-items-evenly align-center gap-8 p-8 md:px-[8%] lg:px-[15%] ">
+    <div class="p-4 grid col-span-3 ">
+      <p class=" text-(--clay) tracking-[0.2rem] mb-4 text-sm font-bold ">Eco-wrapped</p>
+      <h2 class="text-2xl font-extrabold">Pantau progress mingguan-mu.</h2>
+      <p class="text-sm text-pretty w-[70%]">Bagikan pencapaianmu dan ajak yang lain untuk ikut langkah kecil bersama</p>
+      <button class="bg-(--ink) w-fit text-(--sand) font-bold my-4">Buat wrapped kamu</button>
+    </div>
+
+      <div class="bg-(--ink) rounded-2xl p-8 text-(--sand) w-xs md:w-full col-span-2">
+        <p class="font-bold uppercase text-stone-400 flex justify-between mb-8">wrapped - minggu ini <i class="flex text-(--turmeric) mr-4 self-end fa-solid fa-share"></i></p>
+        <h4 class="font-accent font-semibold text-[24pt] ">4.2 Kg</h4>
+        <p class="text-stone-400">Terpilah dari rumah</p>
+        <div class="text-amber-800 bg-amber-100 mt-8 p-2 w-fit rounded-xl">Sang pemilah handal</div>
+      </div>
+  </section>
+  <section class="bg-(--turmeric) p-8 grid justify-items-center md:px-[8%] lg:px-[15%] ">
+    <h2 class="text-2xl font-bold">Bersama kami langkah kecil yang konsisten sangat berarti.</h2>
+    <a href="/views/register.html" class="btn bg-(--ink) text-(--sand) mt-4 font-bold">Daftar sekarang</a>
+  </section>
+  <footer class="bg-(--ink) py-4  text-(--sand) text-center ">
+    <div>Somia &copy; 2026. All right served.</div>
+  </footer>
+  <script>
+    AOS.init({ duration: 1000, once: false, offset: 60 });
+  </script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
