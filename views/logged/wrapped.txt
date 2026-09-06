@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wrapped September 2026</title>
+
+  <style>
+    :root {
+      --ink: #16231C;
+      --sand: #EDE3C8;
+      --moss: #3C6E4F;
+      --moss-light: #d3fce3;
+      --turmeric: #E0A33B;
+      --turmeric-dark: #cd9535;
+      --clay: #b5493b;
+      --stone: #8A8578;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--ink);
+      color: var(--sand);
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    #trail-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    /* Fullscreen Story Slide Structure */
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .tagline {
+      color: var(--turmeric);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .accent-clay { color: var(--clay); }
+    .accent-turmeric { color: var(--turmeric); }
+    .accent-moss { color: var(--moss-light); }
+
+    .draw-leaf path {
+      stroke: var(--moss-light);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+    }
+
+    /* Big Numbers */
+    .hero-number {
+      font-size: 7rem;
+      font-weight: 900;
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .card {
+      background: rgba(237, 227, 200, 0.04);
+      border: 1px solid rgba(138, 133, 120, 0.2);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 2.5rem;
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: rgba(181, 73, 59, 0.25);
+      color: var(--clay);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(181, 73, 59, 0.4);
+    }
+
+    .share-btn {
+      background-color: var(--turmeric);
+      color: var(--ink);
+      font-weight: 800;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      box-shadow: 0 10px 25px rgba(224, 163, 59, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="trail-canvas"></canvas>
+
+  <!-- SLIDE 1: INTRO HOOK -->
+  <section class="slide" id="slide-1">
+    <div class="tagline">Eco Wrapped 2026</div>
+    <svg class="draw-leaf" width="100" height="100" viewBox="0 0 100 100">
+      <path id="leaf-path" d="M50 5 C20 30 20 70 50 95 C80 70 80 30 50 5 Z M50 95 L50 30" />
+    </svg>
+    <h1 class="title">Siap lihat jejak <br><span class="accent-clay">hijau kamu?</span></h1>
+    <p style="color: var(--stone); margin-top: 1.5rem;">Scroll down to reveal ↓</p>
+  </section>
+
+  <!-- SLIDE 2: WASTE STAT -->
+  <section class="slide" id="slide-2">
+    <div class="tagline">Dampak Lingkungan</div>
+    <p style="font-size: 1.25rem;">Bulan ini kamu berhasil mengumpulkan:</p>
+    <div class="hero-number accent-turmeric" id="waste-num">0 kg</div>
+    <p style="color: var(--moss-light); font-size: 1.1rem;">≈ Setara dengan menyelamatkan 20 botol plastik dari laut! 🍾</p>
+  </section>
+
+  <!-- SLIDE 3: STREAK / HABIT -->
+  <section class="slide" id="slide-3">
+    <div class="tagline">Konsistensi Kamu</div>
+    <p style="font-size: 1.25rem;">Kamu beraksi tanpa henti selama:</p>
+    <div class="hero-number accent-clay" id="streak-num">0</div>
+    <p style="font-size: 1.2rem; font-weight: 700;">Hari Beruntun 🔥</p>
+    <p style="color: var(--stone); margin-top: 0.5rem;">Weekend pun kamu tetep rajin memilah!</p>
+  </section>
+
+  <!-- SLIDE 4: ARCHETYPE BADGE -->
+  <section class="slide" id="slide-4">
+    <div class="card">
+      <span class="badge-pill">YOUR ARCHETYPE</span>
+      <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem;">🏆 Sang Pemilah</h2>
+      <p style="opacity: 0.8; font-size: 1rem; line-height: 1.5;">Kamu masuk ke <b>Top 5%</b> pahlawan lingkungan paling aktif bulan ini.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: COMMUNITY IMPACT -->
+  <section class="slide" id="slide-5">
+    <div class="tagline">Efek Kolektif</div>
+    <h2 style="font-size: 2.2rem; font-weight: 800;">Bersama Komunitas, Kamu Membantu Mencegah...</h2>
+    <div class="hero-number accent-moss">120 Kg</div>
+    <p style="font-size: 1.1rem; color: var(--sand);">Sampah menumpuk di TPA lokal bulan ini 🌿</p>
+  </section>
+
+  <!-- SLIDE 6: SUMMARY CARD & SHARE -->
+  <section class="slide" id="slide-6">
+    <div class="card" id="export-card">
+      <div class="tagline">September 2026 Summary</div>
+      <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Sang Pemilah 🏆</h3>
+      <div style="display: flex; justify-content: space-around; margin: 1.5rem 0;">
+        <div>
+          <div style="font-size: 2rem; font-weight: 900; color: var(--turmeric);">4 Kg</div>
+          <div style="font-size: 0.75rem; color: var(--stone);">TERPILAH</div>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 900; color: var(--clay);">5 Hari</div>
+          <div style="font-size: 0.75rem; color: var(--stone);">STREAK</div>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; opacity: 0.8;">#EcoWrapped2026</p>
+    </div>
+
+    <button class="share-btn" onclick="exportStory()">
+      📸 Download Story Card
+    </button>
+  </section>
+
+  <!-- GSAP & HTML2CANVAS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. DrawSVG Line Animation
+    gsap.to("#leaf-path", { strokeDashoffset: 0, duration: 2, ease: "power2.inOut" });
+
+    // 2. Slide 2 Counter Animation
+    let wasteStat = { val: 0 };
+    gsap.to(wasteStat, {
+      val: 4,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: { trigger: "#slide-2", start: "top 60%" },
+      onUpdate: () => document.getElementById("waste-num").innerText = Math.floor(wasteStat.val) + " kg"
+    });
+
+    // 3. Slide 3 Streak Counter Animation
+    let streakStat = { val: 0 };
+    gsap.to(streakStat, {
+      val: 5,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: { trigger: "#slide-3", start: "top 60%" },
+      onUpdate: () => document.getElementById("streak-num").innerText = Math.floor(streakStat.val)
+    });
+
+    // 4. Slide Card Reveals
+    gsap.utils.toArray(".card").forEach((card) => {
+      gsap.from(card, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 1,
+        ease: "back.out(1.7)",
+        scrollTrigger: { trigger: card, start: "top 75%" }
+      });
+    });
+
+    // 5. Mouse Trail Effect
+    const canvas = document.getElementById("trail-canvas");
+    const ctx = canvas.getContext("2d");
+    let points = [];
+
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    window.addEventListener("mousemove", (e) => {
+      points.push({ x: e.clientX, y: e.clientY, alpha: 1 });
+    });
+
+    function drawTrail() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < points.length; i++) {
+        let p = points[i];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(224, 163, 59, ${p.alpha})`;
+        ctx.fill();
+        p.alpha -= 0.02;
+      }
+      points = points.filter(p => p.alpha > 0);
+      requestAnimationFrame(drawTrail);
+    }
+    drawTrail();
+
+    // 6. Export Card to PNG Function
+    function exportStory() {
+      const element = document.getElementById('export-card');
+      html2canvas(element, { backgroundColor: '#16231C', scale: 2 }).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL("image/png");
+        link.download = 'eco-wrapped-2026.png';
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/lib/swiper/swiper-bundle.css">
+    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Somia - Bank sampah</title>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+<div class="w-full h-screen bg-stone-950 relative justify-center flex items-center">
+    <main class=" absolute w-sm md:w-md aspect-[9/20]">
+        <div class="swiper w-full h-full">
+            <div class="swiper-wrapper text-(--sand)">
+                <div class="swiper-slide bg-(--ink) !flex flex-col items-center text-center  justify-center">
+                   <h2 class="text-[24pt] font-accent font-bold tracking-1">Wrapped kamu <br> September 2026</h2>
+                   <p class="opacity-70 mt-2 text-sm tracking-wide">Geser untuk melihat lebih lanjut &rarr;</p>
+                </div>
+
+                <div class="swiper-slide bg-(--clay) !flex flex-col items-center text-center  justify-center">
+                    <h2 class="text-[48pt] font-accent font-bold tracking-1" id="totalWaste"></h2>
+                   <p class="opacity-80 mt-2 font-semibold text-lg tracking-wide">Kg terpilah</p>
+
+                </div>
+
+                <div class="swiper-slide bg-(--moss) !flex flex-col items-center text-center  justify-center">
+                    <h2 class="text-[48pt] font-accent font-bold tracking-1" id="streak"></h2>
+                   <p class="opacity-80 mt-2 font-semibold text-lg tracking-wide">Hari beruntun</p>
+                </div>
+
+                <div class="swiper-slide bg-(--ink) !flex flex-col items-center text-center  justify-center">
+                   <i class="fa-solid fa-sprout text-(--moss) text-[48pt]"></i>
+                    <p class="opacity-80 mt-2 font-semibold text-lg tracking-wide" id="badge"></p>
+                </div>
+
+                <div class="swiper-slide bg-(--moss) !flex flex-col items-center text-center  justify-center">
+                    <h2 class="text-2xl font-accent font-bold tracking-1" id="summary"></h2>
+                   <button class=" bg-(--ink) mt-4"> <i class="fa-solid fa-share mr-2  "></i>Bagikan</button>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-prev !opacity-0 bg-white !h-full -translate-y-[50%]" ></div>
+            <div class="swiper-button-next !opacity-0 bg-white !h-full -translate-y-[50%]" ></div>
+            <div class="swiper-pagination "></div>
+        </div>
+    </main>
+
+</div>
+<script src="/lib/swiper/swiper-bundle.js"></script>
+<script src="/js/main.js"></script>
+<script>
+    
+    let swiper = new Swiper('.swiper', {
+        grabCursor: 'fade',
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar'
+        },
+        navigation: {
+            nextEl : '.swiper-button-next',
+            prevEl : '.swiper-button-prev'
+        }
+    })
+
+    document.getElementById('totalWaste').innerHTML = inven.user.totalWaste
+    document.getElementById('streak').innerHTML = inven.user.dayStreak
+    document.getElementById('badge').innerHTML = inven.user.badge
+    document.getElementById('summary').innerHTML = `${inven.user.totalWaste}kg &middot; ${inven.user.dayStreak} hari </br> <span class="text-yellow-600"> <i class="fa-solid fa-crown fa-lg"></i> ${inven.user.badge} </span>`
+
+</script>
+</body>
+</html>

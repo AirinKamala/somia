@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco Wrapped — Somia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        moss:{50:'#EEF3EC',100:'#DCE6D6',200:'#BFD4B4',300:'#9EC094',400:'#74A272',500:'#3C6E4F',600:'#305C41',700:'#274A35',800:'#1F3A2A',900:'#182D21',950:'#16231C'},
+        sand:{50:'#FBF9F2',100:'#F6F1E4',200:'#EDE3C8',300:'#E2D3A8',400:'#D3BE85',500:'#C0A465',600:'#A3854E',700:'#816841',800:'#665338',900:'#52422F'},
+        turmeric:{50:'#FDF6E9',100:'#FBEACB',200:'#F6D493',300:'#EFBD66',400:'#E0A33B',500:'#C98A24',600:'#A66E1B',700:'#7A5219',800:'#5B3D14',900:'#422C0F'},
+        clay:{50:'#FBEEEC',100:'#F3DAD5',200:'#E6B6AC',300:'#D69184',400:'#C46F60',500:'#B5493B',600:'#953A2F',700:'#742D25',800:'#57221C',900:'#401A15'}
+      },
+      fontFamily: { display:['"Bricolage Grotesque"','sans-serif'], body:['"Plus Jakarta Sans"','sans-serif'], accent:['"Instrument Serif"','serif'] }
+    }}
+  }
+</script>
+<style>
+  body{font-family:'Plus Jakarta Sans',sans-serif; background:#0d0f0c}
+  .font-display{font-family:'Bricolage Grotesque',sans-serif}
+  .font-accent{font-family:'Instrument Serif',serif;font-style:italic}
+
+  .story-shell{width:100%; max-width:400px; aspect-ratio:9/16; margin:0 auto; position:relative; border-radius:20px; overflow:hidden}
+  @media (min-height:700px){ .story-shell{ max-height:88vh } }
+
+  .slide{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2rem; opacity:0; pointer-events:none; transition:opacity .35s ease}
+  .slide.active{opacity:1; pointer-events:auto}
+
+  .tapzone{position:absolute; top:0; bottom:0; width:50%; z-index:20}
+
+  @keyframes popIn{from{opacity:0; transform:translateY(14px) scale(.96)} to{opacity:1; transform:translateY(0) scale(1)}}
+  .slide.active .reveal{animation:popIn .5s ease both}
+  .slide.active .reveal-delay{animation:popIn .5s ease both .15s}
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-6 px-4">
+
+<div class="story-shell shadow-2xl">
+
+  <!-- Progress bar -->
+  <div class="absolute top-3 left-3 right-3 z-30 flex gap-1.5">
+    <span class="flex-1 h-1 rounded-full bg-white/25 overflow-hidden"><span class="progress-fill block h-full bg-turmeric-400 w-0" data-i="0"></span></span>
+    <span class="flex-1 h-1 rounded-full bg-white/25 overflow-hidden"><span class="progress-fill block h-full bg-turmeric-400 w-0" data-i="1"></span></span>
+    <span class="flex-1 h-1 rounded-full bg-white/25 overflow-hidden"><span class="progress-fill block h-full bg-turmeric-400 w-0" data-i="2"></span></span>
+    <span class="flex-1 h-1 rounded-full bg-white/25 overflow-hidden"><span class="progress-fill block h-full bg-turmeric-400 w-0" data-i="3"></span></span>
+    <span class="flex-1 h-1 rounded-full bg-white/25 overflow-hidden"><span class="progress-fill block h-full bg-turmeric-400 w-0" data-i="4"></span></span>
+  </div>
+
+  <!-- Close -->
+  <a href="dashboard.html" class="absolute top-7 right-3 z-30 w-8 h-8 rounded-full bg-black/25 text-white flex items-center justify-center">
+    <i class="fa-solid fa-xmark text-sm"></i>
+  </a>
+
+  <!-- Logo mark -->
+  <div class="absolute top-7 left-3 z-30 flex items-center gap-1.5 text-white/80 text-xs font-display">
+    <svg width="16" height="16" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="rgba(255,255,255,0.15)"/><path d="M20 30 L20 12" stroke="#E0A33B" stroke-width="3" stroke-linecap="round"/></svg>
+    Somia
+  </div>
+
+  <!-- Tap zones -->
+  <div id="tapPrev" class="tapzone left-0"></div>
+  <div id="tapNext" class="tapzone right-0"></div>
+
+  <!-- SLIDE 1: Intro -->
+  <div class="slide active bg-moss-950" data-slide="0">
+    <p class="reveal text-turmeric-400 text-xs tracking-[0.2em] uppercase font-bold mb-4">Eco Wrapped</p>
+    <h1 class="reveal-delay font-display text-sand-100 text-2xl text-center leading-snug">Wrapped kamu untuk<br><span id="slideMonth" class="text-turmeric-400"></span></h1>
+    <p class="reveal-delay text-sand-100/50 text-xs mt-6">Ketuk untuk lanjut →</p>
+  </div>
+
+  <!-- SLIDE 2: Total kg -->
+  <div class="slide bg-moss-800" data-slide="1">
+    <p class="reveal text-sand-100/60 text-xs tracking-[0.2em] uppercase font-bold mb-6">Total terpilah</p>
+    <p class="reveal-delay font-accent text-sand-100 leading-none" style="font-size:64px" id="slideKg"></p>
+    <p class="reveal-delay text-sand-100/70 text-sm mt-2">kg sampah kembali jadi berkah</p>
+  </div>
+
+  <!-- SLIDE 3: Streak -->
+  <div class="slide bg-turmeric-800" data-slide="2">
+    <p class="reveal text-turmeric-100/70 text-xs tracking-[0.2em] uppercase font-bold mb-6">Konsistensi</p>
+    <p class="reveal-delay font-accent text-turmeric-50 leading-none" style="font-size:64px" id="slideStreak"></p>
+    <p class="reveal-delay text-turmeric-100/70 text-sm mt-2">hari beruntun memilah</p>
+  </div>
+
+  <!-- SLIDE 4: Persona -->
+  <div class="slide bg-clay-700" data-slide="3">
+    <p class="reveal text-clay-100/70 text-xs tracking-[0.2em] uppercase font-bold mb-6">Kamu adalah</p>
+    <p class="reveal-delay text-5xl mb-3" id="slidePersonaIcon"></p>
+    <h2 class="reveal-delay font-display text-clay-50 text-3xl text-center" id="slidePersona"></h2>
+  </div>
+
+  <!-- SLIDE 5: Share card -->
+  <div class="slide bg-moss-950" data-slide="4">
+    <p class="reveal text-turmeric-400 text-xs tracking-[0.2em] uppercase font-bold mb-6" id="slideBanjar"></p>
+    <div class="reveal-delay bg-white/5 rounded-2xl p-5 w-full mb-6 border border-white/10">
+      <div class="grid grid-cols-3 gap-2 text-center">
+        <div><p class="font-accent text-xl text-sand-100" id="sumKg"></p><p class="text-[10px] text-sand-100/50 mt-1">kg</p></div>
+        <div><p class="font-accent text-xl text-sand-100" id="sumStreak"></p><p class="text-[10px] text-sand-100/50 mt-1">hari</p></div>
+        <div><p class="font-accent text-xl text-sand-100">#<span id="sumRank"></span></p><p class="text-[10px] text-sand-100/50 mt-1">banjar</p></div>
+      </div>
+    </div>
+    <button id="shareBtn" class="reveal-delay flex items-center gap-2 px-6 py-2.5 rounded-full bg-turmeric-400 text-turmeric-900 text-sm font-bold">
+      <i class="fa-solid fa-share-nodes"></i> Bagikan
+    </button>
+  </div>
+
+</div>
+
+<script src="js/store.js"></script>
+<script>
+  const user = SomiaStore.getUser();
+
+  document.getElementById('slideMonth').textContent = user.month;
+  document.getElementById('slideKg').textContent = user.kg;
+  document.getElementById('slideStreak').textContent = user.streak;
+  document.getElementById('slidePersonaIcon').textContent = user.personaIcon;
+  document.getElementById('slidePersona').textContent = user.persona;
+  document.getElementById('slideBanjar').textContent = user.banjar;
+  document.getElementById('sumKg').textContent = user.kg;
+  document.getElementById('sumStreak').textContent = user.streak;
+  document.getElementById('sumRank').textContent = user.rank;
+
+  const slides = document.querySelectorAll('.slide');
+  const fills = document.querySelectorAll('.progress-fill');
+  let current = 0;
+
+  function render() {
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    fills.forEach((f, i) => { f.style.width = i < current ? '100%' : i === current ? '100%' : '0%'; });
+  }
+
+  function next() {
+    if (current < slides.length - 1) { current++; render(); }
+  }
+  function prev() {
+    if (current > 0) { current--; render(); }
+  }
+
+  document.getElementById('tapNext').addEventListener('click', next);
+  document.getElementById('tapPrev').addEventListener('click', prev);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+
+  document.getElementById('shareBtn').addEventListener('click', async (e) => {
+    e.stopPropagation();
+    const shareText = `Wrapped Somia ${user.month}: ${user.kg}kg terpilah, ${user.streak} hari beruntun, #${user.rank} di ${user.banjar} 🌱`;
+    if (navigator.share) {
+      try { await navigator.share({ text: shareText, title: 'Eco Wrapped — Somia' }); }
+      catch (err) { /* user cancelled, ignore */ }
+    } else {
+      alert('Ambil tangkapan layar kartu ini untuk membagikannya ke Instagram Story.');
+    }
+  });
+
+  render();
+</script>
+</body>
+</html>

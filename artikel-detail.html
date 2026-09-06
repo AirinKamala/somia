@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <script src="/lib/aos/aos.js"></script>
+    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Temukan artikel menarik!</title>
+</head>
+
+<body class="">
+    <header
+        class="sticky top-0 z-1000 rounded-b-md border-b border-gray-400 h-fit flex justify-between p-4 md:px-[8%] lg:px-[15%] bg-white">
+        <a href="/index.html" class="flex items-center">
+            <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+        </a>
+        <div class="gap-4 flex h-12" id="wrap-auth">
+            <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
+            <a href="/views/register.html"><button
+                    class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+        </div>
+    </header>
+    <div id="container"
+        class="w-full bg-(--sand) p-8 md:px-[8%] lg:px-[12%] min-h-screen md:flex-nowrap flex flex-wrap justify-center md:justify-evenly gap-8 md:gap-4">
+        <div class="w-fit flex flex-col gap-2">
+            <h1 id="title" class="text-[24pt] font-bold mb-4"></h1>
+            <div class="flex justify-between w-full">
+                <span id="category" class="text-(--moss) border font-semibold w-fit px-4 rounded-xl "></span> <span
+                    id="date"></span>
+            </div>
+
+            <img src="" alt="" class="mb-8" id="thumbnail">
+
+            <p id="excerpt" class=""></p>
+            <div class="">
+                <h2 class="text-[18pt] pl-4  text-semibold">Bahan-bahan:</h2>
+                <ul class="pl-8 list-disc" id="materials"></ul>
+            </div>
+            <div>
+                <h2 class="text-[18pt]  pl-4 pt-2 text-semibold">Langkah kerja:</h2>
+                <ol class="pl-8 list-decimal" id="steps"></ol>
+            </div>
+            <p id="date"></p>
+        </div>
+
+        <div class=" bg-white p-4 rounded-md min-w-sm h-fit">
+            <h2 class="text-lg font-semibold text-center mb-4">Another article</h2>
+            <div id="container-cards" class="grid gap-2">
+            </div>
+        </div>
+        
+    </div>
+    <footer class="bg-(--ink) py-4  h-fit  text-(--sand) text-center ">
+        <div>Somia &copy; 2026. All right served.</div>
+    </footer>
+
+</body>
+<script src="/js/main.js"></script>
+<script>
+
+    const url = window.location.search
+    const urlParams = new URLSearchParams(url)
+    const pageId = urlParams.get('id') || inven.articles[0].id
+    
+    let article = inven.articles.find(ar => ar.id === pageId) 
+
+    const renderlist = (data) => data.map(item => `
+        <li>${item}</li>
+    `).join('')
+
+    const renderAnother = () => {
+        let i = Number(pageId.slice(3))
+        console.log(i);
+        if (i > inven.articles.length - 3) i = Math.floor(Math.random() * 10)
+        let max = i + 3
+        let cards = []
+        for (let j = i; j < max; j++) {
+            cards.push(`
+               <div class="card" onclick="window.open('artikel-detail.html?id=diy${j}', '_self')">
+                    <img src="${inven.articles[j].thumbnail}" alt="${inven.articles[j].title}">
+                    <h3 class=" font-semibold">${inven.articles[j].title}</h3>
+                </div>
+            `)
+        }
+        return cards.join('')
+    }
+    document.getElementById('title').innerHTML =  article.title
+    document.getElementById('category').innerHTML = article.category
+    document.getElementById('excerpt').innerHTML = article.excerpt
+    document.getElementById('thumbnail').setAttribute('src', article.thumbnail)
+    document.getElementById('materials').innerHTML = renderlist(article.materials)
+    document.getElementById('steps').innerHTML = renderlist(article.steps)
+    document.getElementById('date').innerHTML = inven.formmatedDate(article.date)
+    document.getElementById('container-cards').innerHTML = renderAnother()
+
+</script>
+
+</html>

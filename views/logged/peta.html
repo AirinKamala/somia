@@ -14,8 +14,6 @@
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-
     <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
         rel="stylesheet">
@@ -26,7 +24,7 @@
 
 <body>
     <nav
-        class="w-full bg-(--ink) text-(--sand) sticky top-0 p-2 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
+        class="w-full bg-(--ink) text-(--sand) h-fit sticky top-0 p-2 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
         <a href="/index.html" class="flex items-center">
             <img src="/assets/icon.svg" alt="" class="self-center flex">
             <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
@@ -38,7 +36,7 @@
 
     </nav>
 
-    <div class="p-4 md:px-[8%] lg:px-[12%]">
+    <div class="p-4 md:px-[8%] lg:px-[12%] min-h-screen">
         <div id="map" class="h-72 md:w-[80%] lg:w-[60%] mx-auto "></div>
 
         <div id="filter-wrapper" class="w-full flex font-semibold gap-4 items-center my-2">
@@ -74,19 +72,29 @@
 
         </div>
     </div>
-    <footer class="bg-(--ink) py-4  bottom-0 text-(--sand) text-center ">
+    <footer class="bg-(--ink) py-4  h-fit  text-(--sand) text-center ">
         <div>Somia &copy; 2026. All right served.</div>
     </footer>
-
+    <script src="/js/main.js"></script>
     <script>
+        
+        const popupContent = (name, address, slug) => `
+        <div class="bg-white rounded  max-w-72">
+            <h2 class="text-2xl font-bold">${name}</h2>
+            <p>${address}</p>
+            <button class="bg-(--ink) text-(--sand)" onclick="window.open('detail-bank.html?q=${slug}', '_self')">Lihat TPA</button>
+        </div>`;
+
         let map = L.map('map').setView([-8.45, 115.1], 8.5);
 
-        // Add a tile layer
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
+        for (let i = 0; i < inven.wasteBanks.length; i++) {
+            L.marker(inven.wasteBanks[i].location, {alt: 'map', riseOnHover: true }).addTo(map).bindPopup(popupContent(inven.wasteBanks[i].name, inven.wasteBanks[i].address, inven.wasteBanks[i].slug))
+        }
 
     </script>
 </body>

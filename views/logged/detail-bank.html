@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/lib/aos/aos.js"></script>
+    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Somia - Bank sampah</title>
+</head>
+
+<body>
+    <nav
+        class="w-full bg-(--ink) text-(--sand) h-fit sticky top-0 p-2 z-2000 rounded-b-lg shadow-lg flex justify-between items-center">
+        <a href="/index.html" class="flex items-center">
+            <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+        </a>
+        <div class=" h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer"
+            onclick="modalSignOut.classList.remove('hidden')">
+            <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+        </div>
+
+    </nav>
+
+
+    <div class="p-4 md:px-[8%] lg:px-[12%] min-h-screen">
+        <h1 id="title" class="text-3xl md:text-[24pt] font-bold w-full ">jher</h1>
+        <div class=" flex flex-wrap justify-center md:justify-evenly">
+            <main class="flex flex-wrap p-4  gap-4 lg:flex-2 h-fit ">
+                <div id="map" class="flex w-full h-72 md:h-[40vh] bg-yellow-200">map</div>
+                <div id="information" class="w-full md:flex-2 bg-white rounded-md p-4 h-fit">
+                    <h3 class="md:text-xl font-semibold">
+                        Jam operasional : <br>
+                        <span id="schedule" class=" font-medium"></span>
+                    </h3>
+                    <h3 class="md:text-xl font-semibold mt-4">
+                        Jenis sampah yang diterima :<br>
+                        <ul id="list" class="font-medium w-full overflow-x-scroll flex gap-2"></span>
+                    </h3>
+                </div>
+                <div id="contact" class="md:flex-1 w-full p-4 bg-(--ink) text-(--sand) rounded-md h-fit">
+                    <p class="text-sm text-stone-200/70">Kontak Pengelola</p>
+                    <h2 class="uppercase font-bold text-(--turmeric) text-xl my-2" id="name"></h2>
+                    <p class="text-sm text-stone-200/70">Pengelola bank sampah.</p> <br>
+
+                    <a href="" id="phone"
+                        class="btn bg-(--turmeric) text-(--ink) flex  text-center font-bold my-4 items-center justify-center mx-2"> <i class="fa-solid hidden md: fa-phone fa-lg"></i> Hubungi
+                        Via Whatsapp</a>
+
+                </div>
+            </main>
+
+            <section class=" bg-white p-4 rounded-md  h-fit lg:flex-1">
+                <h2 class="text-lg font-semibold mb-4"> Bank Sampah Lainnya</h2>
+                <div id="container-cards" class="grid gap-2">
+
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <footer class="bg-(--ink) py-4 h-fit text-(--sand) text-center ">
+        <div>Somia &copy; 2026. All right served.</div>
+    </footer>
+    <script src="/js/main.js"></script>
+    <script>
+        let url = window.location.search
+        let baseurl = new URLSearchParams(url)
+        let pageSlug = baseurl.get('q')
+
+
+
+
+        const bank = inven.wasteBanks.find(i => i.slug === pageSlug)
+        const renderlist = (data) => data.map(item => `
+        <li class="border rounded-xl capitalize my-2 w-fit px-2 text-lg font-semibold text-${inven.colors[item]}-700 bg-${inven.colors[item]}-200">${item}</li>
+        `).join('')
+
+        const renderCards = () => {
+            const rec = inven.wasteBanks.filter(item => item.slug !== bank.slug)
+            return rec.map(i => `
+                 <div class="w-full border-stone-800/40 border pl-4 shadow-lg rounded-md p-4">
+                            <h4 class="mb-2 text-lg font-semibold">${i.name}</h4>
+                            <p class="text-sm text-stone-700">${i.address}</p>
+                            <button class="text-(--moss) hover:bg-(--moss) hover:text-white border mt-4" onclick="window.open('detail-bank.html?q=${i.slug}', '_self')">Lihat &rarr;</button>
+                        </div>
+            `
+            ).slice(0,2).join('')}
+
+        let map = L.map('map').setView(bank.location, 12)
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker(bank.location, { alt: 'map', riseOnHover: true }).addTo(map)
+
+        document.getElementById('title').innerHTML = bank.name
+        document.getElementById('schedule').innerHTML = bank.schedule
+        document.getElementById('list').innerHTML = renderlist(bank.accepted)
+        document.getElementById('name').innerHTML = bank.contact.name
+        document.getElementById('phone').setAttribute('href', 'https://wa.me/' + bank.contact.phone)
+        document.getElementById('container-cards').innerHTML = renderCards()
+
+
+    </script>
+</body>
+
+</html>

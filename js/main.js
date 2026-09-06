@@ -1,12 +1,12 @@
-export const useInventory =(()=> {
-  const articles= [
+const inven = {
+  articles: [
     {
       id: "diy1",
       title: "Janur bekas jadi hiasan dinding",
       category: "Upacara",
       excerpt:
         "Ubah janur sisa upacara jadi hiasan dinding anyaman yang tahan lama.",
-      thumbnail: "assets/img/illustrations/diy1.svg",
+      thumbnail: "https://picsum.photos/400/300?random=1",
       materials: [
         "Janur bekas 5 lembar",
         "Benang katun",
@@ -27,7 +27,7 @@ export const useInventory =(()=> {
       category: "Rumah tangga",
       excerpt:
         "Kompos sederhana pakai ember bekas, tanpa bau, cocok untuk rumah kecil.",
-      thumbnail: "assets/img/illustrations/diy2.svg",
+      thumbnail: "https://picsum.photos/400/300?random=2",
       materials: [
         "Ember bekas dengan tutup",
         "Sisa sayur dan buah",
@@ -46,7 +46,7 @@ export const useInventory =(()=> {
       title: "Pot dari botol plastik bekas",
       category: "Rumah tangga",
       excerpt: "Botol plastik 1.5L jadi pot gantung untuk tanaman hias kecil.",
-      thumbnail: "assets/img/illustrations/diy3.svg",
+      thumbnail: "https://picsum.photos/400/300?random=3",
       materials: [
         "Botol plastik 1.5L",
         "Tali rami",
@@ -67,7 +67,7 @@ export const useInventory =(()=> {
       category: "Upacara",
       excerpt:
         "Alas plastik canang yang sudah tidak terpakai bisa dianyam jadi tas kecil.",
-      thumbnail: "assets/img/illustrations/diy4.svg",
+      thumbnail: "https://picsum.photos/400/300?random=4",
       materials: [
         "Alas plastik canang bekas",
         "Gunting",
@@ -88,7 +88,7 @@ export const useInventory =(()=> {
       category: "Rumah tangga",
       excerpt:
         "Padatkan plastik bersih ke dalam botol untuk jadi bahan bangunan ringan.",
-      thumbnail: "assets/img/illustrations/diy5.svg",
+      thumbnail: "https://picsum.photos/400/300?random=5",
       materials: [
         "Botol plastik bersih dan kering",
         "Sampah plastik lunak",
@@ -108,7 +108,7 @@ export const useInventory =(()=> {
       category: "Rumah tangga",
       excerpt:
         "Minyak bekas menggoreng diubah jadi sabun cuci piring sederhana.",
-      thumbnail: "assets/img/illustrations/diy6.svg",
+      thumbnail: "https://picsum.photos/400/300?random=6",
       materials: [
         "Minyak jelantah 500ml",
         "Soda api",
@@ -129,7 +129,7 @@ export const useInventory =(()=> {
       category: "Upacara",
       excerpt:
         "Rayakan tradisi lokal dengan miniatur ogoh-ogoh dari kardus daur ulang.",
-      thumbnail: "assets/img/illustrations/diy7.svg",
+      thumbnail: "https://picsum.photos/400/300?random=7",
       materials: [
         "Kardus bekas",
         "Lem tembak",
@@ -150,7 +150,7 @@ export const useInventory =(()=> {
       category: "Kerajinan",
       excerpt:
         "Kaleng susu atau kopi bekas jadi tempat pensil yang rapi di meja belajar.",
-      thumbnail: "assets/img/illustrations/diy8.svg",
+      thumbnail: "https://picsum.photos/400/300?random=8",
       materials: ["Kaleng bekas", "Kain perca", "Lem kain", "Pita"],
       steps: [
         "Bersihkan kaleng dan pastikan tidak ada bagian tajam.",
@@ -166,7 +166,7 @@ export const useInventory =(()=> {
       category: "Kerajinan",
       excerpt:
         "Kaos lama yang sudah tidak dipakai diubah jadi tote bag tanpa perlu menjahit.",
-      thumbnail: "assets/img/illustrations/diy9.svg",
+      thumbnail: "https://picsum.photos/400/300?random=9",
       materials: ["Kaos bekas", "Gunting", "Penggaris"],
       steps: [
         "Potong bagian lengan dan leher kaos.",
@@ -182,7 +182,7 @@ export const useInventory =(()=> {
       category: "Rumah tangga",
       excerpt:
         "Kulit buah sisa dapur difermentasi jadi pupuk cair untuk tanaman rumah.",
-      thumbnail: "assets/img/illustrations/diy10.svg",
+      thumbnail: "https://picsum.photos/400/300?random=10",
       materials: [
         "Kulit buah 1kg",
         "Gula merah 100g",
@@ -197,30 +197,103 @@ export const useInventory =(()=> {
       ],
       date: "2026-07-05",
     },
-  ]
+  ],
 
-  const containerCard = document.getElementById("container-card");
+  colors: {
+    plastik: "red",
+    kertas: "amber",
+    organik: "emerald",
+    kaca: "teal"
+  },
 
-  const renderCards=() =>{
-       if (!containerCard) return; 
-    containerCard.innerHTML = articles
-      .map(
-        (s) => `
-            <div class="card" data-key="${s.id}">
-                    <img src="https://picsum.photos/200/200?random=1" >
-                    <h3 class="md:text-md">
-                        ${s.title}
-                    </h3>
-                </div>
-            `,
-      )
-      .join("");
-  };
+  wasteBanks : [
+    {
+      location: [-8.612883874536013, 115.21297598465651],
+      name: "Bank Sampah Sarana Gathi",
+      slug: "bank-sampah-sarana-gathi" ,
+      address: "Jl. Ahmad Yani Utara No.453, Peguyangan, Kec. Denpasar Utara, Kota Denpasar, Bali",
+      status: "Menerima",
+      schedule: "Senin-Jumat, 09:00 - 18:00 WITA",
+      accepted:["plastik", "kertas", "kaca"],
+      contact: {
+        name: 'Ni Wayan Sari',
+        phone: '6212345678'
+      }
+    },
+    {
+      location: [-8.557040588872043, 115.35036238501132],
+      name: "TPA Temesi",
+      slug: 'tpa-temesi',
+      address: "Temesi, Gianyar, Kab. Gianyar, Bali",
+      status: "Menerima",
+      schedule: "Senin-Jumat, 09:00 - 17:00 WITA",
+      accepted:["plastik", "kaca"],
+      contact: {
+        name: 'I Made Galuh',
+        phone: '6212345678'
+      }
+    },
+    {
+      location: [-8.529810098481516, 115.09405288155969],
+      name: "TPA Mandung",
+      slug: 'tpa-mandung',
+      address: "Jl. Manik Galih, Sembung Gede, Kec. Kerambitan, Kabupaten Tabanan, Bali",
+      status: "Hampir penuh",
+      schedule: "Senin-Jumat, 08:00 - 18:00 WITA",
+      accepted:["plastik", "kertas"],
+      contact: {
+        name: 'I Gede Agus',
+        phone: '6212345678'
+      }
+    },
+    {
+      location: [-8.719004136290913, 115.2205865680685],
+      name: "TPA Suwung",
+      slug: 'tpa-suwung',
+      address: "Jl. TPA Suwung No.200, Sesetan, Denpasar Selatan, Kota Denpasar, Bali",
+      status: "Penuh",
+      schedule: "Senin-Jumat, 09:00 - 17:00 WITA",
+      accepted:["plastik", "kertas", "kaca"],
+      contact: {
+        name: 'Putu Merta',
+        phone: '6212345678'
+      }
+    },
+    
+  ],
 
- return {
-    articles,
-    containerCard,
-    renderCards
-  };
-})();
+  user: {
+    name: 'Jane Doe',
+    email: 'janedoe@email.test',
+    password: '12345678',
+    address: 'Br. Kaja',
+    totalWaste: 4.2,
+    dayStreak: 5,
+    badge: 'Sang Pemilah',
+  },
 
+  // containerCard: document.getElementById("container-card"),
+  formmatedDate(date) {
+    if (!date) return;
+    const dates = date.split("-");
+    const month = [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember",
+    ];
+
+    let bulan = month[Number(dates[1]) - 1];
+
+    return `${dates[2]} ${bulan} ${dates[0]}`;
+  },
+
+};
