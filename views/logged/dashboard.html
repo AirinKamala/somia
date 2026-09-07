@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="/js/tl.js"></script>
     <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
@@ -91,7 +90,8 @@
                         <p class="text-stone-500 font-bold ">ECO WRAPPED</p>
                         <h2 class="text-(--sand) mt-2 font-bold text-xl">Bagikan progress minnguanmu.</h2>
                     </div>
-                    <button class="bg-(--turmeric) h-fit bg-semibold" onclick="window,open('wrapped.html', '_self')">Lihat Wrapped</button>
+                    <button class="bg-(--turmeric) h-fit bg-semibold"
+                        onclick="window.open('wrapped.html', '_self')">Lihat Wrapped</button>
                 </div>
             </main>
 
@@ -184,32 +184,10 @@
                 </div>
             </section>
 
-            <section class="p-4 md:px-[8%] lg:px-[12%] mt-8" id="favorit">
-                <h2 class="text-2xl font-bold">Artikel favorit</h2>
-                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
-                    <div class="rounded-xl overflow-hidden">
-                        <img src="" class="bg-(--moss) w-full h-24" alt="">
-                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
-                            <h3 class="font-semibold">Kompos dari sampah dapur, hanya 3 langkah.</h3>
-                            <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
-                        </div>
-                    </div>
+            <section class="p-4 md:px-[8%] lg:px-[12%] mt-8 gap-4" id="favorit">
+                <h2 class="text-2xl w-full font-bold">Artikel favorit</h2>
+                <div id="container" class="flex flex-wrap gap-4 justify-center md:justify-start mt-4">
 
-                    <div class="rounded-xl overflow-hidden">
-                        <img src="" class="bg-(--moss) w-full h-24" alt="">
-                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
-                            <h3 class="font-semibold">Sulap botol bekas jadi omzet jutaan rupiah.</h3>
-                            <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-xl overflow-hidden">
-                        <img src="" class="bg-(--moss) w-full h-24" alt="">
-                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
-                            <h3 class="font-semibold">Cara membuat eco-enzym dari buah sisa.</h3>
-                            <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -237,9 +215,9 @@
                 </div>
             </section>
         </div>
-        <div id="modal-overlay" class="hidden relative">
-            <div class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex "
-                onclick="modal.classList.add('hidden')"></div>
+        <div id="modal-overlay"
+            class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex items-center justify-center hidden"
+            onclick="modalSignOut.classList.add('hidden')">
             <div id="modal" class="absolute z-51 bg-white rounded-lg p-4 flex w-sm grid ">
                 <h2 class="font-bold text-2xl">Edit Profile</h2>
                 <label for="" class="font-semibold mt-2">Nama</label>
@@ -251,10 +229,6 @@
                 <label for="" class="font-semibold mt-2">Email</label>
                 <input type="email" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan email anda."
                     required>
-                <label for="" class="font-semibold mt-2">Sandi</label>
-                <input type="password" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan sandi anda."
-                    required>
-
                 <button class="bg-(--moss) font-semibold text-white mt-8"
                     onclick="modal.classList.remove('hidden')">Simpan</button>
 
@@ -272,7 +246,22 @@
                 </div>
             </div>
         </div>
+        <script src="/js/main.js"></script>
         <script>
+            const renderCard = () => {
+                let result = inven.articles.filter(i => inven.bookmark.includes(i.id)).slice(0, 3)
+                // document.getElementById('container-favorit').innerHTML = ''
+                return result.map(f => `
+                    <div class="rounded-xl overflow-hidden w-sm ">
+                        <img src="${f.thumbnail}" class="bg-(--moss) w-full object-cover h-24" alt="">
+                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
+                            <h3 class="font-semibold">${f.title}</h3>
+                            <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
+                        </div>
+                    </div>
+                `).join('')
+            }
+            document.getElementById('container').innerHTML = renderCard()
             let modalShow = false
             const modal = document.getElementById('modal-overlay')
             const modalSignOut = document.getElementById('modal-out')
@@ -288,6 +277,8 @@
                 localStorage.removeItem('user-profile')
                 window.open('/', '_self')
             }
+
+
         </script>
 </body>
 

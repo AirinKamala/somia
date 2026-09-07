@@ -2,7 +2,7 @@
     --ink: #16231C;
     --sand: #EDE3C8;
     --moss: #3C6E4F;
-    --moss-light: #d3fce3;
+    --moss-light: #52da86;
     --turmeric: #E0A33B;
     --turmeric-dark: #cd9535;
     --clay: #b5493b;
@@ -18,7 +18,7 @@ body {
     width: 100%;
     /* max-width: 100vw; */
     min-height: 100vh;
-    background-color: var(--sand);
+    /* background-color: var(--sand); */
     display: grid;
     grid-template-rows: auto auto auto
 

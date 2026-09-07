@@ -261,14 +261,16 @@ const inven = {
     },
     
   ],
+  
+  bookmark: ['diy1', 'diy2', 'diy4'],
 
   user: {
     name: 'Jane Doe',
     email: 'janedoe@email.test',
     password: '12345678',
     address: 'Br. Kaja',
-    totalWaste: 4.2,
-    dayStreak: 5,
+    totalWaste: 9.2,
+    dayStreak: 10,
     badge: 'Sang Pemilah',
   },
 
