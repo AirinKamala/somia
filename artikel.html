@@ -15,20 +15,21 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
         rel="stylesheet">
     <script src="/lib/aos/aos.js"></script>
-
-    <title>Temukan artikel menarik!</title>
+    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Pojok Artikel - Somia</title>
 </head>
 
 <body class="">
-    <header
-        class="sticky top-0 z-1000 rounded-b-md border-b border-gray-400  flex justify-between p-4 md:px-[8%] lg:px-[15%] bg-white">
-        <div id="logo" class="flex items-center"> <img src="/assets/bw-logo.png" alt="" class="w-16 h-16 mr-2"><span class="text-2xl">Somia</span></div>
-        <div class="gap-4 flex h-12" id="wrap-auth">
-            <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
-            <a href="/views/register.html"><button
-                    class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
-        </div>
-    </header>
+    <nav class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
+     <a href="/index.html" class="flex items-center">
+            <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <p class="ml-2 text-amber-600 font-bold font-accent text-[20pt]">Somia</p>
+        </a>
+    <div class="gap-4 flex h-12" id="wrap-auth">
+      <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
+      <a href="/views/register.html"><button class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+    </div>
+  </nav>
     <div id="container" class="w-full bg-(--sand) min-h-screen  p-8 md:px-[8%] lg:px-[12%]">
         <div class="swiper mySwiper mb-8">
             <div class="swiper-wrapper h-auto w-full max-h-[60vh]">
@@ -105,7 +106,7 @@
             </div>
 
             <div id="result" class=" w-full flex flex-wrap gap-4 w-full">
-                <div class="card">
+                <div onclick="window.open(`artikel-detail.html?q=diy1`, '_self')" class="card">
                     <img src="https://placehold.net/600x400.png">
                     <div class="card-text">
                         <h4 class="md:text-md font-extrabold text-sm ">Janur bekas jadi hiasan dinding</h4>
@@ -114,7 +115,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div onclick="window.open(`artikel-detail.html?q=diy1`, '_self')" class="card">
                     <img src="https://placehold.net/600x400.png">
                     <div class="card-text">
                         <h4 class="md:text-md font-extrabold text-sm ">Kompos dari sisa dapur, 3 langkah</h4>
@@ -123,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div onclick="window.open(`artikel-detail.html?q=diy1`, '_self')" class="card">
                     <img src="https://picsum.photos/200/200?random=3">
                     <div class="card-text">
                         <h4 class="md:text-md font-extrabold text-sm ">Pot dari botol plastik bekas</h4>
@@ -131,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div onclick="window.open(`artikel-detail.html?q=diy4`, '_self')" class="card">
                     <img src="https://picsum.photos/200/200?random=4">
                     <div class="card-text">
                         <h4 class="md:text-md font-extrabold text-sm ">Canang plastik bisa didaur ulang jadi apa?</h4>
@@ -143,7 +144,7 @@
         </section>
     </div>
     <footer class="bg-(--ink) py-4 bottom-0 text-(--sand) text-center ">
-        <div>Somia &copy; 2026. All right served.</div>
+        <div>Somia &copy; 2026.All rights reserved.</div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
     <script>

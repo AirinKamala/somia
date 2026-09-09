@@ -14,20 +14,22 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
         rel="stylesheet">
     <script src="/lib/aos/aos.js"></script>
-
-    <title>Voucher</title>
+<link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Voucher - Somia</title>
 </head>
 <body>
-    <header
-        class="sticky top-0 z-1000 rounded-b-md border-b border-gray-400  flex justify-between p-4 md:px-[8%] lg:px-[15%] bg-white">
-        <div id="logo" class="flex items-center"> <img src="/assets/bw-logo.png" alt="" class="w-16 h-16 mr-2"><span class="text-2xl">Somia</span></div>
-        <div class="gap-4 flex h-12" id="wrap-auth">
-            <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
-            <a href="/views/register.html"><button
-                    class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+     <nav
+        class="w-full bg-(--ink) text-(--sand) h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
+        <a href="/index.html" class="flex items-center">
+            <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+        </a>
+        <div class=" h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer"
+            onclick="modalSignOut.classList.remove('hidden')">
+            <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
         </div>
-    </header>
-    <main class="p-8 md:px-[8%] lg:px-[12%] bg-(--sand)">
+    </nav>
+    <main class="p-8 md:px-[8%] lg:px-[12%] bg-(--sand) min-h-screen">
         <div class="bg-white rounded-xl w-full p-4">
             <p>Kumpulkan poin sebanyak mungkin dan claim berbagai voucher</p>
             <h1 class="text-2xl font-bold italic">1000 <span class="text-lg">point</span></h1>
@@ -86,7 +88,7 @@
         </div>
     </main>
     <footer class="bg-(--ink) py-4 bottom-0 text-(--sand) text-center ">
-        <div>Somia &copy; 2026. All right served.</div>
+        <div>Somia &copy; 2026.All rights reserved.</div>
     </footer>
 </body>
 </html>

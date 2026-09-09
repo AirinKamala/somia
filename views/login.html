@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <script src="/js/tl.js"></script>
     <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
@@ -13,42 +12,42 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
         rel="stylesheet">
     <script src="/lib/aos/aos.js"></script>
-
-    <title>Somia - Masuk</title>
+    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Masuk - Somia</title>
 </head>
 
-<body class="min-h-screen flex flex-col">
-    <main class="p-8 md:px-[8%] lg:px-[12%] grid md:grid-cols-2 gap-4 grid items-center justify-items-center my-auto">
+<body>
+    <main class="p-8 md:px-[8%] lg:px-[12%] grid md:grid-cols-2 gap-4 grid items-center justify-items-center my-auto min-h-screen">
         <div class="flex justify-items-center items-center z-5">
-            <form class="flex flex-col bg-(--sand) rounded-md p-8 gap-4 min-w-sm shadow-lg">
+            <form class="flex flex-col bg-(--ink) text-(--sand) rounded-md p-8 gap-4 min-w-sm shadow-lg">
                 <h1 class="text-4xl font-extrabold tracking-[.1rem] ">Masuk</h1>
                 <hr>
 
                 <label class="font-bold text-lg" for="email">Email</label>
-                <input class="bg-white px-4 py-2 rounded focus:shadow-xl" required id="email" type="email"
+                <input class="bg-white px-4 py-2 rounded text-(--ink) focus:shadow-xl" required id="email" type="email"
                     placeholder="Masukkan email anda.">
 
                 <label class="font-bold text-lg" for="pass">Password</label>
-                <input class="bg-white px-4 py-2 rounded focus:shadow-xl" required id="pass" type="password" min="8"
+                <input class="bg-white px-4 py-2 rounded text-(--ink) focus:shadow-xl" required id="pass" type="password" min="8"
                     placeholder="Masukkan password anda.">
 
-                <a href="/views/logged/dashboard.html" class="mt-16 w-full flex"><button
-                        class=" w-full bg-(--turmeric) font-bold tracking-[.2rem]">Masuk</button></a>
-                        <p class="">Belum memiliki akun? <a class="text-(--moss) font-semibold underline" href="./logged/dashboard.html">Daftar disini.</a></p>
+                <a href="/logged/dashboard.html" class="mt-16 w-full flex"><button
+                        class=" w-full bg-(--moss) font-bold tracking-[.2rem]">Masuk</button></a>
+                <p class="">Belum memiliki akun? <a class="text-(--turmeric) font-semibold underline"
+                        href="/views/register.html">Daftar disini.</a></p>
             </form>
         </div>
-        <div id="form-img z-4">
-            <img src="/assets/login.svg" alt="">
+        <div id="form-img" class=" z-4 hidden  md:h-screen  md:flex">
+            <img src="/assets/login.svg" class="h-full object-contain w-full" alt="">
         </div>
     </main>
 
     <footer class="bg-(--ink) py-4  text-(--sand) text-center mt-auto">
-        <div>Somia &copy; 2026. All right served.</div>
+        <div>Somia &copy; 2026.All rights reserved.</div>
     </footer>
     <script>
         AOS.init({ duration: 1000, once: false, offset: 60 });
     </script>
-    <script src="./js/main.js"></script>
 
 </body>
 

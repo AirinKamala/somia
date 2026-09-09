@@ -17,12 +17,11 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="/lib/aos/aos.js"></script>
     <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
-    <title>Somia - Bank sampah</title>
 </head>
 
 <body>
     <nav
-        class="w-full bg-(--ink) text-(--sand) h-fit sticky top-0 p-2 z-2000 rounded-b-lg shadow-lg flex justify-between items-center">
+        class="w-full bg-(--ink) text-(--sand) h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
         <a href="/index.html" class="flex items-center">
             <img src="/assets/icon.svg" alt="" class="self-center flex">
             <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
@@ -31,7 +30,6 @@
             onclick="modalSignOut.classList.remove('hidden')">
             <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
         </div>
-
     </nav>
 
 
@@ -72,7 +70,7 @@
 
     </div>
     <footer class="bg-(--ink) py-4 h-fit text-(--sand) text-center ">
-        <div>Somia &copy; 2026. All right served.</div>
+        <div>Somia &copy; 2026.All rights reserved.</div>
     </footer>
     <script src="/js/main.js"></script>
     <script>
@@ -80,10 +78,9 @@
         let baseurl = new URLSearchParams(url)
         let pageSlug = baseurl.get('q')
 
-
-
-
         const bank = inven.wasteBanks.find(i => i.slug === pageSlug)
+        document.title = bank.name + ' - Somia'
+
         const renderlist = (data) => data.map(item => `
         <li class="border rounded-xl capitalize my-2 w-fit px-2 text-lg font-semibold text-${inven.colors[item]}-700 bg-${inven.colors[item]}-200">${item}</li>
         `).join('')

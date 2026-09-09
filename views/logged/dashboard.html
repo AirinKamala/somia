@@ -13,8 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
         rel="stylesheet">
     <script src="/lib/aos/aos.js"></script>
-
-    <title>Dashboard</title>
+    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
+    <title>Dashboard - Somia</title>
 </head>
 
 <body>
@@ -250,12 +250,11 @@
         <script>
             const renderCard = () => {
                 let result = inven.articles.filter(i => inven.bookmark.includes(i.id)).slice(0, 3)
-                // document.getElementById('container-favorit').innerHTML = ''
                 return result.map(f => `
                     <div class="rounded-xl overflow-hidden w-sm ">
                         <img src="${f.thumbnail}" class="bg-(--moss) w-full object-cover h-24" alt="">
                         <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
-                            <h3 class="font-semibold">${f.title}</h3>
+                            <h3 class="font-semibold cursor-pointer" onclick="window.open('/artikel-detail.html?q=${f.id}', '_self')">${f.title}</h3>
                             <p class="text-(--clay) text-sm underline mt-auto mb-2">Hapus dari favorit</p>
                         </div>
                     </div>

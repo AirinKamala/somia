@@ -19,9 +19,7 @@ body {
     /* max-width: 100vw; */
     min-height: 100vh;
     /* background-color: var(--sand); */
-    display: grid;
-    grid-template-rows: auto auto auto
-
+    display: block;
 }
 
 button,
