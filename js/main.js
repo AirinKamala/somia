@@ -1,202 +1,192 @@
+//================================== MAIN JS ==================================
+//============================= Berisi dummy data =============================
 const inven = {
   articles: [
     {
-      id: "diy1",
-      title: "Janur bekas jadi hiasan dinding",
-      category: "Upacara",
-      excerpt:
-        "Ubah janur sisa upacara jadi hiasan dinding anyaman yang tahan lama.",
-      thumbnail: "https://picsum.photos/400/300?random=1",
-      materials: [
-        "Janur bekas 5 lembar",
-        "Benang katun",
-        "Gunting",
-        "Bingkai kayu kecil",
-      ],
-      steps: [
-        "Keringkan janur di tempat teduh selama 2 hari.",
-        "Belah janur menjadi lembaran tipis memanjang.",
-        "Anyam lembaran membentuk pola sederhana.",
-        "Rekatkan anyaman ke bingkai kayu.",
-      ],
-      date: "2026-08-10",
-    },
-    {
-      id: "diy2",
-      title: "Kompos dari sisa dapur, 3 langkah",
-      category: "Rumah tangga",
-      excerpt:
-        "Kompos sederhana pakai ember bekas, tanpa bau, cocok untuk rumah kecil.",
-      thumbnail: "https://picsum.photos/400/300?random=2",
-      materials: [
-        "Ember bekas dengan tutup",
-        "Sisa sayur dan buah",
-        "Tanah",
-        "Sekam padi",
-      ],
-      steps: [
-        "Lubangi bagian bawah ember untuk sirkulasi udara.",
-        "Susun lapisan sekam, sisa dapur, dan tanah bergantian.",
-        "Aduk setiap 3 hari sekali selama 3 minggu.",
-      ],
-      date: "2026-08-08",
-    },
-    {
-      id: "diy3",
-      title: "Pot dari botol plastik bekas",
-      category: "Rumah tangga",
-      excerpt: "Botol plastik 1.5L jadi pot gantung untuk tanaman hias kecil.",
-      thumbnail: "https://picsum.photos/400/300?random=3",
-      materials: [
-        "Botol plastik 1.5L",
-        "Tali rami",
-        "Cutter",
-        "Tanah dan bibit",
-      ],
-      steps: [
-        "Potong botol secara horizontal, sisakan bagian bawah.",
-        "Lubangi dasar botol untuk drainase.",
-        "Ikat tali rami di kedua sisi sebagai gantungan.",
-        "Isi dengan tanah dan tanam bibit.",
-      ],
-      date: "2026-08-05",
-    },
-    {
-      id: "diy4",
-      title: "Canang plastik bisa didaur ulang jadi apa?",
-      category: "Upacara",
-      excerpt:
-        "Alas plastik canang yang sudah tidak terpakai bisa dianyam jadi tas kecil.",
-      thumbnail: "https://picsum.photos/400/300?random=4",
-      materials: [
-        "Alas plastik canang bekas",
-        "Gunting",
-        "Stapler kecil",
-        "Kain pelapis",
-      ],
-      steps: [
-        "Cuci dan keringkan alas plastik.",
-        "Potong memanjang menjadi pita-pita kecil.",
-        "Anyam pita menjadi lembaran.",
-        "Jahit atau staples menjadi bentuk tas kecil.",
-      ],
-      date: "2026-08-02",
-    },
-    {
-      id: "diy5",
-      title: "Ecobrick: botol jadi bata ringan",
-      category: "Rumah tangga",
-      excerpt:
-        "Padatkan plastik bersih ke dalam botol untuk jadi bahan bangunan ringan.",
-      thumbnail: "https://picsum.photos/400/300?random=5",
-      materials: [
-        "Botol plastik bersih dan kering",
-        "Sampah plastik lunak",
-        "Tongkat kayu",
-      ],
-      steps: [
-        "Pastikan plastik dalam kondisi kering dan bersih.",
-        "Padatkan plastik ke dalam botol menggunakan tongkat.",
-        "Ulangi hingga botol benar-benar padat dan keras.",
-        "Timbang, minimal 0.33 kg per botol 600ml.",
-      ],
-      date: "2026-07-28",
-    },
-    {
-      id: "diy6",
-      title: "Sabun cuci dari minyak jelantah",
-      category: "Rumah tangga",
-      excerpt:
-        "Minyak bekas menggoreng diubah jadi sabun cuci piring sederhana.",
-      thumbnail: "https://picsum.photos/400/300?random=6",
-      materials: [
-        "Minyak jelantah 500ml",
-        "Soda api",
-        "Air",
-        "Pewangi secukupnya",
-      ],
-      steps: [
-        "Saring minyak jelantah hingga bersih dari kotoran.",
-        "Larutkan soda api ke dalam air secara perlahan.",
-        "Campurkan larutan ke minyak sambil diaduk hingga mengental.",
-        "Tuang ke cetakan dan diamkan 2 hari.",
-      ],
-      date: "2026-07-22",
-    },
-    {
-      id: "diy7",
-      title: "Ogoh-ogoh mini dari kardus bekas",
-      category: "Upacara",
-      excerpt:
-        "Rayakan tradisi lokal dengan miniatur ogoh-ogoh dari kardus daur ulang.",
-      thumbnail: "https://picsum.photos/400/300?random=7",
-      materials: [
-        "Kardus bekas",
-        "Lem tembak",
-        "Cat akrilik sisa",
-        "Bambu kecil",
-      ],
-      steps: [
-        "Bentuk kerangka dari bambu kecil.",
-        "Lapisi kerangka dengan kardus yang dibentuk.",
-        "Rekatkan seluruh bagian dengan lem tembak.",
-        "Warnai menggunakan cat akrilik sisa.",
-      ],
-      date: "2026-07-18",
-    },
-    {
-      id: "diy8",
-      title: "Tempat pensil dari kaleng bekas",
-      category: "Kerajinan",
-      excerpt:
-        "Kaleng susu atau kopi bekas jadi tempat pensil yang rapi di meja belajar.",
-      thumbnail: "https://picsum.photos/400/300?random=8",
-      materials: ["Kaleng bekas", "Kain perca", "Lem kain", "Pita"],
-      steps: [
-        "Bersihkan kaleng dan pastikan tidak ada bagian tajam.",
-        "Ukur dan potong kain perca sesuai tinggi kaleng.",
-        "Rekatkan kain mengelilingi kaleng dengan lem.",
-        "Hias dengan pita di bagian atas.",
-      ],
-      date: "2026-07-14",
-    },
-    {
-      id: "diy9",
-      title: "Tas belanja dari kaos bekas, tanpa jahit",
-      category: "Kerajinan",
-      excerpt:
-        "Kaos lama yang sudah tidak dipakai diubah jadi tote bag tanpa perlu menjahit.",
-      thumbnail: "https://picsum.photos/400/300?random=9",
-      materials: ["Kaos bekas", "Gunting", "Penggaris"],
-      steps: [
-        "Potong bagian lengan dan leher kaos.",
-        "Balik kaos ke dalam, gunting bagian bawah menjadi rumbai.",
-        "Ikat setiap dua rumbai berdekatan hingga rapat.",
-        "Balik kembali kaos, tas siap digunakan.",
-      ],
-      date: "2026-07-10",
-    },
-    {
-      id: "diy10",
-      title: "Pupuk cair dari kulit buah",
-      category: "Rumah tangga",
-      excerpt:
-        "Kulit buah sisa dapur difermentasi jadi pupuk cair untuk tanaman rumah.",
-      thumbnail: "https://picsum.photos/400/300?random=10",
-      materials: [
-        "Kulit buah 1kg",
-        "Gula merah 100g",
-        "Air 3 liter",
-        "Botol besar",
-      ],
-      steps: [
-        "Potong kecil kulit buah dan masukkan ke botol.",
-        "Larutkan gula merah dengan sedikit air, tuang ke botol.",
-        "Tambahkan sisa air hingga botol terisi 3/4.",
-        "Fermentasi selama 2 minggu, buka tutup setiap hari.",
-      ],
-      date: "2026-07-05",
-    },
+    id: "diy1",
+    title: "Eco-Enzyme Pembersih Serbaguna dari Kulit Buah",
+    category: "Organik",
+    excerpt: "Manfaatkan sisa kulit buah segar menjadi cairan pembersih alami yang ramah lingkungan.",
+    thumbnail: "https://picsum.photos/400/300?random=11",
+    materials: [
+      "300g kulit buah segar (jeruk, apel, atau nanas)",
+      "100g gula merah atau molase",
+      "1 liter air bersih",
+      "Botol plastik bekas ukuran 1.5L (jangan gunakan kaca)"
+    ],
+    steps: [
+      "Campurkan air dan gula merah ke dalam botol plastik hingga larut sepenuhnya.",
+      "Masukkan potongan kulit buah ke dalam botol, pastikan menyisakan ruang kosong untuk gas.",
+      "Tutup rapat botol dan diamkan. ",
+      "Selama dua minggu pertama, buka tutup botol perlahan setiap hari untuk membuang gas.",
+      "Simpan di tempat teduh selama 3 bulan sebelum disaring dan digunakan sebagai pembersih."
+    ],
+    date: "2026-08-15"
+  },
+  {//cari gambar spesifik
+    id: "diy2",
+    title: "Pot Tanaman Self-Watering dari Botol Plastik",
+    category: "Berkebun",
+    excerpt: "Buat sistem penyiraman otomatis sederhana untuk tanaman hias menggunakan botol plastik bekas air mineral.",
+    thumbnail: "https://picsum.photos/400/300?random=12",
+    materials: [
+      "Botol plastik bekas 1.5L",
+      "Gunting atau cutter tajam",
+      "Kain flanel bekas atau tali katun tebal",
+      "Media tanam (tanah) dan bibit tanaman"
+    ],
+    steps: [
+      "Potong botol plastik menjadi dua bagian",
+      "Lubangi tutup botol, lalu masukkan kain flanel memanjang sebagai sumbu kapiler.",
+      "Isi bagian bawah botol dengan air secukupnya (jangan sampai menyentuh tutup botol nanti).",
+      "Pasang bagian atas botol dalam posisi terbalik ke bagian bawah",
+      "Isi dengan tanah, lalu tanam bibit."
+    ],
+    date: "2026-08-18"
+  },
+  {
+    id: "diy3",
+    title: "Organizer Meja Estetik dari Kardus Bekas",
+    category: "Kerajinan",
+    excerpt: "Ubah tumpukan kardus bekas menjadi laci atau kotak penyimpanan estetik untuk alat tulis di mejamu.",
+    thumbnail: "https://picsum.photos/400/300?random=13",
+    materials: [
+      "Kardus bekas pengiriman yang tebal",
+      "Lem tembak",
+      "Cutter tajam dan penggaris besi",
+      "Kertas kado sisa atau kain bekas untuk pelapis luar"
+    ],
+    steps: [
+      "Ukur dan potong kardus sesuai pola kotak penyimpanan yang diinginkan menggunakan cutter.",
+      "Rakit potongan-potongan kardus menggunakan lem tembak hingga membentuk kotak yang kokoh.",
+      "Tambahkan sekat-sekat kecil di bagian dalam jika diperlukan.",
+      "Lapisi seluruh permukaan luar kardus dengan kertas kado atau kain sisa menggunakan lem agar terlihat rapi."
+    ],
+    date: "2026-08-20"
+  },
+  {
+    id: "diy4",
+    title: "Sabun Cuci Serbaguna dari Minyak Jelantah",
+    category: "Daur Ulang",
+    excerpt: "Jangan buang minyak bekas menggoreng! Olah menjadi sabun batang yang ampuh membersihkan noda kain.",
+    thumbnail: "https://picsum.photos/400/300?random=14",
+    materials: [
+      "500ml minyak jelantah (sudah disaring jernih)",
+      "80g Soda Api (NaOH)",
+      "170ml air suling atau air pandan",
+      "Cetakan silikon atau wadah plastik tebal",
+      "Masker dan sarung tangan karet (wajib)"
+    ],
+    steps: [
+      "Gunakan masker dan sarung tangan, lalu tuang NaOH ke dalam air secara perlahan di ruang terbuka (jangan terbalik).",
+      "Diamkan larutan NaOH hingga suhunya turun menyamai suhu ruang.",
+      "Tuang larutan perlahan ke dalam minyak jelantah, aduk menggunakan spatula hingga mengental (fase trace).",
+      "Tuang ke cetakan, diamkan 24 jam, potong, lalu angin-anginkan (curing) selama 3-4 minggu sebelum dipakai."
+    ],
+    date: "2026-08-22"
+  },
+  {
+    id: "diy5",
+    title: "Pembatas Buku Elegan dari Kemasan Dupa",
+    category: "Kerajinan",
+    excerpt: "Manfaatkan corak dan motif indah pada kemasan kardus dupa menjadi pembatas buku yang artistik.",
+    thumbnail: "https://picsum.photos/400/300?random=15",
+    materials: [
+      "Kardus kemasan dupa bekas bercorak bagus",
+      "Gunting atau cutter",
+      "Pembolong kertas (hole punch)",
+      "Pita kecil bekas atau benang rami"
+    ],
+    steps: [
+      "Pilih bagian dari kemasan dupa yang memiliki corak atau gambar paling menarik.",
+      "Potong kardus tersebut menjadi bentuk persegi panjang memanjang (sekitar 5 x 15 cm).",
+      "Gunting membulat keempat sudut kardus agar tidak tajam.",
+      "Beri lubang di bagian tengah atas menggunakan pembolong kertas, lalu ikatkan pita atau benang rami."
+    ],
+    date: "2026-08-25"
+  },
+  {
+    id: "diy6",
+    title: "Seed Paper (Kertas Benih) dari Koran Bekas",
+    category: "Berkebun",
+    excerpt: "Olah tumpukan kertas buram dan koran menjadi kertas baru yang bisa ditanam dan tumbuh menjadi bunga.",
+    thumbnail: "https://picsum.photos/400/300?random=16",
+    materials: [
+      "Kertas atau koran bekas (hindari kertas glossy/licin)",
+      "Air hangat",
+      "Blender",
+      "Benih ukuran kecil (seperti selasih, bayam, atau bunga kertas)",
+      "Screen sablon atau saringan kawat datar"
+    ],
+    steps: [
+      "Sobek kertas menjadi potongan kecil dan rendam dalam air hangat selama minimal 2 jam.",
+      "Blender campuran kertas dan sedikit air hingga menjadi bubur kertas (pulp) yang halus.",
+      "Tuang pulp ke dalam baskom berisi air lebar, taburkan benih, dan aduk perlahan agar menyebar rata.",
+      "Serok pulp menggunakan screen sablon, ratakan tipis, dan jemur di bawah sinar matahari hingga kering."
+    ],
+    date: "2026-08-28"
+  },
+  {
+    id: "diy7",
+    title: "Produce Bag (Tas Jaring) Tanpa Jahit dari Kaos",
+    category: "Daur Ulang",
+    excerpt: "Ubah kaos katun lama yang sudah melar menjadi tas belanja kepasar.",
+    thumbnail: "https://picsum.photos/400/300?random=17",
+    materials: [
+      "Kaos berbahan katun bekas",
+      "Gunting kain tajam",
+      "Penggaris"
+    ],
+    steps: [
+      "Potong bagian leher dan kedua lengan kaos (membentuk bukaan tas dan gagang).",
+      "Gunting bagian bawah kaos (hem) secara vertikal membentuk rumbai-rumbai sepanjang 10 cm.",
+      "Ikat kuat setiap pasangan rumbai atas dan bawah sebanyak dua kali untuk menutup dasar tas.",
+      "Buat sayatan-sayatan kecil memanjang di seluruh badan kaos secara selang-seling agar tas bisa meregang."
+    ],
+    date: "2026-09-01"
+  },
+  {
+    id: "diy8",
+    title: "Tempat Lilin Aromaterapi dari Toples Kaca",
+    category: "Dekorasi",
+    excerpt: "Toples bekas selai atau saus bisa disulap menjadi tempat lilin estetik dan aman untuk menghias ruangan.",
+    thumbnail: "https://picsum.photos/400/300?random=18",
+    materials: [
+      "Toples kaca bekas",
+      "Tali rami (burlap string)",
+      "Lem tembak",
+      "Biji kopi, pasir laut, atau kerikil kecil",
+      "Lilin kecil (tealight candle)"
+    ],
+    steps: [
+      "Cuci bersih toples kaca dan rendam air hangat untuk menghilangkan sisa lem label kertasnya.",
+      "Lilitkan tali rami di bagian leher toples beberapa kali dan rekatkan ujungnya menggunakan lem tembak.",
+      "Isi seperempat bagian bawah toples dengan biji kopi atau pasir laut.",
+      "Letakkan lilin tealight tepat di tengah-tengah bantalan biji kopi atau pasir."
+    ],
+    date: "2026-09-03"
+  },
+  {
+    id: "diy9",
+    title: "Kompos Minim Bau Menggunakan Pot Bekas",
+    category: "Organik",
+    excerpt: "Tidak punya lahan luas? Kamu tetap bisa mengompos sisa makanan menggunakan pot tanaman yang tak terpakai.",
+    thumbnail: "https://picsum.photos/400/300?random=19",
+    materials: [
+      "Pot tanaman bekas yang berlubang di bawahnya",
+      "Sisa organik dapur (kulit buah, sayur, ampas kopi)",
+      "Sampah coklat (daun kering basah atau kardus cacah)",
+      "Tanah subur",
+      "Piringan penutup pot"
+    ],
+    steps: [
+      "Masukkan lapisan tanah setebal 5 cm di dasar pot untuk menyerap cairan berlebih.",
+      "Tambahkan lapisan sampah coklat (kardus/daun kering), lalu timpa dengan lapisan sisa organik dapur.",
+      "Tutup rapat bagian atas dengan lapisan tanah lagi agar tidak memancing lalat buah atau bau.",
+      "Tutup pot dengan piringan, letakkan di tempat teduh, dan biarkan terurai selama kurang lebih 1 bulan."
+    ],
+    date: "2026-09-06"
+  }
   ],
 
   colors: {
@@ -206,7 +196,7 @@ const inven = {
     kaca: "teal"
   },
 
-  wasteBanks : [
+  wasteBanks : [ //jangan dirubah
     {
       location: [-8.612883874536013, 115.21297598465651],
       name: "Bank Sampah Sarana Gathi",
@@ -266,13 +256,57 @@ const inven = {
 
   user: {
     name: 'Jane Doe',
+    address: 'Br. Kaja',
     email: 'janedoe@email.test',
     password: '12345678',
-    address: 'Br. Kaja',
     totalWaste: 9.2,
     dayStreak: 10,
     badge: 'Sang Pemilah',
+    point: 400
   },
+
+  voucher : [
+    {
+        id: "vch-01",
+        title: "Diskon Warung Tegal Rp15.000",
+        category: "UMKM",
+        point: 200,
+        image: "fa-regular fa-home",
+        bg: "bg-(--turmeric)"
+    },
+    {
+        id: "vch-02",
+        title: "Pulsa Isi Ulang Telkomsel Rp10.000",
+        category: "Pulsa",
+        point: 150,
+        image: "fa-solid fa-mobile-button",
+        bg: "bg-(--clay)"
+    },
+    {
+        id: "vch-03",
+        title: "Voucher Belanja Indomaret Rp50.000",
+        category: "Voucher",
+        point: 400,
+        image: "fa-solid fa-ticket",
+        bg: "bg-(--moss)"
+    },
+    {
+        id: "vch-04",
+        title: "Token Listrik PLN Rp20.000",
+        category: "Lainnya",
+        point: 250,
+        image: "fa-solid fa-gift",
+        bg: "bg-(--stone)"
+    },
+    {
+        id: "vch-05",
+        title: "Es Cendol Durian Gratis",
+        category: "UMKM",
+        point: 50,
+        image: "fa-regular fa-home",
+        bg: "bg-(--turmeric)"
+    }
+],
 
   // containerCard: document.getElementById("container-card"),
   formmatedDate(date) {

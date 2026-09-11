@@ -4,18 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/tl.js"></script>
+    
     <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
-        rel="stylesheet">
-    <script src="/lib/aos/aos.js"></script>
-    <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
-</head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<script src="/js/tl.js"></script><link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml"></head>
 
 <body class="">
     <nav
@@ -62,8 +59,50 @@
         </div>
 
     </div>
-    <footer class="bg-(--ink) py-4  h-fit  text-(--sand) text-center ">
-        <div>Somia &copy; 2026.All rights reserved.</div>
+    <footer class="bg-(--ink) py-4 text-(--sand) grid">
+        <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
+            <div class="grid space-y-2 w-sm  " id="identitas">
+                <a href="/index.html" class="flex items-center">
+                    <img src="/assets/icon.svg" alt="" class="self-center flex">
+                    <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+                </a>
+                <p class="pl-2 text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
+                    jadi reward </p>
+                <hr>
+                <a href="/views/logged/dashboard.html"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
+                <a href="/views/logged/voucher.html"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+                <a href="/artikel.html"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
+                <a href="/views/logged/peta.html"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
+
+            </div>
+            <div class="flex flex-col ">
+                <h4 class="text-xl font-bold">Ikuti kami di</h4>
+                <a href="#"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-instagram fa-xl mr-4"></i> Instagram</a>
+
+                <a href="#"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-facebook fa-xl mr-4"></i> Facebook</a>
+
+                <a href="#"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-tiktok fa-xl mr-4"></i> Tiktok</a>
+
+                <a href="#"
+                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-youtube fa-xl mr-4"></i> Youtube</a>
+            </div>
+        </div>
+        <p class="text-center mt-4">Somia &copy; 2026.All rights reserved.</p>
     </footer>
 
 </body>

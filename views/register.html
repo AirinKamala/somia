@@ -4,56 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/tl.js"></script>
+    
     <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="../lib/aos/aos.css">
-    
+    <link rel="stylesheet" href="/lib/aos/aos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
-    <script src="/lib/aos/aos.js"></script>
-<link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
-    <title>Daftar - Somia</title>
+<script src="/js/tl.js"></script><link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">    <title>Daftar - Somia</title>
 </head>
 
 <body>
-    <main class="p-8 md:px-[8%] lg:px-[12%] grid md:grid-cols-2 gap-4 grid items-center justify-items-center my-auto min-h-screen">
-        <div id="form-img"class=" z-4 h-full hidden md:flex">
-            <img src="../assets/register.svg" class="object-cover" alt="">
-        </div>
-        <div class="flex justify-items-center items-center z-5">
-            <form class="flex flex-col bg-(--ink) text-(--sand) rounded-md p-8 gap-4 min-w-sm shadow-lg">
-                <h1 class="text-4xl font-extrabold tracking-[.1rem] ">Daftar</h1>
-                <hr>
+    <main class="p-6 md:p-12 min-h-screen max-w-6xl mx-auto flex">
+        <div data-aos="fade-up"
+            class="grid md:grid-cols-2 bg-white md:w-full shadow-xl rounded-xl items-center self-center mx-auto  rounded-xl overflow-hidden">
 
-                <label class="font-bold text-lg" for="nama">Nama</label>
-                <input class="bg-white px-4 py-2 rounded focus:shadow-xl text-(--ink)" required id="nama" type="text"
-                    placeholder="Masukkan nama lengkap anda.">
+            <div id="form-img" class="hidden md:block py-24 px-4">
+                <div class="flex"><img src="/assets/icon.svg" alt="">
+                    <p class="ml-2 text-amber-500 font-bold font-accent text-[20pt]">Somia</p>
+                </div>
+                <img src="/assets/register.svg" alt="">
+            </div>
+            <div id="form" class="bg-(--ink) text-(--sand) py-24 px-8 h-full lg:px-12 grid max-w-md md:max-w-full ">
+                <div>
+                    <h1 class="text-xl font-bold ">DAFTAR</h1>
+                    <p class="text-white/70 font-semibold tracking-[.1rem] mt-2 text-xs">Silahkan masuk dengan akun
+                        Somia.</p>
+                </div>
+                <form class="mt-8 space-y-4">
+                    <label for="nama" class="text-sm font-semibold tracking-wider">Nama</label>
+                    <input type="text"
+                        class="bg-white text-sm rounded mt-1 w-full text-black mb-4 px-4 py-2 focus:shadow-lg focus:shadow-white/40 "
+                        placeholder="Masukkan nama anda." required id="nama">
 
-                <label class="font-bold text-lg" for="email">Email</label>
-                <input class="bg-white px-4 py-2 rounded focus:shadow-xl text-(--ink)" required id="email" type="email"
-                    placeholder="Masukkan email anda.">
+                    <label for="email" class="text-sm font-semibold tracking-wider">Email</label>
+                    <input type="email"
+                        class="bg-white text-sm rounded mt-1 w-full text-black mb-4 px-4 py-2 focus:shadow-lg focus:shadow-white/40 "
+                        placeholder="Masukkan email anda." required id="email">
 
-                <label class="font-bold text-lg" for="pass">Password</label>
-                <input class="bg-white px-4 py-2 rounded focus:shadow-xl text-(--ink)" required id="pass" type="password" min="8"
-                    placeholder="Masukkan password anda.">
-                        <button type="button" class=" w-full bg-(--moss) font-bold tracking-[.2rem] mt-16" onclick="window.open('/views/logged/dashboard.html', '_self')">Daftar</button>
-                <p class="">Sudah memiliki akun? <a class="text-(--turmeric) font-semibold underline"
-                        href="/views/login.html">Masuk disini.</a></p>
-
-            </form>
-        </div>
-        
+                    <label for="password" class="text-sm font-semibold tracking-wider ">Password</label>
+                    <input type="password"
+                        class="bg-white text-sm rounded mt-1 w-full text-black px-4 py-2 focus:shadow-lg focus:shadow-white/40 "
+                        placeholder="Masukkan password anda." required id="email">
+                    <div class="flex justify-between flex-wrap text-sm font-semibold items-center">
+                        <label><input type="checkbox" name=""> Remember me</label>
+                    </div>
+                </form>
+                <div class="grid h-fit self-end">
+                    <button type="button" class=" w-full bg-(--moss) font-bold tracking-widest mt-4"
+                        onclick="window.open('/views/logged/dashboard.html', '_self')">Daftar</button>
+                    <p class="text-sm text-center text-pretty">Sudah memiliki akun? <a
+                            class="text-(--turmeric) font-semibold underline" href="/views/login.html">Masuk
+                            disini.</a></p>
+                </div>
+            </div>
     </main>
-
-    <footer class="bg-(--ink) py-4  text-(--sand) text-center mt-auto">
-        <div>Somia &copy; 2026.All rights reserved.</div>
-    </footer>
+    <script src="/lib/aos/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false, offset: 60 });
+        AOS.init();
     </script>
-    <script src="../js/main.js"></script>
 
 </body>
 
