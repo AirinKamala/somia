@@ -299,7 +299,6 @@ const inven = {
     }
 ],
 
-  // containerCard: document.getElementById("container-card"),
   formmatedDate(date) {
     if (!date) return;
     const dates = date.split("-");
