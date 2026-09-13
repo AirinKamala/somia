@@ -1,59 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>Artikel - Somia</title>
+    <meta name="description" content="Panduan dan tutorial ramah lingkungan dari Somia.">
     <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-<script src="/js/tl.js"></script><link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml"></head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <script src="/js/tl.js"></script>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+
+</head>
 
 <body class="">
     <nav
         class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
         <a href="/index.html" class="flex items-center">
-            <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
             <p class="ml-2 text-amber-600 font-bold font-accent text-[20pt]">Somia</p>
         </a>
-        <div class="gap-4 flex h-12" id="wrap-auth">
-            <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
+        <div class="gap-4 md:w-64 md:justify-around flex h-12" id="wrap-auth">
             <a href="/views/register.html"><button
-                    class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+                    class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+            <a href="/views/login.html"><button class="md:w-32 border text-(--moss)">Masuk</button></a>
         </div>
     </nav>
     <div id="container"
-        class="w-full bg-(--sand) p-8 md:px-[8%] lg:px-[12%] min-h-screen md:flex-nowrap flex flex-wrap justify-center md:justify-evenly gap-8 md:gap-4">
-        <div class="w-fit flex flex-col gap-2">
-            <h1 id="title" class="text-[24pt] font-bold mb-4"></h1>
+        class="w-full bg-(--sand) p-6 md:p-12 min-h-screen max-w-6xl mx-auto  min-h-screen md:flex-nowrap flex flex-wrap justify-center md:justify-evenly gap-8 md:gap-4">
+        <div class="min-w-sm flex flex-col gap-2">
+            <h1 id="title" class="text-2xl  font-bold text-pretty mb-4"></h1>
             <div class="flex justify-between w-full">
+                <p id="meta" class="rounded-xl flex items-center text-sm text-stone-500 tracking-tight"></p>
                 <button type="button" id="bookmark"
                     class="text-(--moss) border font-semibold w-fit py-2 items-center flex px-4 rounded-xl "
                     onclick="toggleBookmark()"></button>
-                <span id="date"></span>
             </div>
+            <figure class="h-64 md:h-96 w-full rounded-lg overflow-hidden flex shadow-xl">
+                <img src="" alt="" class="w-full h-full object-cover flex" id="thumbnail">
+            </figure>
 
-            <img src="" alt="" class="mb-8" id="thumbnail">
-
-            <p id="excerpt" class=""></p>
+            <p id="excerpt" class="max-w-prose mt-4"></p>
             <div class="">
-                <h2 class="text-[18pt] pl-4  text-semibold">Bahan-bahan:</h2>
-                <ul class="pl-8 list-disc" id="materials"></ul>
+                <h2 class="text-xl pl-4  font-semibold">Bahan-bahan:</h2>
+                <ul class="pl-8 list-disc space-y-2" id="materials"></ul>
             </div>
             <div>
-                <h2 class="text-[18pt]  pl-4 pt-2 text-semibold">Langkah kerja:</h2>
-                <ol class="pl-8 list-decimal" id="steps"></ol>
+                <h2 class="text-xl  pl-4 pt-2 font-semibold">Langkah kerja:</h2>
+                <ol class="pl-8 list-decimal space-y-2" id="steps"></ol>
             </div>
-            <p id="date"></p>
         </div>
 
-        <div class=" bg-white p-4 rounded-md min-w-sm h-fit">
-            <h2 class="text-lg font-semibold text-center mb-4">Another article</h2>
+        <div class=" bg-white p-4 rounded-md w-fit h-fit">
+            <h2 class="text-xl font-semibold text-center mb-4">Artikel lainnya</h2>
             <div id="container-cards" class="grid gap-2">
             </div>
         </div>
@@ -63,7 +67,7 @@
         <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
             <div class="grid space-y-2 w-sm  " id="identitas">
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex">
+                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
                     <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
                 </a>
                 <p class="pl-2 text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
@@ -74,7 +78,7 @@
                     <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
                 <a href="/views/logged/voucher.html"
                     class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
                 <a href="/artikel.html"
                     class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
                     <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
@@ -114,26 +118,22 @@
     const pageId = urlParams.get('q') || inven.articles[0].id
 
     let article = inven.articles.find(ar => ar.id === pageId)
+    if (!article) window.open('/artikel.html', '_self')
     document.title = article.title + ' - Somia'
     const renderlist = (data) => data.map(item => `
         <li>${item}</li>
     `).join('')
-    let isBookmark = inven.bookmark.some(i => i === pageId)
+    let isBookmark = inven.bookmark.some(i => i === article.id)
     const renderAnother = () => {
-        let i = Number(pageId.slice(3))
-        console.log(i);
-        if (i > inven.articles.length - 3) i = Math.floor(Math.random() * 10)
-        let max = i + 3
-        let cards = []
-        for (let j = i; j < max; j++) {
-            cards.push(`
-               <div class="card" onclick="window.open('artikel-detail.html?q=diy${j}', '_self')">
-                    <img src="${inven.articles[j].thumbnail}" alt="${inven.articles[j].title}">
-                    <h3 class="cursor-pointer font-semibold">${inven.articles[j].title}</h3>
+        let rec = inven.articles.filter(i => i.id !== pageId).slice(0, 3)
+        return rec.map(j => {
+            return `
+               <div class="card" onclick="window.open('artikel-detail.html?q=${j.id}', '_self')" role="link">
+                    <img src="${j.thumbnail}" alt="${j.title}">
+                    <h3 class="cursor-pointer font-semibold">${j.title}</h3>
                 </div>
-            `)
-        }
-        return cards.join('')
+            `
+        }).join('')
     }
     const toggleBookmark = () => {
         if (!isBookmark) {
@@ -144,19 +144,18 @@
             isBookmark = false
             inven.bookmark = inven.bookmark.filter(i => i !== pageId)
         }
-       
         document.getElementById('bookmark').innerHTML = `<i class="fa-${isBookmark ? 'solid' : 'regular'} fa-bookmark fa-lg"></i> ${isBookmark ? 'Tersimpan' : 'Simpan'}`
-        console.log(inven.bookmark);
     }
     document.getElementById('bookmark').innerHTML = `<i class="fa-${isBookmark ? 'solid' : 'regular'} fa-bookmark fa-lg"></i> ${isBookmark ? 'Tersimpan' : 'Simpan'}`
     document.getElementById('title').innerHTML = article.title
+    document.getElementById('meta').innerHTML = `<span class="font-semibold text-stone-700 pr-3 border-r border-stone-400  cursor-pointer">  ${article.category}</span><span class="pl-3 font-normal"> ${inven.formmatedDate(article.date)}</span></p>`
+    document.getElementById('thumbnail').setAttribute('src', article.thumbnail);
+    document.getElementById('thumbnail').setAttribute('alt', article.title);
     document.getElementById('excerpt').innerHTML = article.excerpt
-    document.getElementById('thumbnail').setAttribute('src', article.thumbnail)
     document.getElementById('materials').innerHTML = renderlist(article.materials)
     document.getElementById('steps').innerHTML = renderlist(article.steps)
-    document.getElementById('date').innerHTML = inven.formmatedDate(article.date)
     document.getElementById('container-cards').innerHTML = renderAnother()
 
 </script>
 
-</html>
+</html>${inven.formmatedDate(article.date)}

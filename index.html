@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <title>Somia - Langkah kecil peduli lingkungan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="https://googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" 
-          >
-  <script src="/js/tl.js" defer></script>
-
-    <link rel="stylesheet" href="css/all.min.css" >
-    <link rel="stylesheet" href="aos/aos.css" >
-    <noscript>
-        <link rel="stylesheet" href="https://googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
-        <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="aos/aos.css"> 
-    </noscript>
+  <meta name="description" content="Somia — kebiasaan kecil, dampak besar. Pilah sampah, temukan bank sampah terdekat, dan tukar poinmu dengan voucher UMKM di Bali.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" >
+    <link rel="stylesheet" href="/style.css">
+    <script src="/js/tl.js"></script>
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css" >
+    <link rel="stylesheet" href="/lib/aos/aos.css" >
+    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x+">
 </head>
 
 
@@ -29,20 +21,20 @@
   <nav
     class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
     <a href="/index.html" class="flex items-center">
-      <img src="/assets/icon.svg" alt="" class="self-center flex">
+      <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
       <p class="ml-2 text-amber-600 font-bold font-accent text-[20pt]">Somia</p>
     </a>
-    <div class="gap-4 flex h-12" id="wrap-auth">
-      <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
-      <a href="/views/register.html"><button class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+    <div class="gap-4 md:w-64 md:justify-around flex h-12" id="wrap-auth">
+      <a href="/views/register.html"><button class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+      <a href="/views/login.html"><button class="md:w-32 border text-(--moss)">Masuk</button></a>
     </div>
   </nav>
   <!-- hero section -->
   <main
     class="text-(--sand)  bg-no-repeat p-8 bg-(--ink) items-center flex flex-wrap justify-between md:grid md:grid-cols-5 md:px-[8%] lg:px-[15%] gap-4 flex-wrap"
     id="hero">
-    <div id="hero-title " class=" mb-24 grid md:col-span-3">
-      <h1 class=" font-bold text-3xl mb-4">Kebiasaan kecil, <br>
+    <div id="hero-title " class="grid md:col-span-3">
+      <h1 class=" font-bold text-5xl mb-4">Kebiasaan kecil, <br>
         <span class="text-(--turmeric)">dampak yang besar.</span>
       </h1>
       <p class="w-[80%] text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi
@@ -59,13 +51,13 @@
     </div>
   </main>
   <!-- kenapa kami ada  -->
-  <section class="bg-sand-200 grid md:grid-cols-3 items-center p-4 md:px-[8%] lg:px-[15%] ">
-    <div id="hero-img" class="max-w-lg overflow-hidden h-auto flex mx-auto my-8">
+  <section class="grid md:grid-cols-3 items-center p-4 md:px-[8%] lg:px-[15%] ">
+    <div id="waste-img" class="max-w-lg overflow-hidden h-auto flex mx-auto my-8">
       <img class="w-full h-auto object-contain object-center" src="/assets/waste.svg" alt="">
     </div>
     <div class=" md:col-span-2" data-aos="fade-up">
       <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Bukan salah siapa siapa</p>
-      <h2 class="text-2xl font-extrabold">Bank Sampah Penuh Bukan Salah Siapa</h2>
+      <h2 class="text-4xl font-extrabold">Bank Sampah Penuh Bukan Salah Siapa</h2>
       <p class="">Ini bukan soal siapa yang belum peduli, namun soal sistem yang belum terhubung dengan baik.</p>
     </div>
 
@@ -73,51 +65,51 @@
   <!-- Produk kami  -->
   <section class="bg-(--ink) p-8 text-(--sand) md:px-[8%] lg:px-[15%] " id="product">
     <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Layanan unggulan kami</p>
-    <h2 class="text-2xl font-extrabold">Tiga hal yang bikin kebiasaan gampang dijaga.</h2>
-    <div class="mt-4 px-8 grid md:flex gap-4">
-      <div class="bg-emerald-950 md:-ml-8 w-full p-4 rounded-md border-l-4 border-amber-400" data-aos="fade-up">
-        <i class="fa-solid fa-bank text-amber-400 fa-xl mb-8"></i>
-        <h3 class="font-bold">Bank Sampah</h3>
+    <h2 class="text-4xl font-extrabold">Tiga hal yang bikin kebiasaan gampang dijaga.</h2>
+    <div class="mt-4 grid md:flex gap-4">
+      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up">
+        <i class="fa-solid fa-bank text-(--turmeric) fa-xl mb-8"></i>
+        <h3 class="font-bold text-xl">Bank Sampah</h3>
         <p>Cari bank sampah terdekat yang masih tersedia</p>
       </div>
-      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-green-500" data-aos="fade-up">
-        <i class="fa-solid fa-star text-green-500 fa-xl mb-8"></i>
-        <h3 class="font-bold">DIY</h3>
+      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up">
+        <i class="fa-solid fa-star text-(--turmeric) fa-xl mb-8"></i>
+        <h3 class="font-bold text-xl">DIY</h3>
         <p>Ubah waktu luang menjadi hal kreatif</p>
       </div>
-      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-orange-500" data-aos="fade-up">
-        <i class="fa-solid fa-ticket text-orange-500 fa-xl mb-8"></i>
-        <h3 class="font-bold">Voucher</h3>
+      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up">
+        <i class="fa-solid fa-ticket text-(--turmeric) fa-xl mb-8"></i>
+        <h3 class="font-bold text-xl">Voucher</h3>
         <p>Kapan lagi tukar sampah dengan voucher</p>
       </div>
     </div>
   </section>
   <!-- bagiamana Somia membantu  -->
-  <section class="bg-(--sand) p-8 md:px-[8%] lg:px-[15%] ">
+  <section class="p-8 md:px-[8%] lg:px-[15%] ">
     <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Cara kerja</p>
-    <h2 class="text-2xl font-extrabold">4 Langkah sederhana untuk menangani sampah anda.</h2>
+    <h2 class="text-4xl font-extrabold ">4 Langkah sederhana untuk menangani sampah anda.</h2>
     <div class="mt-8  grid md:grid-cols-4 gap-4">
-      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg" data-aos="fade-up">
+      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
         <p class="text-amber-800 font-accent text-4xl">01</p>
-        <h3 class="font-bold text-lg mt-2 text-lg">Pilah dari rumah</h3>
+        <h3 class="font-bold mt-2 text-xl">Pilah dari rumah</h3>
         <p class="text-sm">Memilah sampah berdasarkan jenisnya</p>
       </div>
 
-      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg" data-aos="fade-up">
+      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
         <p class="text-amber-800 font-accent text-4xl">02</p>
-        <h3 class="font-bold text-lg mt-2 text-lg">Somia mencatat</h3>
+        <h3 class="font-bold mt-2 text-xl">Somia mencatat</h3>
         <p class="text-sm">Temukan bank sampah siap menerima sampahmu </p>
       </div>
 
-      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg" data-aos="fade-up">
+      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
         <p class="text-amber-800 font-accent text-4xl">03</p>
-        <h3 class="font-bold text-lg mt-2 text-lg">Rayakan progress mu</h3>
+        <h3 class="font-bold mt-2 text-xl">Rayakan progress mu</h3>
         <p class="text-sm">Bagikan Eco-wrapped mingguanmu ke teman-teman </p>
       </div>
 
-      <div class="bg-amber-100 mb-4 p-4 rounded-md shadow-lg" data-aos="fade-up">
+      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
         <p class="text-amber-800 font-accent text-4xl">04</p>
-        <h3 class="font-bold text-lg mt-2 text-lg">Claim voucher UMKM</h3>
+        <h3 class="font-bold mt-2 text-xl">Claim voucher UMKM</h3>
         <p class="text-sm">Tukar poinmu dengan voucher di UMKM mitra kami</p>
       </div>
     </div>
@@ -125,7 +117,7 @@
 
   <section class="p-8 bg-(--ink) text-(--sand) md:px-[8%] lg:px-[15%] overflow-hidden">
     <!-- quatity -->
-    <div class="grid-cols-3 grid mb-8 justify-items-center gap-4">
+    <div class="w-full max-w-sm grid md:flex mb-8 justify-center mx-auto space-x-4">
       <div class="py-4 w-sm rounded-md grid justify-center">
         <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]">1000+ </h3>
         <p class=""> kg terpilah</p>
@@ -145,28 +137,22 @@
     <!-- testimony -->
     <div class="my-12">
       <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Testimoni pengguna kami</p>
-      <h2 class="text-2xl font-extrabold">Apa yang mereka katakan tentang kami?</h2>
+      <h2 class="text-4xl font-extrabold">Apa yang mereka katakan tentang kami?</h2>
       <!-- wrapper testimony -->
-      <div class="flex overflow-x-auto w-auto py-2 gap-4 mt-4" data-aos="fade-left">
-        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+      <div class="flex snap-x snap-mandatory overflow-x-auto w-full py-2 gap-4 mt-4" data-aos="fade-left">
+        <div class="snap-start text-pretty border rounded-md p-4 border-(--moss-light)">
           <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
             such mefilled linking.</p>
           <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
         </div>
 
-        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+        <div class="snap-start text-pretty border rounded-md p-4 border-(--moss-light)">
           <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
             such mefilled linking.</p>
           <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
         </div>
 
-        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
-          <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
-            such mefilled linking.</p>
-          <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
-        </div>
-
-        <div class="text-pretty min-w-xs border rounded-md p-4 border-green-800">
+        <div class="snap-start text-pretty border rounded-md p-4 border-(--moss-light)">
           <p>The chamber all at stillness entrance something. Reply there prophet yore and murmured grave my and. Said
             such mefilled linking.</p>
           <h4 class="font-semibold text-center mt-2">Con che - Denpasar</h4>
@@ -176,44 +162,47 @@
 
   </section>
 
-  <section
-    class="bg-stone-300 h-auto grid md:grid-cols-5 justify-items-evenly align-center gap-8 p-8 md:px-[8%] lg:px-[15%] ">
+  <section class="bg-stone-200 h-auto grid md:grid-cols-5 justify-items-evenly align-center gap-8 p-8 md:px-[8%] lg:px-[15%] ">
     <div class="p-4 grid col-span-3 " data-aos="fade-up">
-      <p class=" text-(--clay) tracking-[0.2rem] mb-4 text-sm font-bold ">Eco-wrapped</p>
-      <h2 class="text-2xl font-extrabold">Pantau progress mingguan-mu.</h2>
+      <p class=" text-red-900 tracking-[0.2rem] mb-4 text-sm font-bold ">Eco-wrapped</p>
+      <h2 class="text-4xl font-extrabold">Pantau progress mingguan-mu.</h2>
       <p class="text-sm text-pretty w-[70%]">Bagikan pencapaianmu dan ajak yang lain untuk ikut langkah kecil bersama
       </p>
       <button class="bg-(--ink) w-fit text-(--sand) font-bold my-4">Buat wrapped kamu</button>
     </div>
 
-    <div class="bg-(--ink) rounded-2xl p-8 text-(--sand) w-xs md:w-full col-span-2">
-      <p class="font-bold uppercase text-stone-400 flex justify-between mb-8">wrapped - minggu ini <i
+    <div class="bg-(--ink) rounded-4xl p-8 text-(--sand) w-full col-span-2">
+      <p class="font-bold uppercase text-stone-400 flex justify-between mb-8">wrapped — minggu ini <i
           class="flex text-(--turmeric) mr-4 self-end fa-solid fa-share"></i></p>
-      <h4 class="font-accent font-semibold text-[24pt] ">4.2 Kg</h4>
-      <p class="text-stone-400">Terpilah dari rumah</p>
+      <h4 class="font-accent font-semibold text-[24pt] ">9.2 Kg</h4>
+      <p class="text-stone-300">Terpilah dari rumah</p>
       <div class="text-amber-800 bg-amber-100 mt-8 p-2 w-fit rounded-xl">Sang pemilah handal</div>
     </div>
   </section>
-  <section class="bg-(--turmeric) p-8 grid justify-items-center md:px-[8%] lg:px-[15%] ">
-    <h2 class="text-2xl font-bold">Bersama kami langkah kecil yang konsisten sangat berarti.</h2>
+  <section class="bg-(--turmeric) px-8 py-12 grid justify-items-center md:px-[8%] lg:px-[15%] space-y-2 ">
+    <h2 class="text-4xl text-center font-bold">Bersama kami langkah kecil yang konsisten sangat berarti.</h2>
+    <p class="text-pretty font-regular tracking-wide ">Langsung terhubung ke bank sampah terdekat di kotamu.</p>
     <a href="/views/register.html" class="btn bg-(--ink) text-(--sand) mt-4 font-bold">Daftar sekarang</a>
+    <span class="text-stone-900 text-xs ">100% Gratis & tanpa ribet</span>
   </section>
   <footer class="bg-(--ink) py-4 text-(--sand) grid w-full">
     <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
       <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
         <a href="/index.html" class="flex items-center">
-          <img src="/assets/icon.svg" alt="" class="self-center flex">
+          <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
           <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
         </a>
         <p class="pl-2 text-pretty ">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi
           reward </p>
         <hr>
+        <h4 class="text-xl font-bold mt-4">Jelajahi Somia</h4>
+
         <a href="/views/logged/dashboard.html"
-          class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+          class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
           <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
         <a href="/views/logged/voucher.html"
           class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+          <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
         <a href="/artikel.html"
           class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
           <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
@@ -222,7 +211,7 @@
           <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
 
       </div>
-      <div class="flex flex-col ">
+      <div class="flex flex-col max-w-sm">
         <h4 class="text-xl font-bold">Ikuti kami di</h4>
         <a href="#"
           class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
@@ -245,17 +234,15 @@
   </footer>
 
 
-  <script src="/lib/aos/aos.js" defer></script>
+  <script src="/lib/aos/aos.js"></script>
   <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-      // AOS.init({
-      //   duration: 500,
-      //   behavior: 'smooth',
-      //   once: true
+      AOS.init({
+        duration: 500,
+        behavior: 'smooth',
+        once: true
 
-      // })
-      AOS.init()
-    // })
+      })
+      
   </script>
 </body>
 

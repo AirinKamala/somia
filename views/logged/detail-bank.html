@@ -1,215 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detail bank sampah - lokasi, jadwal, jenis sampah yang diterima, dan kontak pengelola.">
 
-    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <title>Detail Bank Sampah - Somia</title>
+
     <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="/lib/aos/aos.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
     <script src="/js/tl.js"></script>
+
     <link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">
 </head>
 
 <body>
-    <nav
-        class="w-full  bg-(--ink) text-(--sand) z-49 sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
+
+    <nav class="w-full bg-(--ink) text-(--sand) z-40 sticky top-0 p-3 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
         <div class="flex gap-4 items-center">
-            <i class="fa-solid fa-bars fa-xl text-white" onclick="a.toggleModal(sidebar)"></i>
+            <div aria-label="Buka menu" class="text-white p-1"
+                onclick="a.toggleModal(sidebar)">
+                <i class="fa-solid fa-bars fa-xl"></i>
+        </div>
             <a href="/index.html" class="flex items-center">
-                <img src="/assets/icon.svg" alt="" class="self-center flex">
+                <img src="/assets/icon.svg" alt="Logo Somia" class="self-center flex">
                 <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
             </a>
         </div>
-        <div class=" h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer"
+        <button type="button"
+            class="h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer text-(--sand)"
             onclick="a.toggleModal(modalSignOut)">
-            <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
-        </div>
+            <i class="fa-solid fa-sign-out fa-lg mr-2"></i>Keluar
+        </button>
     </nav>
 
+    <main class="p-4 md:p-8 lg:px-[8%] xl:px-[12%] min-h-screen">
 
-    <div class="p-4 md:px-[8%] lg:px-[12%] min-h-screen">
-        <h1 id="title" class="text-3xl md:text-[24pt] font-bold w-full ">jher</h1>
-        <div class=" flex flex-wrap justify-center md:justify-evenly">
-            <main class="flex flex-wrap p-4  gap-4 lg:flex-2 h-fit ">
-                <div id="map" class="flex w-full h-72 md:h-[40vh] bg-yellow-200">map</div>
-                <div id="information" class="w-full md:flex-2 bg-white rounded-md p-4 h-fit">
-                    <h3 class="md:text-xl font-semibold">
-                        Jam operasional : <br>
-                        <span id="schedule" class=" font-medium"></span>
-                    </h3>
-                    <h3 class="md:text-xl font-semibold mt-4">
-                        Jenis sampah yang diterima :<br>
-                        <ul id="list" class="font-medium w-full overflow-x-scroll flex gap-2"></span>
-                    </h3>
+
+        <!-- <nav class="text-sm text-stone-500 mb-4">
+            <a href="/views/logged/peta.html" class="hover:underline hover:text-(--moss)">Bank Sampah</a>
+            <span class="mx-1">/</span>
+            <span class="text-(--ink) font-medium" id="breadcrumbName">Detail</span>
+        </nav> -->
+
+
+        <h1 id="title" class="text-2xl md:text-3xl lg:text-4xl font-bold w-full mb-6">Memuat...</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+
+    
+            <div class="lg:col-span-2 space-y-4">
+
+        
+                <div id="map"
+                    class="w-full h-72 md:h-96 rounded-lg overflow-hidden z-0 bg-stone-200 border-2 border-white shadow-md">
+                    <p class="text-center p-8 text-stone-500">Memuat peta...</p>
                 </div>
-                <div id="contact" class="md:flex-1 w-full p-4 bg-(--ink) text-(--sand) rounded-md h-fit">
-                    <p class="text-sm text-stone-200/70">Kontak Pengelola</p>
-                    <h2 class="uppercase font-bold text-(--turmeric) text-xl my-2" id="name"></h2>
-                    <p class="text-sm text-stone-200/70">Pengelola bank sampah.</p> <br>
 
-                    <a href="" id="phone"
-                        class="btn bg-(--turmeric) text-(--ink) flex  text-center font-bold my-4 items-center justify-center mx-2">
-                        <i class="fa-solid hidden md: fa-phone fa-lg"></i> Hubungi
-                        Via Whatsapp</a>
+        
+                <div id="information" class="bg-white rounded-lg p-5 shadow-sm border border-stone-200">
+                    <div>
+                        <h3 class="md:text-lg font-semibold text-(--ink)">
+                            <i class="fa-regular fa-clock text-(--moss) mr-2"></i>Jam operasional
+                        </h3>
+                        <p id="schedule" class="font-medium text-stone-700 mt-1 ml-6">—</p>
+                    </div>
 
+                    <div class="mt-5">
+                        <h3 class="md:text-lg font-semibold text-(--ink)">
+                            <i class="fa-solid fa-recycle text-(--moss) mr-2"></i>Jenis sampah yang diterima
+                        </h3>
+                        <ul id="list" class="mt-3 ml-6 flex flex-wrap gap-2"></ul>
+                    </div>
+
+            
+                    <a id="directions" href="#" target="_blank" rel="noopener"
+                        class="mt-6 inline-flex items-center gap-2 bg-(--ink) text-(--sand) font-semibold px-4 py-2 rounded-lg hover:bg-emerald-950 transition">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                        Petunjuk arah
+                    </a>
                 </div>
-            </main>
+            </div>
 
-            <section class=" bg-white p-4 rounded-md  h-fit lg:flex-1">
-                <h2 class="text-lg font-semibold mb-4"> Bank Sampah Lainnya</h2>
-                <div id="container-cards" class="grid gap-2">
+    
+            <aside class="space-y-4">
 
+        
+                <div id="contact" class="bg-(--ink) text-(--sand) rounded-lg p-5 shadow-md">
+                    <p class="text-xs uppercase tracking-wider text-stone-400 font-semibold">Kontak Pengelola</p>
+                    <h2 id="contactName" class="uppercase font-bold text-(--turmeric) text-xl my-2">—</h2>
+                    <p class="text-xs text-stone-400">Pengelola bank sampah.</p>
+
+                    <a id="phone" href="#" target="_blank" rel="noopener"
+                        class="mt-5 flex items-center justify-center gap-2 bg-(--turmeric) text-(--ink) font-bold py-3 px-4 rounded-lg hover:bg-amber-400 transition">
+                        <i class="fa-brands fa-whatsapp fa-lg"></i>
+                        Hubungi via WhatsApp
+                    </a>
                 </div>
-            </section>
+
+        
+                <section class="bg-white rounded-lg p-5 shadow-sm border border-stone-200">
+                    <h2 class="text-base font-semibold mb-4 text-(--ink)">
+                        <i class="fa-solid fa-location-dot text-(--moss) mr-2"></i>Bank Sampah Lainnya
+                    </h2>
+                    <div id="container-cards" class="grid gap-3"></div>
+                </section>
+            </aside>
         </div>
+    </main>
 
-    </div>
-    <footer class="bg-(--ink) py-4 text-(--sand) grid w-full">
-        <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
-            <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
+    <footer class="bg-(--ink) py-6 text-(--sand) mt-8">
+        <div class="flex flex-col space-y-8 md:space-y-0 md:items-start md:flex-row md:justify-around px-6 md:px-12 gap-8">
+            <div class="flex flex-col space-y-2 max-w-sm" id="identitas">
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex">
+                    <img src="/assets/icon.svg" alt="Logo Somia" class="self-center flex">
                     <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
                 </a>
-                <p class="pl-2 text-pretty ">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
-                    jadi
-                    reward </p>
-                <hr>
+                <p class="pl-2 text-pretty text-sm">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik
+                    menjadi reward.</p>
+                <hr class="border-white/20 my-2">
                 <a href="/views/logged/dashboard.html"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
+                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-solid fa-home fa-lg mr-3"></i> Beranda</a>
                 <a href="/views/logged/voucher.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-3"></i> Voucher</a>
                 <a href="/artikel.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
+                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-solid fa-newspaper fa-lg mr-3"></i> Artikel</a>
                 <a href="/views/logged/peta.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
-
+                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-solid fa-dumpster fa-lg mr-3"></i> Bank Sampah</a>
             </div>
-            <div class="flex flex-col ">
+            <div class="flex flex-col">
                 <h4 class="text-xl font-bold">Ikuti kami di</h4>
                 <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-instagram fa-xl mr-4"></i> Instagram</a>
-
+                    class="h-fit py-2 hover:bg-emerald-900 mt-2 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-brands fa-instagram fa-xl mr-3"></i> Instagram</a>
                 <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-facebook fa-xl mr-4"></i> Facebook</a>
-
+                    class="h-fit py-2 hover:bg-emerald-900 mt-2 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-brands fa-facebook fa-xl mr-3"></i> Facebook</a>
                 <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-tiktok fa-xl mr-4"></i> Tiktok</a>
-
+                    class="h-fit py-2 hover:bg-emerald-900 mt-2 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-brands fa-tiktok fa-xl mr-3"></i> Tiktok</a>
                 <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-youtube fa-xl mr-4"></i> Youtube</a>
+                    class="h-fit py-2 hover:bg-emerald-900 mt-2 p-2 transition duration-500 rounded ease-in-out cursor-pointer">
+                    <i class="fa-brands fa-youtube fa-xl mr-3"></i> Youtube</a>
             </div>
         </div>
-        <p class="text-center mt-4">Somia &copy; 2026.All rights reserved.</p>
+        <p class="text-center mt-6 text-sm opacity-80">Somia &copy; 2026. All rights reserved.</p>
     </footer>
-    <div id="sidebar"
-        class="bg-stone-900/30 backdrop-blur-md z-49 fixed inset-0 flex items-center justify-center hidden"
+
+    <div id="sidebar" class="bg-stone-900/70 backdrop-blur-md z-50 fixed inset-0 hidden"
         onclick="a.toggleModal(sidebar)">
-        <sidebar class="left-0 bg-(--ink) absolute  h-screen z-55  w-sm text-(--sand) flex flex-col py-2 px-4 "
+        <aside class="left-0 bg-(--ink) absolute h-screen w-72 max-w-[85vw] text-(--sand) flex flex-col py-4 px-4"
             onclick="event.stopPropagation()">
-            <div onclick="window.open('/', '_self')"
-                class="flex items-center cursor-pointer border-b-2 border-white/20">
-                <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <div onclick="window.open('/', '_self')" class="flex items-center cursor-pointer border-b-2 border-white/20 pb-3">
+                <img src="/assets/icon.svg" alt="Logo Somia" class="self-center flex">
                 <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
             </div>
-            <div class="grid gap-4">
+            <nav class="grid gap-2 mt-4">
                 <a href="/views/logged/dashboard.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
+                    class="w-full py-3 px-3 hover:bg-emerald-900 transition rounded ease-in-out cursor-pointer">
+                    <i class="fa-solid fa-home fa-lg mr-3"></i> Beranda</a>
                 <a href="/views/logged/voucher.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+                    class="w-full py-3 px-3 hover:bg-emerald-900 transition rounded ease-in-out cursor-pointer">
+                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-3"></i> Voucher</a>
                 <a href="/artikel.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
+                    class="w-full py-3 px-3 hover:bg-emerald-900 transition rounded ease-in-out cursor-pointer">
+                    <i class="fa-solid fa-newspaper fa-lg mr-3"></i> Artikel</a>
                 <a href="/views/logged/peta.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
-            </div>
-            <div onclick=" a.toggleModal(modalSignOut)"
-                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out mt-auto border-t cursor-pointer">
-                <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
-            </div>
-
-        </sidebar>
+                    class="w-full py-3 px-3 bg-emerald-900 transition rounded ease-in-out cursor-pointer border-l-4 border-(--moss-light)">
+                    <i class="fa-solid fa-dumpster fa-lg mr-3"></i> Bank Sampah</a>
+            </nav>
+            <button type="button" onclick="a.toggleModal(modalSignOut)"
+                class="w-full py-3 px-3 hover:bg-emerald-900 transition rounded ease-in-out mt-auto border-t border-white/20 cursor-pointer text-left text-(--sand)">
+                <i class="fa-solid fa-sign-out fa-lg mr-3"></i>Keluar
+            </button>
+        </aside>
     </div>
 
-
-    <div id="modal-out" class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex hidden"
+    <div id="modal-out" class="bg-stone-900/50 backdrop-blur-md z-[60] fixed inset-0 flex hidden p-4"
         onclick="a.toggleModal(modalSignOut)">
-        <div id="modal" class="relative z-51 bg-white rounded-lg p-4 w-sm grid mx-auto self-center"
+        <div class="relative bg-white rounded-lg p-6 w-full max-w-sm mx-auto self-center shadow-2xl"
             onclick="event.stopPropagation();">
-            <h2 class="font-bold text-2xl">Anda yakin untuk keluar dari akun ini?</h2>
-            <div class="w-full grid md:grid-cols-2 mt-8 gap-4">
-                <button class="text-(--moss) border font-semibold "
-                    onclick="modalSignOut.classList.remove('hidden')">Tidak</button>
-                <button class="bg-(--moss) font-semibold text-white" onclick="a.signout()">Ya, saya yakin.</button>
+            <h2 class="font-bold text-xl text-(--ink)">Anda yakin untuk keluar dari akun ini?</h2>
+            <div class="w-full grid grid-cols-2 mt-6 gap-3">
+                <button type="button" class="text-(--moss) border border-(--moss) font-semibold py-2 rounded-lg hover:bg-emerald-50 transition"
+                    onclick="modalSignOut.classList.add('hidden')">
+                    Tidak
+                </button>
+                <button type="button" class="bg-(--moss) font-semibold text-white py-2 rounded-lg hover:bg-emerald-800 transition"
+                    onclick="a.signout()">
+                    Ya, keluar
+                </button>
             </div>
         </div>
     </div>
+
     <script src="/js/main.js"></script>
     <script src="/js/script.js"></script>
+
     <script>
-        let url = window.location.search
-        let baseurl = new URLSearchParams(url)
-        let pageSlug = baseurl.get('q')
+        const sidebar = document.getElementById('sidebar');
+        const modalSignOut = document.getElementById('modal-out');
 
-        const bank = inven.wasteBanks.find(i => i.slug === pageSlug)
-        document.title = bank.name + ' - Somia'
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageSlug = urlParams.get('q');
 
-        const renderlist = (data) => data.map(item => `
-        <li class="border rounded-xl capitalize my-2 w-fit px-2 text-lg font-semibold text-${inven.colors[item]}-700 bg-${inven.colors[item]}-200">${item}</li>
-        `).join('')
+       
+        const bank = inven.wasteBanks.find(i => i.slug === pageSlug);
 
-        const renderCards = () => {
-            const rec = inven.wasteBanks.filter(item => item.slug !== bank.slug)
-            return rec.map(i => `
-                 <div class="w-full border-stone-800/40 border pl-4 shadow-lg rounded-md p-4">
-                            <h4 class="mb-2 text-lg font-semibold">${i.name}</h4>
-                            <p class="text-sm text-stone-700">${i.address}</p>
-                            <button class="text-(--moss) hover:bg-(--moss) hover:text-white border mt-4" onclick="window.open('detail-bank.html?q=${i.slug}', '_self')">Lihat &rarr;</button>
-                        </div>
-            `
-            ).slice(0, 2).join('')
+        if (!bank) {
+            window.location.href = '/views/logged/peta.html';
+            throw new Error('Bank not found: ' + pageSlug);
         }
 
-        let map = L.map('map').setView(bank.location, 12)
+
+        const typeColor = {
+            plastik:  { text: '#991b1b', bg: '#fecaca', border: '#f87171' }, 
+            kertas:   { text: '#92400e', bg: '#fde68a', border: '#fbbf24' }, 
+            organik:  { text: '#065f46', bg: '#a7f3d0', border: '#34d399' }, 
+            kaca:     { text: '#115e59', bg: '#99f6e4', border: '#2dd4bf' }  
+        };
+
+        const statusColor = {
+            'Menerima':     { text: '#065f46', bg: '#d1fae5', border: '#34d399' },
+            'Hampir penuh': { text: '#92400e', bg: '#fef3c7', border: '#fbbf24' },
+            'Penuh':        { text: '#991b1b', bg: '#fee2e2', border: '#f87171' }
+        };
+
+        const renderAccepted = (data) => {
+            if (!data || !data.length) {
+                return `<li class="text-stone-500 italic text-sm">Tidak ada data</li>`;
+            }
+            return data.map(item => {
+                const c = typeColor[item] || { text: '#374151', bg: '#e5e7eb', border: '#9ca3af' };
+                return `
+                    <li class="capitalize px-3 py-1 rounded-full text-sm font-semibold"
+                        style="color:${c.text}; background:${c.bg}; border:1px solid ${c.border}">
+                        ${item}
+                    </li>
+                `;
+            }).join('');
+        };
+
+        const renderCards = () => {
+            const rec = inven.wasteBanks
+                .filter(item => item.slug !== bank.slug)
+                .slice(0, 3);
+
+            if (!rec.length) {
+                return `<p class="text-stone-500 italic text-sm">Tidak ada bank sampah lain.</p>`;
+            }
+
+            return rec.map(i => {
+                const statusStyle = statusColor[i.status] || statusColor['Menerima'];
+                return `
+                    <a href="detail-bank.html?q=${i.slug}"
+                       class="block w-full border border-stone-200 rounded-lg p-4 shadow-sm hover:shadow-md hover:border-(--moss) transition cursor-pointer">
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                            <h3 class="text-base font-semibold text-(--ink) leading-tight">${i.name}</h3>
+                            <span class="text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap"
+                                style="color:${statusStyle.text}; background:${statusStyle.bg}; border:1px solid ${statusStyle.border}">
+                                ${i.status}
+                            </span>
+                        </div>
+                        <p class="text-xs text-stone-600 line-clamp-2">
+                            <i class="fa-solid fa-location-dot text-(--moss) mr-1"></i>${i.address}
+                        </p>
+                        <span class="inline-block mt-3 text-sm font-semibold text-(--moss)">
+                            Lihat detail <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </span>
+                    </a>
+                `;
+            }).join('');
+        };
+
+      
+        const map = L.map('map', {
+            scrollWheelZoom: false
+        }).setView(bank.location, 15);
+
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
-        L.marker(bank.location, { alt: 'map', riseOnHover: true }).addTo(map)
 
-        document.getElementById('title').innerHTML = bank.name
-        document.getElementById('schedule').innerHTML = bank.schedule
-        document.getElementById('list').innerHTML = renderlist(bank.accepted)
-        document.getElementById('name').innerHTML = bank.contact.name
-        document.getElementById('phone').setAttribute('href', 'https://wa.me/' + bank.contact.phone)
-        document.getElementById('container-cards').innerHTML = renderCards()
+        L.marker(bank.location, { riseOnHover: true, alt: bank.name })
+            .addTo(map)
+            .bindPopup(`<b>${bank.name}</b><br><span style="font-size:12px;color:#555">${bank.address}</span>`)
+            .openPopup();
 
+        document.title = bank.name + ' - Somia';
+        // document.getElementById('breadcrumbName').textContent = bank.name;
+        document.getElementById('title').textContent = bank.name;
+        document.getElementById('schedule').textContent = bank.schedule || 'Jadwal belum tersedia';
+        document.getElementById('list').innerHTML = renderAccepted(bank.accepted);
+        document.getElementById('contactName').textContent = bank.contact?.name || 'Pengelola';
+        document.getElementById('container-cards').innerHTML = renderCards();
 
+        document.getElementById('phone').setAttribute('href', 'https://wa.me/' + phone);
+
+        const [lat, lng] = bank.location;
+        document.getElementById('directions')
+            .setAttribute('href', `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`);
     </script>
-
+</body>
 
 </html>

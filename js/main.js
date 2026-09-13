@@ -7,7 +7,8 @@ const inven = {
     title: "Eco-Enzyme Pembersih Serbaguna dari Kulit Buah",
     category: "Organik",
     excerpt: "Manfaatkan sisa kulit buah segar menjadi cairan pembersih alami yang ramah lingkungan.",
-    thumbnail: "https://picsum.photos/400/300?random=11",
+    thumbnail: "/assets/artikel/diy1.webp",
+    source: "sustaination.id",
     materials: [
       "300g kulit buah segar (jeruk, apel, atau nanas)",
       "100g gula merah atau molase",
@@ -28,7 +29,8 @@ const inven = {
     title: "Pot Tanaman Self-Watering dari Botol Plastik",
     category: "Berkebun",
     excerpt: "Buat sistem penyiraman otomatis sederhana untuk tanaman hias menggunakan botol plastik bekas air mineral.",
-    thumbnail: "https://picsum.photos/400/300?random=12",
+    thumbnail: "/assets/artikel/diy2.webp",
+    source: "Pikiran rakyat medan",
     materials: [
       "Botol plastik bekas 1.5L",
       "Gunting atau cutter tajam",
@@ -49,7 +51,8 @@ const inven = {
     title: "Organizer Meja Estetik dari Kardus Bekas",
     category: "Kerajinan",
     excerpt: "Ubah tumpukan kardus bekas menjadi laci atau kotak penyimpanan estetik untuk alat tulis di mejamu.",
-    thumbnail: "https://picsum.photos/400/300?random=13",
+    thumbnail: "/assets/artikel/diy3.webp",
+    source: "pinterest",
     materials: [
       "Kardus bekas pengiriman yang tebal",
       "Lem tembak",
@@ -69,7 +72,8 @@ const inven = {
     title: "Sabun Cuci Serbaguna dari Minyak Jelantah",
     category: "Daur Ulang",
     excerpt: "Jangan buang minyak bekas menggoreng! Olah menjadi sabun batang yang ampuh membersihkan noda kain.",
-    thumbnail: "https://picsum.photos/400/300?random=14",
+    thumbnail: "/assets/artikel/diy4.webp",
+    source: "greeners.co",
     materials: [
       "500ml minyak jelantah (sudah disaring jernih)",
       "80g Soda Api (NaOH)",
@@ -87,21 +91,24 @@ const inven = {
   },
   {
     id: "diy5",
-    title: "Pembatas Buku Elegan dari Kemasan Dupa",
+    title: "Pembatas Buku Elegan dari Kain Perca",
     category: "Kerajinan",
-    excerpt: "Manfaatkan corak dan motif indah pada kemasan kardus dupa menjadi pembatas buku yang artistik.",
-    thumbnail: "https://picsum.photos/400/300?random=15",
+    excerpt: "Manfaatkan kain perca menjadi pembatas buku yang lucu.",
+    thumbnail: "/assets/artikel/diy5.webp",
+    source: "NewBytes",
     materials: [
-      "Kardus kemasan dupa bekas bercorak bagus",
+      "Kain perca",
       "Gunting atau cutter",
       "Pembolong kertas (hole punch)",
-      "Pita kecil bekas atau benang rami"
+      "Pita kecil bekas atau benang wol",
+      "Benang dan jarum jahit"
     ],
     steps: [
-      "Pilih bagian dari kemasan dupa yang memiliki corak atau gambar paling menarik.",
-      "Potong kardus tersebut menjadi bentuk persegi panjang memanjang (sekitar 5 x 15 cm).",
+      "Pilih bagian kain perca yang memiliki corak paling menarik.",
+      "Potong kardus tersebut menjadi bentuk persegi panjang memanjang sekitar 5 x 15 cm.",
       "Gunting membulat keempat sudut kardus agar tidak tajam.",
-      "Beri lubang di bagian tengah atas menggunakan pembolong kertas, lalu ikatkan pita atau benang rami."
+      "Beri lubang di bagian tengah atas menggunakan pembolong kertas, lalu ikatkan pita atau benang rami.",
+      "Tutup kardus dengan kain perca, lalu jahit."
     ],
     date: "2026-08-25"
   },
@@ -110,7 +117,8 @@ const inven = {
     title: "Seed Paper (Kertas Benih) dari Koran Bekas",
     category: "Berkebun",
     excerpt: "Olah tumpukan kertas buram dan koran menjadi kertas baru yang bisa ditanam dan tumbuh menjadi bunga.",
-    thumbnail: "https://picsum.photos/400/300?random=16",
+    thumbnail: "/assets/artikel/diy6.webp",
+    source: "castpaperart",
     materials: [
       "Kertas atau koran bekas (hindari kertas glossy/licin)",
       "Air hangat",
@@ -128,65 +136,48 @@ const inven = {
   },
   {
     id: "diy7",
-    title: "Produce Bag (Tas Jaring) Tanpa Jahit dari Kaos",
-    category: "Daur Ulang",
-    excerpt: "Ubah kaos katun lama yang sudah melar menjadi tas belanja kepasar.",
-    thumbnail: "https://picsum.photos/400/300?random=17",
-    materials: [
-      "Kaos berbahan katun bekas",
-      "Gunting kain tajam",
-      "Penggaris"
-    ],
-    steps: [
-      "Potong bagian leher dan kedua lengan kaos (membentuk bukaan tas dan gagang).",
-      "Gunting bagian bawah kaos (hem) secara vertikal membentuk rumbai-rumbai sepanjang 10 cm.",
-      "Ikat kuat setiap pasangan rumbai atas dan bawah sebanyak dua kali untuk menutup dasar tas.",
-      "Buat sayatan-sayatan kecil memanjang di seluruh badan kaos secara selang-seling agar tas bisa meregang."
-    ],
-    date: "2026-09-01"
-  },
-  {
-    id: "diy8",
     title: "Tempat Lilin Aromaterapi dari Toples Kaca",
     category: "Dekorasi",
     excerpt: "Toples bekas selai atau saus bisa disulap menjadi tempat lilin estetik dan aman untuk menghias ruangan.",
-    thumbnail: "https://picsum.photos/400/300?random=18",
+    thumbnail: "/assets/artikel/diy7.webp",
+    source: "etsy",
     materials: [
       "Toples kaca bekas",
-      "Tali rami (burlap string)",
+      "Tali rami atau gelang bekas",
       "Lem tembak",
-      "Biji kopi, pasir laut, atau kerikil kecil",
-      "Lilin kecil (tealight candle)"
+      "Kerang atau kerikil kecil dan pasir pantai",
+      "Lilin kecil"
     ],
     steps: [
       "Cuci bersih toples kaca dan rendam air hangat untuk menghilangkan sisa lem label kertasnya.",
-      "Lilitkan tali rami di bagian leher toples beberapa kali dan rekatkan ujungnya menggunakan lem tembak.",
-      "Isi seperempat bagian bawah toples dengan biji kopi atau pasir laut.",
-      "Letakkan lilin tealight tepat di tengah-tengah bantalan biji kopi atau pasir."
+      "Lilitkan tali rami atau gelang bekas dan rekatkan ujungnya menggunakan lem tembak.",
+      "Isi seperempat bagian bawah toples dengan kerang atau kerikil kecil dan pasir pantai.",
+      "Letakkan lilin kecil tepat di tengah-tengah kerang atau pasir."
     ],
     date: "2026-09-03"
   },
+  
   {
-    id: "diy9",
-    title: "Kompos Minim Bau Menggunakan Pot Bekas",
-    category: "Organik",
-    excerpt: "Tidak punya lahan luas? Kamu tetap bisa mengompos sisa makanan menggunakan pot tanaman yang tak terpakai.",
-    thumbnail: "https://picsum.photos/400/300?random=19",
-    materials: [
-      "Pot tanaman bekas yang berlubang di bawahnya",
-      "Sisa organik dapur (kulit buah, sayur, ampas kopi)",
-      "Sampah coklat (daun kering basah atau kardus cacah)",
-      "Tanah subur",
-      "Piringan penutup pot"
-    ],
-    steps: [
-      "Masukkan lapisan tanah setebal 5 cm di dasar pot untuk menyerap cairan berlebih.",
-      "Tambahkan lapisan sampah coklat (kardus/daun kering), lalu timpa dengan lapisan sisa organik dapur.",
-      "Tutup rapat bagian atas dengan lapisan tanah lagi agar tidak memancing lalat buah atau bau.",
-      "Tutup pot dengan piringan, letakkan di tempat teduh, dan biarkan terurai selama kurang lebih 1 bulan."
-    ],
-    date: "2026-09-06"
-  }
+  id: "diy8",
+  title: "Komposter Mini Praktis Menggunakan Galon Bekas",
+  category: "Organik",
+  excerpt: "Manfaatkan galon air mineral bekas untuk membuat komposter mini rumahan yang bersih dan tidak memakan tempat.",
+  thumbnail: "/assets/artikel/diy8.webp",
+  materials: [
+    "Galon air mineral bekas (ukuran 19 liter)",
+    "Cutter atau pisau tajam",
+    "Sisa organik dapur (kulit buah, sayur, ampas kopi)",
+    "Sampah coklat (daun kering atau kardus cacah)",
+    "Tanah subur secukupnya"
+  ],
+  steps: [
+    "Potong bagian atas galon menggunakan cutter untuk memudahkan memasukkan sampah, dan buat beberapa lubang kecil di bagian bawah galon untuk sirkulasi udara serta tirisan air.",
+    "Masukkan lapisan tanah dan sampah coklat setebal 5 cm di dasar galon sebagai fondasi awal.",
+    "Tambahkan lapisan sisa organik dapur, lalu timpa kembali secara bergantian dengan sampah coklat dan sedikit tanah untuk menghindari bau.",
+    "Tutup galon, letakkan di tempat yang teduh, dan biarkan proses penguraian berjalan selama 4 hingga 6 minggu hingga kompos matang."
+  ],
+  date: "2026-09-06"
+}
   ],
 
   colors: {

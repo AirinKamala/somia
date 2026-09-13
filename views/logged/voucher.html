@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tukarkan Eco-Poin kamu dengan voucher menarik dari UMKM mitra Somia.">
+
+    <title>Voucher - Somia</title>
 
     <link rel="stylesheet" href="/style.css">
-    <!-- <link rel="stylesheet" href="/lib/aos/aos.css"> -->
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
     <script src="/js/tl.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
-<script src="/js/tl.js"></script><link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">    <title>Voucher - Somia</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
 </head>
 
 <body>
     <nav
-        class="w-full  bg-(--ink) text-(--sand) z-49 sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
+        class="w-full  bg-(--ink) text-(--sand) z-[49] sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
         <div class="flex gap-4 items-center">
             <i class="fa-solid fa-bars fa-xl text-white" onclick="a.toggleModal(sidebar)"></i>
             <a href="/index.html" class="flex items-center">
-                <img src="/assets/icon.svg" alt="" class="self-center flex">
+                <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
                 <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
             </a>
         </div>
@@ -33,7 +35,7 @@
             <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
         </div>
     </nav>
-    <main class="p-6 md:p-12 min-h-screen max-w-6xl mx-auto space-y-8">
+    <main class="p-6 md:p-12 min-h-screen max-w-6xl mx-auto space-y-4">
         <div
             class="bg-white rounded-2xl w-full p-6 shadow-sm flex flex-col-reverse md:flex-row items-center gap-6 border border-stone-200">
             <div class="flex-1 w-full space-y-4">
@@ -50,7 +52,7 @@
                         <div>
                             <p class="text-[10px] uppercase tracking-wider text-emerald-200 font-bold">Peringkat Level
                             </p>
-                            <strong id="badge" class="text-lg font-bold tracking-wide" id="badge">Sang Pemilah</strong>
+                            <strong class="text-lg font-bold tracking-wide" id="badge">Sang Pemilah</strong>
                         </div>
                         <div class="text-right text-sm font-medium text-emerald-100">
                             <span class="text-white font-bold text-base">400</span> / 450 Poin
@@ -66,28 +68,31 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
-            </div>
             <!-- Profile -->
             <div class="flex-shrink-0 flex justify-center">
                 <div class="relative p-1 bg-(--moss) rounded-full shadow-md">
                     <img class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-stone-50 object-cover"
-                        src="https://api.dicebear.com/10.x/lorelei/svg?seed=Felix" alt="Avatar">
+                        src="/assets/avatar.png" alt="Avatar">
                 </div>
             </div>
         </div>
 
+
         <div class="flex overflow-x-auto w-full gap-4 py-4 ">
-            <button class="bg-(--ink) text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm ">Semua</button>
-            <button class="bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">UMKM</button>
-            <button class="bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Pulsa</button>
-            <button
-                class="bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Voucher</button>
-            <button
-                class="bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Lainnya</button>
+            <button onclick="applyFilter('Semua')" data-filter='Semua'
+                class="filter-chip bg-(--ink) text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm ">Semua</button>
+            <button onclick="applyFilter('UMKM')" data-filter='UMKM'
+                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">UMKM</button>
+            <button onclick="applyFilter('Pulsa')" data-filter='Pulsa'
+                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Pulsa</button>
+            <button onclick="applyFilter('Voucher')" data-filter='Voucher'
+                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Voucher</button>
+            <button onclick="applyFilter('Lainnya')" data-filter='Lainnya'
+                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Lainnya</button>
         </div>
 
-        <div class="flex flex-wrap  gap-6 w-full justify-center md:justify-start mt-4" id="container"></div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full justify-center md:justify-start mt-4"
+            id="container"></div>
 
         </div>
     </main>
@@ -95,7 +100,7 @@
         <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
             <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex">
+                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
                     <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
                 </a>
                 <p class="pl-2 text-pretty ">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
@@ -107,7 +112,7 @@
                     <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
                 <a href="/views/logged/voucher.html"
                     class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
                 <a href="/artikel.html"
                     class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
                     <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
@@ -139,13 +144,13 @@
     </footer>
 
     <div id="sidebar"
-        class="bg-stone-900/30 backdrop-blur-md z-49 fixed inset-0 flex items-center justify-center hidden"
+        class="bg-stone-900/30 backdrop-blur-md z-[49] fixed inset-0 flex items-center justify-center hidden"
         onclick="a.toggleModal(sidebar)">
-        <sidebar class="left-0 bg-(--ink) absolute  h-screen z-55  w-sm text-(--sand) flex flex-col py-2 px-4 "
+        <sidebar class="left-0 bg-(--ink) absolute  h-screen z-[55]  w-sm text-(--sand) flex flex-col py-2 px-4 "
             onclick="event.stopPropagation()">
             <div onclick="window.open('/', '_self')"
                 class="flex items-center cursor-pointer border-b-2 border-white/20">
-                <img src="/assets/icon.svg" alt="" class="self-center flex">
+                <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
                 <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
             </div>
             <div class="grid gap-4">
@@ -154,7 +159,7 @@
                     <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
                 <a href="/views/logged/voucher.html"
                     class="w-full h-fit py-2 bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
                 <a href="/artikel.html"
                     class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
                     <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
@@ -173,12 +178,12 @@
 
     <div id="modal-out" class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex hidden"
         onclick="a.toggleModal(modalSignOut)">
-        <div id="modal" class="relative z-51 bg-white rounded-lg p-4 w-sm grid mx-auto self-center"
+        <div id="modal" class="relative z-[51] bg-white rounded-lg p-4 w-sm grid mx-auto self-center"
             onclick="event.stopPropagation();">
             <h2 class="font-bold text-2xl">Anda yakin untuk keluar dari akun ini?</h2>
             <div class="w-full grid md:grid-cols-2 mt-8 gap-4">
                 <button class="text-(--moss) border font-semibold "
-                    onclick="modalSignOut.classList.remove('hidden')">Tidak</button>
+                    onclick="modalSignOut.classList.add('hidden')">Tidak</button>
                 <button class="bg-(--moss) font-semibold text-white" onclick="a.signout()">Ya, saya yakin.</button>
             </div>
         </div>
@@ -186,31 +191,60 @@
     <script src="/js/main.js"></script>
     <script src="/js/script.js"></script>
     <script>
+        const modalSignOut = document.getElementById('modal-out')
+        const sidebar = document.getElementById('sidebar')
         document.getElementById('point').innerHTML = `${inven.user.point} <span class="text-lg">point</span>`
         document.getElementById('badge').innerHTML = inven.user.badge
 
-        function renderCard() {
-            return inven.voucher.map(item =>
-                `
-                <div class="grid w-84 col-span-1 bg-white rounded pl-4 pt-4 rounded-2xl overflow-hidden">
+        const applyFilter = (category) => {
+            currentFilter = category;
+            document.querySelectorAll('.filter-chip').forEach(btn => {
+                const isActive = btn.dataset.filter === category;
+                if (isActive) {
+                    btn.className = 'filter-chip bg-(--ink) text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm whitespace-nowrap transition';
+                } else {
+                    btn.className = 'filter-chip bg-white text-(--ink) font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200 whitespace-nowrap hover:border-(--moss) transition';
+                }
+            });
+            renderVouchers(category);
+        };
+        const renderCard = (item) => {
+            return ` <div class="grid col-span-1 bg-white rounded p-4 rounded-2xl overflow-hidden gap-y-4">
+                    <div class="flex">
                     <div class="${item.bg} rounded flex items-center justify-center w-12 h-12">
                     <i class="${item.image} fa-xl text-white"></i></div>
-                    <p class="text-(--stone) text-sm font-semibold my-2">${item.category}</p>
-                    <p class="font-bold my-8">${item.title}</p>
-
-                    <div class=" flex  border-stone-900/40 items-center">
-                        <div class="text-left text-(--turmeric) font-semibold text-lg flex-3 pb-2"><i class="fa-solid fa-star"></i>${item.point}</div>
+                    <p class="font-bold ml-4">
+                        <span class="text-(--stone) text-sm font-semibold my-2">${item.category}</span>
+                        <br>
+                        ${item.title}
+                    </p>
+                </div>
+                    <div class="flex border-stone-900/40 items-center border-t pt-4 justify-between">
+                        <div class="text-left text-(--turmeric) font-semibold text-lg pb-2"><i class="fa-solid fa-star"></i>${item.point}</div>
                         <div
-                            class="flex-2 justify-center font-semibold text-white h-12 items-center flex hover:bg-emerald-800 bg-emerald-700 ">
+                            class="justify-center font-semibold text-white rounded-lg h-8 w-24 items-center flex hover:bg-emerald-800 bg-emerald-700 ">
                             Claim</div>
                     </div>
                 </div>
                 `
-            ).join('')
         }
-        document.getElementById('container').innerHTML = renderCard()
-        const modalSignOut = document.getElementById('modal-out')
-        const sidebar = document.getElementById('sidebar')
+        function renderVouchers(filter = 'Semua') {
+            const list = filter === 'Semua' ? inven.voucher : inven.voucher.filter(v => v.category === filter)
+            const container = document.getElementById('container')
+            if (!list.length) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="fa-solid fa-ticket text-stone-300 text-4xl mb-3"></i>
+                        <p class="text-stone-500">Belum ada voucher untuk kategori ini.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = list.map(renderCard).join('');
+        }
+        renderVouchers()
+
     </script>
 </body>
 

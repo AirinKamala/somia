@@ -1,86 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
+    <meta name="description" content="Jelajahi artikel dan panduan DIY Somia: cara memilah sampah, membuat kompos, dan mengubah barang bekas jadi karya bermanfaat.">
+    <script src="/js/tl.js"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="/lib/aos/aos.css"> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/lib/swiper/swiper-bundle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-<script src="/js/tl.js"></script><link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">    <title>Pojok Artikel - Somia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
+        <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+
+    <title>Pojok Artikel - Somia</title>
 </head>
 
 <body class="">
     <nav
         class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
         <a href="/index.html" class="flex items-center">
-            <img src="/assets/icon.svg" alt="" class="self-center flex">
+            <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
             <p class="ml-2 text-amber-600 font-bold font-accent text-[20pt]">Somia</p>
         </a>
-        <div class="gap-4 flex h-12" id="wrap-auth">
-            <a href="/views/login.html"><button class="border text-(--moss)">Masuk</button></a>
+        <div class="gap-4 md:w-64 md:justify-around flex h-12" id="wrap-auth">
             <a href="/views/register.html"><button
-                    class="border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+                    class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+            <a href="/views/login.html"><button class="md:w-32 border text-(--moss)">Masuk</button></a>
         </div>
     </nav>
-    <div id="container" class="w-full bg-(--sand) min-h-screen  p-8 md:px-[8%] lg:px-[12%]">
-        <div class="swiper mySwiper mb-8">
-            <div class="swiper-wrapper h-auto w-full max-h-[60vh]">
+    <div id="container-article" class="w-full bg-(--sand) min-h-screen ">
+        <div class="swiper mySwiper mb-8 !h-96">
+            <div class="swiper-wrapper w-full ">
                 <div class="swiper-slide overflow-hidden rounded-2xl">
-                    <div class="swipper-zoom-container"><img src="https://placehold.net/600x400.png"
-                            class="mx-auto block object-cover w-full" alt=""></div>
+                    <div class="swipper-zoom-container overflow-hidden w-full h-full bg-white"><img
+                            src="/assets/artikel/diy1.webp" class="mx-auto block object-cover h-full w-full" alt="">
+                    </div>
                 </div>
                 <div class="swiper-slide overflow-hidden rounded-2xl ">
-                    <div class="swipper-zoom-container"><img src="https://placehold.net/600x400.png"
-                            class="mx-auto block object-cover w-full" alt=""></div>
+                    <div class="swipper-zoom-container overflow-hidden w-full h-full bg-white"><img
+                            src="/assets/artikel/diy2.webp" class="mx-auto block object-cover h-full w-full " alt="">
+                    </div>
                 </div>
                 <div class="swiper-slide overflow-hidden rounded-2xl ">
-                    <div class="swipper-zoom-container"><img src="https://placehold.net/600x400.png"
-                            class="mx-auto block object-cover w-full" alt=""></div>
+                    <div class="swipper-zoom-container overflow-hidden w-full h-full bg-white"><img
+                            src="/assets/artikel/diy3.webp" class="mx-auto block object-cover h-full w-full " alt="">
+                    </div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
 
-        <div id="container-cards" class="swiper">
-            <div class=" swiper-wrapper gap-4">
-                <div class="card swiper-slide">
-                    <img src="https://placehold.net/600x400.png">
-                    <h3 class="md:text-md text-center font-semibold">
-                        Janur bekas jadi hiasan dinding</h3>
-                </div>
-                <div class="card swiper-slide">
-                    <img src="https://placehold.net/600x400.png">
-                    <h3 class="md:text-md text-center font-semibold">
-                        Kompos dari sisa dapur, 3 langkah</h3>
-                </div>
-                <div class="card swiper-slide">
-                    <img src="https://placehold.net/600x400.png">
-                    <h3 class="md:text-md text-center font-semibold">
-                        Pot dari botol plastik bekas</h3>
-                </div>
+        <div id="container-cards" class="swiper h-64">
+            <div class=" swiper-wrapper gap-4" id="card-recomend">
             </div>
             <div class="swiper-pagination"></div>
         </div>
 
-        <section class="md:flex grid mt-8 gap-4">
-            <div id="drawers" class="bg-white h-fit rounded-xl p-4 border ">
+        <section class="flex flex-col md:flex-row mt-8 gap-8">
+            <div id="drawers" class="bg-white h-fit md:shrink-0 rounded-xl px-4 py-8">
                 <h2 class="font-bold text-lg m-2">Filters</h2>
-                <div class="relative w-full flex items-center">
-                    <input type="text" name="" id="" class="border rounded-2xl p-2 w-full"
-                        placeholder="Masukkan pencarian anda..">
-                    <i
-                        class="fa-solid fa-search fa-lg absolute right-1 rounded-r-2xl pl-2 py-4 pr-8 flex items-center bg-white "></i>
+                <div class="relative w-full">
+                    <input class="border rounded-2xl p-2 pr-10 w-full" placeholder="Cari...">
+                    <i class="fa-solid fa-search absolute right-3 top-1/2 -translate-y-1/2 text-stone-400"></i>
                 </div>
-                <div id="result" class=" grid mt-4 ">
+                <div id="result" class=" grid mt-4 space-y-4">
                     <div class="">
                         <p class="font-semibold mb-2">Berdasarkan waktu</p>
                         <label class="cursor-pointer" for="asc"><input checked type="radio" name="order" id="asc"
@@ -91,7 +76,7 @@
                             Terlama</label>
                     </div>
                     <div class="">
-                        <p class="font-extrabold mb-2">Berdasarkan kategori</p>
+                        <p class="font-semibold mb-2">Berdasarkan kategori</p>
                         <label class="cursor-pointer" for="">
                             <input type="checkbox" name="" id=""
                                 class="mr-2 w-4 h-4 accent-(--moss)  " />Upacara</label> <br>
@@ -103,100 +88,65 @@
                                 class="mr-2 w-4 h-4 accent-(--moss)  " />Pertanian</label>
                     </div>
                 </div>
-                <button class="bg-(--turmeric) font-bold mt-4 flex mx-auto">Search with filter</button>
+                <button class="bg-(--turmeric) w-full font-bold mt-4  mx-auto">Terapkan filter</button>
             </div>
 
-            <div id="result" class=" w-full flex flex-wrap gap-4 w-full">
-                <div onclick="window.open(`artikel-detail.html?q=diy1`, '_self')" class="card">
-                    <img src="https://placehold.net/600x400.png">
-                    <div class="card-text">
-                        <h4 class="md:text-md font-extrabold text-sm ">Janur bekas jadi hiasan dinding</h4>
-                        <p class="text-pretty text-xs md:text-sm">Ubah janur sisa upacara jadi hiasan dinding anyaman
-                            yang tahan lama.</p>
-                    </div>
-                </div>
-
-                <div onclick="window.open(`artikel-detail.html?q=diy1`, '_self')" class="card">
-                    <img src="https://placehold.net/600x400.png">
-                    <div class="card-text">
-                        <h4 class="md:text-md font-extrabold text-sm ">Kompos dari sisa dapur, 3 langkah</h4>
-                        <p class="text-pretty text-xs md:text-sm">Kompos sederhana pakai ember bekas, tanpa bau, cocok
-                            untuk rumah kecil.</p>
-                    </div>
-                </div>
-
-                <div onclick="window.open(`artikel-detail.html?q=diy1`, '_self')" class="card">
-                    <img src="https://picsum.photos/200/200?random=3">
-                    <div class="card-text">
-                        <h4 class="md:text-md font-extrabold text-sm ">Pot dari botol plastik bekas</h4>
-                        <p class="text-pretty text-xs md:text-sm">humbnail: "assets/img/illustrations/diy3.svg</p>
-                    </div>
-                </div>
-
-                <div onclick="window.open(`artikel-detail.html?q=diy4`, '_self')" class="card">
-                    <img src="https://picsum.photos/200/200?random=4">
-                    <div class="card-text">
-                        <h4 class="md:text-md font-extrabold text-sm ">Canang plastik bisa didaur ulang jadi apa?</h4>
-                        <p class="text-pretty text-xs md:text-sm">Alas plastik canang yang sudah tidak terpakai bisa
-                            dianyam jadi tas kecil.</p>
-                    </div>
-                </div>
+            <div id="artikel-wrap" class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-4">
             </div>
         </section>
     </div>
     <footer class="bg-(--ink) py-4 text-(--sand) grid w-full">
-    <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
-      <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
-        <a href="/index.html" class="flex items-center">
-          <img src="/assets/icon.svg" alt="" class="self-center flex">
-          <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
-        </a>
-        <p class="pl-2 text-pretty ">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi
-          reward </p>
-        <hr>
-        <a href="/views/logged/dashboard.html"
-          class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
-        <a href="/views/logged/voucher.html"
-          class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
-        <a href="/artikel.html"
-          class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
-        <a href="/views/logged/peta.html"
-          class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
+        <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
+            <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
+                <a href="/index.html" class="flex items-center">
+                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
+                    <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+                </a>
+                <p class="pl-2 text-pretty ">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
+                    jadi
+                    reward </p>
+                <hr>
+                <a href="/views/logged/dashboard.html"
+                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
+                <a href="/views/logged/voucher.html"
+                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
+                <a href="/artikel.html"
+                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
+                <a href="/views/logged/peta.html"
+                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
 
-      </div>
-      <div class="flex flex-col ">
-        <h4 class="text-xl font-bold">Ikuti kami di</h4>
-        <a href="#"
-          class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-brands fa-instagram fa-xl mr-4"></i> Instagram</a>
+            </div>
+            <div class="flex flex-col ">
+                <h4 class="text-xl font-bold">Ikuti kami di</h4>
+                <a href="#"
+                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-instagram fa-xl mr-4"></i> Instagram</a>
 
-        <a href="#"
-          class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-brands fa-facebook fa-xl mr-4"></i> Facebook</a>
+                <a href="#"
+                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-facebook fa-xl mr-4"></i> Facebook</a>
 
-        <a href="#"
-          class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-brands fa-tiktok fa-xl mr-4"></i> Tiktok</a>
+                <a href="#"
+                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-tiktok fa-xl mr-4"></i> Tiktok</a>
 
-        <a href="#"
-          class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-          <i class="fa-brands fa-youtube fa-xl mr-4"></i> Youtube</a>
-      </div>
-    </div>
-    <p class="text-center mt-4">Somia &copy; 2026.All rights reserved.</p>
-  </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+                <a href="#"
+                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
+                    <i class="fa-brands fa-youtube fa-xl mr-4"></i> Youtube</a>
+            </div>
+        </div>
+        <p class="text-center mt-4">Somia &copy; 2026.All rights reserved.</p>
+    </footer>
+    <script src="/js/main.js"></script>
+    <script src="/lib/swiper/swiper-bundle.js"></script>
     <script>
 
         let swiper = new Swiper('.mySwiper', {
             effect: 'fade',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
             loop: true,
             autoplay: {
                 delay: 3000,
@@ -208,10 +158,36 @@
             }
         })
 
+
+        const renderAllCard = () => {
+            return inven.articles.map(a => {
+                return `
+            <div onclick="window.open('/artikel-detail.html?q=${a.id}', '_self')" class="card">
+                    <img src="${a.thumbnail}">
+                    <div class="card-text">
+                        <h4 class="md:text-base font-extrabold text-sm ">${a.title}</h4>
+                        <p class="text-pretty line-clamp-1 opacity-90 text-xs md:text-sm">${a.excerpt}</p>
+                    </div>
+                </div>
+            `
+            }).join('')
+        }
+
+        const renderCardRecomend = () => {
+            let result = inven.articles.slice(3,6)
+            return result.map(f => `
+                   <div class="card swiper-slide cursor-pointer" onclick="window.open('/artikel-detail.html?q=${f.id}', '_self')" >
+                    <img class="" src="${f.thumbnail}" alt="">
+                    <h3 class="md:text-base font-semibold">
+                    ${f.title}</h3>
+                </div>
+                `).join('')
+        }
+
+        document.getElementById("card-recomend").innerHTML = renderCardRecomend()
+        document.getElementById("artikel-wrap").innerHTML = renderAllCard()
         let cardSwiper = new Swiper('#container-cards', {
-            grabCursor: true,
-            loop: true,
-            slidesPerView: 'auto'
+            slidesPerView: 2
         })
     </script>
 </body>

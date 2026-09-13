@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <meta name="description" content="Dashboard Somia-mu. Lihat total sampah terpilah, hari beruntun, eco-poin, riwayat pemilahan, dan artikel favoritmu.">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/lib/aos/aos.css">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-<script src="/js/tl.js"></script><link rel="shortcut icon" href="/assets/icon.svg" type="image/svg+xml">    <title>Dashboard - Somia</title>
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+    <script src="/js/tl.js"></script>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <title>Dashboard - Somia</title>
 </head>
 
 <body>
 
     <div class="flex-wrap md:flex-nowrap flex min-h-screen relative z-1 ">
         <nav
-            class="w-full md:hidden  bg-(--ink) text-(--sand) z-49 sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
+            class="w-full md:hidden  bg-(--ink) text-(--sand) z-40 sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
             <div class="flex gap-4 items-center">
                 <i class="fa-solid fa-bars fa-xl text-white"
                     onclick="toggleNav(sidebar, document.getElementById('overlay'))"></i>
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex">
+                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
                     <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
                 </a>
             </div>
@@ -35,14 +37,15 @@
                 <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
             </div>
         </nav>
-        <div id="overlay" class="h-screen w-screen hidden fixed bg-stone-900/70 overflow-hidden z-50"
+        <div id="overlay"
+            class="inset-0 hidden fixed bg-stone-900/70 overflow-hidden z-50 backdrop-blur-md"
             onclick="toggleNav(sidebar, document.getElementById('overlay'))"></div>
         <sidebar id="sidebar"
-            class="top-0 bg-(--ink) absolute -translate-x-100 md:translate-none md:sticky h-screen z-55  w-sm text-(--sand) flex flex-col py-2 px-4 "
+            class="top-0 bg-(--ink) fixed -translate-x-100 md:translate-none md:sticky h-screen z-50  max-w-sm md:w-sm text-(--sand) flex flex-col py-2 px-4 "
             onclick="event.stopPropagation()">
             <div onclick="window.open('/', '_self')"
                 class="flex items-center cursor-pointer border-b-2 border-white/20">
-                <img src="/assets/icon.svg" alt="" class="self-center flex">
+                <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
                 <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
             </div>
             <div class="grid gap-4">
@@ -51,7 +54,7 @@
                     <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
                 <a href="/views/logged/voucher.html"
                     class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-25 mr-4"></i> Voucher</a>
+                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
                 <a href="/artikel.html"
                     class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
                     <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
@@ -66,7 +69,7 @@
 
         </sidebar>
         <div class="bg-(--sand) w-full">
-            <main class="p-8 md:px-[8%] lg:px-[12%]" id="main">
+            <main class="p-6 md:p-12 min-h-screen max-w-6xl mx-auto " id="main">
                 <!-- nama  -->
                 <div class="flex justify-between">
                     <div>
@@ -74,7 +77,7 @@
                         <h1 class="text-2xl" id="name"></h1>
                     </div>
                     <img class="w-20 h-20 border-2 rounded-full border-(--moss)"
-                        src="https://api.dicebear.com/10.x/lorelei/svg?seed=Felix" alt="">
+                        src="/assets/avatar.png" alt="avatar">
                 </div>
 
                 <!-- info -->
@@ -92,10 +95,10 @@
                 <div
                     class="bg-(--ink) rounded-md p-8 min-w-64 flex justify-between items-center gap-4 mx-auto mt-8 h-fit">
                     <div class="mb-4">
-                        <p class="text-stone-500 font-bold ">ECO WRAPPED</p>
+                        <p class="text-stone-400 font-bold ">ECO WRAPPED</p>
                         <h2 class="text-(--sand) mt-2 font-bold text-xl">Bagikan progres bulanan kamu.</h2>
                     </div>
-                    <button class="bg-(--turmeric) h-fit bg-semibold"
+                    <button class="bg-(--turmeric) h-fit font-semibold"
                         onclick="window.open('wrapped.html', '_self')">Lihat Wrapped</button>
                 </div>
 
@@ -103,11 +106,11 @@
                 <div
                     class="bg-(--moss) rounded-md p-8 min-w-64 flex justify-between items-center gap-4 mx-auto mt-4 h-fit">
                     <div class="mb-4">
-                        <p class="text-(--moss-light) font-bold ">ECO-POIN</p>
+                        <p class="text-white font-bold ">ECO-POIN</p>
                         <h2 class="text-(--sand) mt-2 font-bold text-xl">Tukarkan Eco-poin kamu dengan voucher menarik.
                         </h2>
                     </div>
-                    <button class="bg-(--turmeric) h-fit bg-semibold"
+                    <button class="bg-(--turmeric) h-fit font-semibold"
                         onclick="window.open('voucher.html', '_self')">Tukar Poin</button>
                 </div>
             </main>
@@ -124,16 +127,16 @@
                     <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
                         <div class="flex items-center">
                             <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-burger fa-xl text-white"></i></div>
+                                    class="fa-solid fa-bag-shopping fa-xl text-white"></i></div>
                             <div class="grid">
-                                <h4 class="font-semibold md:text-lg">Rumah tangga</h4>
+                                <h4 class="font-semibold md:text-lg">Plastik</h4>
                                 <p class="text-xs md:text-sm text-stone-500">20 Agustus 2026</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center">
                             <p class="font-semibold">4.3 kg</p>
                             <div
-                                class="text-(--moss) w-24 h-fit font-semibold bg-emerald-300 rounded-xl px-4 text-xs md:sm py-2 ">
+                                class="text-emerald-950 w-24 h-fit font-semibold bg-emerald-200 rounded-xl px-4 text-[12px] md:text-sm py-2 ">
                                 Terverifikasi</div>
                         </div>
                     </div>
@@ -143,30 +146,30 @@
                             <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
                                     class="fa-solid fa-leaf fa-xl text-white"></i></div>
                             <div class="grid">
-                                <h4 class="font-semibold md:text-lg">Upacara</h4>
+                                <h4 class="font-semibold md:text-lg">Organik</h4>
                                 <p class="text-xs md:text-sm text-stone-500">13 Agustus 2026</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center">
                             <p class="font-semibold">2 kg</p>
                             <div
-                                class="text-(--turmeric) w-24 h-fit font-semibold bg-amber-100 rounded-xl px-4 text-xs md:sm py-2 ">
+                                class="text-amber-950 w-24 h-fit font-semibold bg-amber-200 rounded-xl px-4 text-[12px] md:text-sm py-2 ">
                                 Menunggu</div>
                         </div>
                     </div>
                     <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
                         <div class="flex items-center">
                             <div class="bg-(--turmeric) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-tree fa-xl text-white"></i></div>
+                                    class="fa-solid fa-newspaper fa-xl text-white"></i></div>
                             <div class="grid">
-                                <h4 class="font-semibold md:text-lg">Pertanian</h4>
+                                <h4 class="font-semibold md:text-lg">Kertas</h4>
                                 <p class="text-xs md:text-sm text-stone-500">30 July 2026</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center">
                             <p class="font-semibold">4.3 kg</p>
                             <div
-                                class="text-(--moss) w-24 h-fit font-semibold bg-emerald-300 rounded-xl px-4 text-xs md:sm py-2 ">
+                                class="text-emerald-950 w-24 h-fit font-semibold bg-emerald-200 rounded-xl px-4 text-[12px] md:text-sm py-2 ">
                                 Terverifikasi</div>
                         </div>
                     </div>
@@ -176,14 +179,14 @@
                             <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
                                     class="fa-solid fa-leaf fa-xl text-white"></i></div>
                             <div class="grid">
-                                <h4 class="font-semibold md:text-lg">Upacara</h4>
+                                <h4 class="font-semibold md:text-lg">Organik</h4>
                                 <p class="text-xs md:text-sm text-stone-500">29 Juli 2026</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center">
                             <p class="font-semibold">1.5 kg</p>
                             <div
-                                class="text-(--turmeric) w-24 h-fit font-semibold bg-amber-100 rounded-xl px-4 text-xs md:sm py-2 ">
+                                class="text-amber-950 w-24 h-fit font-semibold bg-amber-200 rounded-xl px-4 text-[12px] md:text-sm py-2 ">
                                 Menunggu</div>
                         </div>
                     </div>
@@ -191,16 +194,16 @@
                     <div class="mb-2 px-4 md:px-12 py-4 justify-between flex">
                         <div class="flex items-center">
                             <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-burger fa-xl text-white"></i></div>
+                                    class="fa-solid fa-bag-shopping fa-xl text-white"></i></div>
                             <div class="grid">
-                                <h4 class="font-semibold md:text-lg">Rumah tangga</h4>
+                                <h4 class="font-semibold md:text-lg">Plastik</h4>
                                 <p class="text-xs md:text-sm text-stone-500">29 Juli 2026</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center">
                             <p class="font-semibold">2.3 kg</p>
                             <div
-                                class="text-(--moss) w-24 h-fit font-semibold bg-emerald-300 rounded-xl px-4 text-xs md:sm py-2 ">
+                                class="text-emerald-950 w-24 h-fit font-semibold bg-emerald-200 rounded-xl px-4 text-[12px] md:text-sm py-2 ">
                                 Terverifikasi</div>
                         </div>
                     </div>
@@ -218,38 +221,23 @@
                 <h2 class="text-2xl font-bold">Profil</h2>
                 <div class="bg-white flex mt-2 p-4 rounded-lg gap-4 items-center">
                     <img class="w-20 h-20 border-2 rounded-full border-(--moss)"
-                        src="https://api.dicebear.com/10.x/lorelei/svg?seed=Felix" alt="">
+                        src="/assets/avatar.png" alt="avatar">
                     <h3 class="md:text-lg font-semibold">John Doe <br><span class="text-xs font-medium">bergabung sejak
                             1 Juli 2026</span></h3>
-                    <button class="border rounded h-fit ml-auto text-sm md:text-md"
+                    <button class="border rounded h-fit ml-auto text-sm md:text-base"
                         onclick="modal.classList.remove('hidden')">Edit profil</button>
-                </div>
-                <div class="bg-white pt-4">
-                    <h3 class="md:text-lg"><i class="fa-solid fa-medal text-amber-600 px-4 md:px-8"></i>Lencana </h3>
-                    <hr class="text-stone-300  mx-auto">
-                    <div class="flex flex-wrap gap-4 p-4">
-                        <div class="bg-amber-100 text-amber-800 p-2 rounded-lg text-sm md:text-md font-semibold">Pemilah
-                            Handal</div>
-                        <div class="bg-emerald-100 text-emerald-800 p-2 rounded-lg text-sm md:text-md font-semibold">
-                            Rintisan Hijau</div>
-                        <div class="bg-orange-100 text-orange-800 p-2 rounded-lg text-sm md:text-md font-semibold">
-                            Pemula Peduli</div>
-                    </div>
                 </div>
             </section>
         </div>
 
-
-
-
         <div id="modal-out" class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex hidden"
             onclick="a.toggleModal(modalSignOut)">
-            <div id="modal" class="relative z-51 bg-white rounded-lg p-4 w-sm grid mx-auto self-center"
+            <div class="relative z-60 bg-white rounded-lg p-4 w-sm grid mx-auto self-center"
                 onclick="event.stopPropagation();">
                 <h2 class="font-bold text-2xl">Anda yakin untuk keluar dari akun ini?</h2>
                 <div class="w-full grid md:grid-cols-2 mt-8 gap-4">
                     <button class="text-(--moss) border font-semibold "
-                        onclick="modalSignOut.classList.remove('hidden')">Tidak</button>
+                        onclick="modalSignOut.classList.add('hidden')">Tidak</button>
                     <button class="bg-(--moss) font-semibold text-white" onclick="a.signout()">Ya, saya yakin.</button>
                 </div>
             </div>
@@ -257,7 +245,7 @@
         <div id="modal-overlay"
             class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex items-center justify-center hidden"
             onclick="a.toggleModal(modal)">
-            <div id="modal" class="absolute z-51 bg-white rounded-lg p-4 flex w-sm grid "
+            <div id="modal" class="absolute z-60 bg-white rounded-lg p-4 flex w-sm grid "
                 onclick="event.stopPropagation()">
                 <h2 class="font-bold text-2xl">Edit Profile</h2>
                 <label for="inpNama" class="font-semibold mt-2">Nama</label>
@@ -278,8 +266,12 @@
         <script src="/js/main.js"></script>
         <script src="/js/script.js"></script>
         <script>
+            const sidebar = document.getElementById('sidebar')
+            const modal = document.getElementById('modal-overlay')
+            const modalSignOut = document.getElementById('modal-out')
+            let modalShow = false
             document.getElementById('name').innerHTML = `${inven.user.name} . <span class="text-amber-800">${inven.user.badge}</span>`
-            document.getElementById('totalWaste').innerHTML = `${inven.user.totalWaste} <br> <span class="text-(--ink) text-sm md:text-lg font-medium">kg terpilah.</span>`
+            document.getElementById('totalWaste').innerHTML = `${inven.user.totalWaste ?? 0} <br> <span class="text-(--ink) text-sm md:text-lg font-medium">kg terpilah.</span>`
             document.getElementById('dayStreak').innerHTML = `${inven.user.dayStreak} <br> <span class="text-(--ink) text-sm md:text-lg font-medium">hari beruntun.</span>`
             document.getElementById('point').innerHTML = `${inven.user.point} <br> <span class="text-(--ink) text-sm md:text-lg font-medium">eco-poin.</span>`
             const deleteBookmark = (id) => {
@@ -289,8 +281,9 @@
             }
             const renderCard = () => {
                 let result = inven.articles.filter(i => inven.bookmark.includes(i.id)).slice(0, 3)
+                if (!result.length) return `<p class="text-stone-500 italic">Belum ada artikel favorit. Simpan artikel untuk melihatnya di sini.</p>`
                 return result.map(f => `
-                    <div class="rounded-xl overflow-hidden w-sm ">
+                    <div class="rounded-xl overflow-hidden w-full md:w-sm ">
                         <img src="${f.thumbnail}" class="bg-(--moss) w-full object-cover h-24" alt="">
                         <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
                             <h3 class="font-semibold cursor-pointer" onclick="window.open('/artikel-detail.html?q=${f.id}', '_self')">${f.title}</h3>
@@ -299,10 +292,10 @@
                     </div>
                 `).join('')
             }
-
-            const toggleNav=(ins, over) =>{
-                this.isOpen = !this.isOpen;
-                if (this.isOpen) {
+            let isShow = false
+            const toggleNav = (ins, over) => {
+                isShow = !isShow;
+                if (isShow) {
                     ins.classList.remove("-translate-x-100");
                     over.classList.remove("hidden");
 
@@ -313,10 +306,9 @@
             }
 
             document.getElementById('container').innerHTML = renderCard()
-            let modalShow = false
-            const modal = document.getElementById('modal-overlay')
-            const modalSignOut = document.getElementById('modal-out')
-            const sidebar = document.getElementById('sidebar')
+            document.getElementById('inpNama').value = inven.user.name
+            document.getElementById('inpAlamat').value = inven.user.address
+            document.getElementById('inpEmail').value = inven.user.email
 
         </script>
 </body>
