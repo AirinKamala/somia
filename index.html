@@ -5,183 +5,201 @@
   <meta charset="UTF-8">
   <title>Somia - Langkah kecil peduli lingkungan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Somia — kebiasaan kecil, dampak besar. Pilah sampah, temukan bank sampah terdekat, dan tukar poinmu dengan voucher UMKM di Bali.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" >
-    <link rel="stylesheet" href="/style.css">
-    <script src="/js/tl.js"></script>
-    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css" >
-    <link rel="stylesheet" href="/lib/aos/aos.css" >
-    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x+">
+  <meta name="description"
+    content="Somia — kebiasaan kecil, dampak besar. Pilah sampah, temukan bank sampah terdekat, dan tukar poinmu dengan voucher UMKM di Bali.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/js/tl.js"></script>
+  <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/aos/aos.css">
+  <link rel="shortcut icon" href="/assets/icon.ico" type="image/x+">
+
 </head>
 
-
 <body class="">
-  <nav
-    class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
+  <!-- ================ NAVIGASI ================ -->
+  <nav class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
     <a href="/index.html" class="flex items-center">
       <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
       <p class="ml-2 text-amber-600 font-bold font-accent text-[20pt]">Somia</p>
     </a>
     <div class="gap-4 md:w-64 md:justify-around flex h-12" id="wrap-auth">
-      <a href="/views/register.html"><button class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+      <a href="/views/register.html"><button
+          class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
       <a href="/views/login.html"><button class="md:w-32 border text-(--moss)">Masuk</button></a>
     </div>
   </nav>
-  <!-- hero section -->
-  <main
-    class="text-(--sand)  bg-no-repeat p-8 bg-(--ink) items-center flex flex-wrap justify-between md:grid md:grid-cols-5 md:px-[8%] lg:px-[15%] gap-4 flex-wrap"
-    id="hero">
-    <div id="hero-title " class="grid md:col-span-3">
-      <h1 class=" font-bold text-5xl mb-4">Kebiasaan kecil, <br>
-        <span class="text-(--turmeric)">dampak yang besar.</span>
-      </h1>
-      <p class="w-[80%] text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi
-        reward</p>
-      <div class="btn-wrap mt-4 flex gap-3 flex-wrap">
-        <button class="bg-(--turmeric) text-(--ink)" onclick="window.open('/views/register.html', '_self')">Mulai
-          sekarang</button>
-        <button class="border" onclick="document.getElementById('product').scrollIntoView({ behavior: 'smooth' })">Lihat
-          cara kerjanya</button>
-      </div>
-    </div>
-    <div id="hero-img" class="max-w-[48rem] h-auto flex md:grid md:col-span-2 my-8">
-      <img class="w-full h-auto object-cover object-center" loading="eager" fetchpriority="high" src="/assets/hero.svg" alt="">
-    </div>
-  </main>
-  <!-- kenapa kami ada  -->
-  <section class="grid md:grid-cols-3 items-center p-4 md:px-[8%] lg:px-[15%] ">
-    <div id="waste-img" class="max-w-lg overflow-hidden h-auto flex mx-auto my-8">
-      <img class="w-full h-auto object-contain object-center" src="/assets/waste.svg" alt="">
-    </div>
-    <div class=" md:col-span-2" data-aos="fade-up">
-      <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Bukan salah siapa siapa</p>
-      <h2 class="text-4xl font-extrabold">Bank Sampah Penuh Bukan Salah Siapa</h2>
-      <p class="">Ini bukan soal siapa yang belum peduli, namun soal sistem yang belum terhubung dengan baik.</p>
-    </div>
-
-  </section>
-  <!-- Produk kami  -->
-  <section class="bg-(--ink) p-8 text-(--sand) md:px-[8%] lg:px-[15%] " id="product">
-    <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Layanan unggulan kami</p>
-    <h2 class="text-4xl font-extrabold">Tiga hal yang bikin kebiasaan gampang dijaga.</h2>
-    <div class="mt-4 grid md:flex gap-4">
-      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up">
-        <i class="fa-solid fa-bank text-(--turmeric) fa-xl mb-8"></i>
-        <h3 class="font-bold text-xl">Bank Sampah</h3>
-        <p>Cari bank sampah terdekat yang masih tersedia</p>
-      </div>
-      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up">
-        <i class="fa-solid fa-star text-(--turmeric) fa-xl mb-8"></i>
-        <h3 class="font-bold text-xl">DIY</h3>
-        <p>Ubah waktu luang menjadi hal kreatif</p>
-      </div>
-      <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up">
-        <i class="fa-solid fa-ticket text-(--turmeric) fa-xl mb-8"></i>
-        <h3 class="font-bold text-xl">Voucher</h3>
-        <p>Kapan lagi tukar sampah dengan voucher</p>
-      </div>
-    </div>
-  </section>
-  <!-- bagiamana Somia membantu  -->
-  <section class="p-8 md:px-[8%] lg:px-[15%] ">
-    <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Cara kerja</p>
-    <h2 class="text-4xl font-extrabold ">4 Langkah sederhana untuk menangani sampah anda.</h2>
-    <div class="mt-8  grid md:grid-cols-4 gap-4">
-      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
-        <p class="text-amber-800 font-accent text-4xl">01</p>
-        <h3 class="font-bold mt-2 text-xl">Pilah dari rumah</h3>
-        <p class="text-sm">Memilah sampah berdasarkan jenisnya</p>
-      </div>
-
-      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
-        <p class="text-amber-800 font-accent text-4xl">02</p>
-        <h3 class="font-bold mt-2 text-xl">Temukan bank sampah terdekat</h3>
-        <p class="text-sm">Temukan bank sampah siap menerima sampahmu </p>
-      </div>
-
-      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
-        <p class="text-amber-800 font-accent text-4xl">03</p>
-        <h3 class="font-bold mt-2 text-xl">Rayakan progress mu</h3>
-        <p class="text-sm">Bagikan Eco-wrapped mingguanmu ke teman-teman </p>
-      </div>
-
-      <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up">
-        <p class="text-amber-800 font-accent text-4xl">04</p>
-        <h3 class="font-bold mt-2 text-xl">Claim voucher UMKM</h3>
-        <p class="text-sm">Tukar poinmu dengan voucher di UMKM mitra kami</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-8 bg-(--ink) text-(--sand) md:px-[8%] lg:px-[15%] overflow-hidden">
-    <!-- quatity -->
-    <div class="w-full max-w-sm grid md:flex mb-8 justify-center mx-auto space-x-4">
-      <div class="py-4 w-sm rounded-md grid justify-center">
-        <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]">1000+ </h3>
-        <p class=""> kg terpilah</p>
-      </div>
-
-      <div class="py-4 w-sm rounded-md grid justify-center">
-        <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]">100+ </h3>
-        <p class=""> pengguna aktif</p>
-      </div>
-
-      <div class="py-4 w-sm rounded-md grid justify-center">
-        <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]">10+ </h3>
-        <p class="">Bank Sampah</p>
-      </div>
-    </div>
-
-    <!-- testimony -->
-    <div class="my-12">
-      <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Testimoni pengguna kami</p>
-      <h2 class="text-4xl font-extrabold">Apa yang mereka katakan tentang kami?</h2>
-      <!-- wrapper testimony -->
-      <div class="flex overflow-x-auto w-full py-2 gap-4 mt-4 snap-x snap-mandatory scroll-smooth lg:justify-center" data-aos="fade-left">
-        <div class="shrink-0 snap-start w-72 md:w-80 border rounded-md p-4 border-(--moss-light)">
-          <p>Dulu sampah dapur langsung buang ke TPA. Sekarang saya punya komposter dari galon bekas, dan tiap minggu bisa setor 3 kg ke bank sampah dekat rumah. Anak-anak juga ikut belajar memilah.</p>
-          <h4 class="font-semibold text-center mt-2"> Ni Made Ayu - Denpasar Utara</h4>
-        </div>
-
-        <div class="shrink-0 snap-start w-72 md:w-80 border rounded-md p-4 border-(--moss-light)">
-          <p>Awalnya iseng ikut teman. Ternyata asik — tiap setor sampah dapat poin, dan poinnya bisa ditukar jadi voucher kopi di UMKM dekat kampus. Sekarang malah nagih kalau seminggu nggak nyetor.</p>
-          <h4 class="font-semibold text-center mt-2">I Gede Arta - Denpasar Selatan</h4>
-        </div>
-
-        <div class="shrink-0 snap-start w-72 md:w-80 border rounded-md p-4 border-(--moss-light)">
-          <p>Yang paling saya suka dari Somia itu bank sampahnya jelas — ada jam operasional, jenis sampah yang diterima, bahkan kontak pengelolanya. Jadi nggak perlu bingung lagi mau ke mana.</p>
-          <h4 class="font-semibold text-center mt-2">Wayan Sukerta - Kerambitan</h4>
+  
+  <!-- ================ HERO SECTION ================ -->
+    <main class=" text-sand p-8 bg-(--ink) flex flex-col md:flex-row items-center justify-around px-4 md:px-[8%] lg:px-[12%] py-8 " id="hero">
+      <div class="min-w-64 py-12 grid">
+        <h1 class=" font-bold text-4xl md:text-5xl mb-4  ">Kebiasaan kecil, <br>
+          <span class="text-(--turmeric)" id="hero-title"></span>
+        </h1>
+        <p class="w-[80%] text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi reward</p>
+        <div class="btn-wrap mt-4 flex gap-3 flex-wrap ">
+          <button class="bg-(--turmeric) text-(--ink)" onclick="window.open('/views/register.html', '_self')">Mulai sekarang</button>
+          <button class="border"
+            onclick="document.getElementById('hooks').scrollIntoView({ behavior: 'smooth' })">Lihat cara kerjanya</button>
         </div>
       </div>
-    </div>
+      <div id="hero-img" class="w-auto max-w-xl min-w-72 overflow-hidden h-full min-h-96 flex my-8 items-center">
+        <img width="400" height="300" class="w-auto h-full object-cover object-center" loading="eager"
+          fetchpriority="high" src="/assets/hero.svg" alt="Illustrasi-1">
+      </div>
+    </main>
+      
+    <!-- ================ MENGAPA MEMILIH KAMI? ================ -->
+    <section class="flex flex-col md:flex-row items-center px-4 md:px-[8%] lg:px-[12%] py-8 " id="hooks">
+      <div id="waste-img" class="w-auto max-w-xl overflow-hidden h-full min-h-96 flex my-8 items-center">
+        <img width="400" height="300" class="w-auto h-full object-cover object-center" src="/assets/waste.svg"
+          alt="Illustrasi-2">
+      </div>
+      <div class="min-w-64 py-12" data-aos="fade-up">
+        <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Bukan salah siapa siapa</p>
+        <h2 class="text-4xl font-extrabold">Bank Sampah Penuh Bukan Salah Siapa</h2>
+        <p class="">Ini bukan soal siapa yang belum peduli, namun soal sistem yang belum terhubung dengan baik.</p>
+      </div>
+    </section>
 
-  </section>
+      <!-- ================ LAYANAN KAMI ================ -->
+    <section class="bg-(--ink) p-8 text-(--sand) md:px-[8%] lg:px-[12%] min-h-96 items-center " id="product">
+      <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Layanan unggulan kami</p>
+      <h2 class="text-4xl font-extrabold">Tiga hal yang bikin kebiasaan gampang dijaga.</h2>
+      <div class="mt-4 grid md:flex gap-4">
+        <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-bank text-(--turmeric) fa-xl mb-8"></i>
+          <h3 class="font-bold text-xl">Bank Sampah</h3>
+          <p>Cari bank sampah terdekat yang masih tersedia</p>
+        </div>
+        <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-star text-(--turmeric) fa-xl mb-8"></i>
+          <h3 class="font-bold text-xl">DIY</h3>
+          <p>Ubah waktu luang menjadi hal kreatif</p>
+        </div>
+        <div class="bg-emerald-950 w-full p-4 rounded-md border-l-4 border-(--turmeric)" data-aos="fade-up" data-aos-delay="500">
+          <i class="fa-solid fa-ticket text-(--turmeric) fa-xl mb-8"></i>
+          <h3 class="font-bold text-xl">Voucher</h3>
+          <p>Kapan lagi tukar sampah dengan voucher</p>
+        </div>
+      </div>
+    </section>
 
-  <section class="bg-stone-200 h-auto grid md:grid-cols-5 justify-items-evenly align-center gap-8 p-8 md:px-[8%] lg:px-[15%] ">
-    <div class="p-4 grid col-span-3 " data-aos="fade-up">
-      <p class=" text-red-900 tracking-[0.2rem] mb-4 text-sm font-bold ">Eco-wrapped</p>
-      <h2 class="text-4xl font-extrabold">Pantau progress mingguan-mu.</h2>
-      <p class="text-sm text-pretty w-[70%]">Bagikan pencapaianmu dan ajak yang lain untuk ikut langkah kecil bersama
-      </p>
-      <button class="bg-(--ink) w-fit text-(--sand) font-bold my-4" onclick="window.open('/views/login.html', '_self')">Buat wrapped kamu</button>
-    </div>
+    <!-- ================ CARA KERJA ================ -->
+    <section class="p-8 md:px-[8%] lg:px-[12%] min-h-96 items-center ">
+      <p class=" text-amber-800 tracking-[0.2rem] mb-4 text-sm font-bold ">Cara kerja</p>
+      <h2 class="text-4xl font-extrabold ">4 Langkah sederhana untuk menangani sampah anda.</h2>
+      <div class="mt-8  grid md:grid-cols-4 gap-4">
+        <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <p class="text-amber-800 font-accent text-4xl">01</p>
+          <h3 class="font-bold mt-2 text-xl">Pilah dari rumah</h3>
+          <p class="text-sm">Memilah sampah berdasarkan jenisnya</p>
+        </div>
 
-    <div class="bg-(--ink) rounded-4xl p-8 text-(--sand) w-full col-span-2">
-      <p class="font-bold uppercase text-stone-400 flex justify-between mb-8">wrapped — minggu ini <i
-          class="flex text-(--turmeric) mr-4 self-end fa-solid fa-share"></i></p>
-      <h4 class="font-accent font-semibold text-[24pt] ">9.2 Kg</h4>
-      <p class="text-stone-300">Terpilah dari rumah</p>
-      <div class="text-amber-800 bg-amber-100 mt-8 p-2 w-fit rounded-xl">Sang pemilah</div>
-    </div>
-  </section>
-  <section class="bg-(--turmeric) px-8 py-12 grid justify-items-center md:px-[8%] lg:px-[15%] space-y-2 ">
-    <h2 class="text-4xl text-center font-bold">Bersama kami langkah kecil yang konsisten sangat berarti.</h2>
-    <p class="text-pretty font-regular tracking-wide ">Langsung terhubung ke bank sampah terdekat di kotamu.</p>
-    <a href="/views/register.html" class="btn bg-(--ink) text-(--sand) mt-4 font-bold">Daftar sekarang</a>
-    <span class="text-stone-900 text-xs ">100% Gratis & tanpa ribet</span>
-  </section>
+        <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <p class="text-amber-800 font-accent text-4xl">02</p>
+          <h3 class="font-bold mt-2 text-xl">Temukan bank sampah terdekat</h3>
+          <p class="text-sm">Temukan bank sampah siap menerima sampahmu </p>
+        </div>
+
+        <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <p class="text-amber-800 font-accent text-4xl">03</p>
+          <h3 class="font-bold mt-2 text-xl">Rayakan progress mu</h3>
+          <p class="text-sm">Bagikan Eco-wrapped mingguanmu ke teman-teman </p>
+        </div>
+
+        <div class="bg-amber-100  p-4 rounded-md shadow-lg" data-aos="fade-up" data-aos-delay="400">
+          <p class="text-amber-800 font-accent text-4xl">04</p>
+          <h3 class="font-bold mt-2 text-xl">Claim voucher UMKM</h3>
+          <p class="text-sm">Tukar poinmu dengan voucher di UMKM mitra kami</p>
+        </div>
+      </div>
+    </section>
+
+  <!-- ================ JUMLAH DAN TESTIMONY ================ -->
+    <section class="p-8 bg-(--ink) text-(--sand) md:px-[8%] lg:px-[12%] min-h-96 items-center overflow-hidden">
+      <div class="w-full max-w-sm grid md:flex mb-8 justify-center mx-auto space-x-4">
+        <div class="py-4 w-sm rounded-md grid justify-center">
+          <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]" id="totalKg">0 </h3>
+          <p class=""> kg terpilah</p>
+        </div>
+
+        <div class="py-4 w-sm rounded-md grid justify-center">
+          <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]" id="totalUser">0 </h3>
+          <p class=""> pengguna aktif</p>
+        </div>
+
+        <div class="py-4 w-sm rounded-md grid justify-center">
+          <h3 class="text-(--turmeric) text-center font-accent  text-[24pt]" id="totalTpa">0</h3>
+          <p class="">Bank Sampah</p>
+        </div>
+      </div>
+
+      <!-- ================ TESTIMONY ================ -->
+      <div class="my-12">
+        <p class=" text-amber-400 tracking-[0.2rem] text-sm font-bold mb-4">Testimoni pengguna kami</p>
+        <h2 class="text-4xl font-extrabold">Apa yang mereka katakan tentang kami?</h2>
+        <div class="flex overflow-x-auto scrollbar-auto w-full py-2 gap-4 mt-4 snap-x snap-mandatory scroll-smooth lg:justify-center" data-aos="fade-left">
+
+          <div class="shrink-0 snap-start w-72 md:w-80 border rounded-md p-4 border-(--moss-light)">
+            <p>Dulu sampah dapur langsung buang ke TPA. Sekarang saya punya komposter dari galon bekas, dan tiap minggu
+               bisa setor 3 kg ke bank sampah dekat rumah. Anak-anak juga ikut belajar memilah.</p>
+            <h4 class="font-semibold text-center mt-2"> Ni Made Ayu - Denpasar Utara</h4>
+          </div>
+
+          <div class="shrink-0 snap-start w-72 md:w-80 border rounded-md p-4 border-(--moss-light)">
+            <p>Awalnya iseng ikut teman. Ternyata asik — tiap setor sampah dapat poin, dan poinnya bisa ditukar jadi
+               voucher kopi di UMKM dekat kampus. Sekarang malah nagih kalau seminggu nggak nyetor.</p>
+            <h4 class="font-semibold text-center mt-2">I Gede Arta - Denpasar Selatan</h4>
+          </div>
+
+          <div class="shrink-0 snap-start w-72 md:w-80 border rounded-md p-4 border-(--moss-light)">
+            <p>Yang paling saya suka dari Somia itu bank sampahnya jelas — ada jam operasional, jenis sampah yang
+               diterima, bahkan kontak pengelolanya. Jadi nggak perlu bingung lagi mau ke mana.</p>
+            <h4 class="font-semibold text-center mt-2">Wayan Sukerta - Kerambitan</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ================ ECO-WRAPPED ================ -->
+    <section
+      class="bg-stone-200 h-auto grid md:grid-cols-5 justify-items-evenly align-center gap-8 p-8 md:px-[8%] lg:px-[12%] min-h-96 items-center ">
+      <div class="p-4 grid col-span-3 " data-aos="fade-up">
+        <p class=" text-red-900 tracking-[0.2rem] mb-4 text-sm font-bold ">Eco-wrapped</p>
+        <h2 class="text-4xl font-extrabold">Pantau progress mingguan-mu.</h2>
+        <p class="text-sm text-pretty w-[70%]">Bagikan pencapaianmu dan ajak yang lain untuk ikut langkah kecil bersama </p>
+        <button class="bg-(--ink) w-fit text-(--sand) font-bold my-4"
+          onclick="window.open('/views/login.html', '_self')">Buat wrapped kamu
+        </button>
+      </div>
+
+      <div class="bg-(--ink) rounded-4xl p-8 text-(--sand) w-full col-span-2">
+        <p class="font-bold uppercase text-stone-400 flex justify-between mb-8">wrapped — minggu ini 
+          <i class="flex text-(--turmeric) mr-4 self-end fa-solid fa-share"></i>
+        </p>
+        <h4 class="font-accent font-semibold text-[24pt] ">9.2 Kg</h4>
+        <p class="text-stone-300">Terpilah dari rumah</p>
+        <div class="text-amber-800 bg-amber-100 mt-8 p-2 w-fit rounded-xl">Sang pemilah</div>
+      </div>
+    </section>
+
+  <!-- ================ CTA ================ -->
+    <section class="bg-(--turmeric) h-108 flex  justify-center items-center space-y-2 ">
+      <div class="flex flex-col  max-w-6xl mx-auto self-center align-center text-center px-4" data-aos="zoom-in"
+        data-aos-delay="200">
+        <h2 class="text-4xl text-center font-bold ">Bersama kami langkah kecil yang konsisten sangat berarti.</h2>
+        <p class="text-pretty font-regular tracking-wide ">Langsung terhubung ke bank sampah terdekat di kotamu.</p>
+        <a href="/views/register.html" class="btn bg-(--ink) mx-auto w-fit text-(--sand) mt-4 font-bold">Daftar
+          sekarang</a>
+        <p class="text-stone-900 text-xs my-2">100% Gratis & tanpa ribet</p>
+      </div>
+    </section>
+  
+  <!-- ================ FOOTER ================ -->
   <footer class="bg-(--ink) py-4 text-(--sand) grid w-full">
     <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
       <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
@@ -232,14 +250,36 @@
 
 
   <script src="/lib/aos/aos.js"></script>
-  <script>
-      AOS.init({
-        duration: 500,
-        behavior: 'smooth',
-        once: true
+  <script src="/js/script.js"></script>
+  <script src="/lib/gsap/gsap.min.js"></script>
+  <script src="/lib/gsap/TextPlugin.min.js"></script>
 
-      })
-      
+  <script>
+    //TYPED EFFECT
+    gsap.to('#hero-title', {
+      duration: 3,
+      text: {
+        value: "dampak yang besar.",
+        delimiter: ""
+      },
+    })
+
+    //COUNT UP NUMBER
+    let obj = { val1: 0, val2: 0, val3: 0 };
+    gsap.to(obj, {
+      duration: 1.5,
+      val1: 300,
+      val2: 125,
+      val3: 4,
+      ease: 'power2.out',
+      snap: { val1: 1, val2: 1, val3: 1 },
+      onUpdate: () => {
+        document.getElementById('totalKg').innerText = obj.val1 + '+';
+        document.getElementById('totalUser').innerText = obj.val2 + '+';
+        document.getElementById('totalTpa').innerText = obj.val3 + '+';
+      }
+    });
+
   </script>
 </body>
 
