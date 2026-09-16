@@ -35,7 +35,7 @@
         </div>
     </nav>
 
-    <main class="p-4 md:p-8 lg:px-[8%] xl:px-[12%] min-h-screen">
+    <main class="p-4 md:p-8 lg:px-[8%] xl:px-[12%]">
 
         <!-- ================ BREADCRUMB ================ -->
         <div class="mb-4 text-stone-500 text-sm" id="breadcrumb">
@@ -103,43 +103,43 @@
 
     <!-- ================FOOTER ================ -->
     <footer class="bg-(--ink) py-4 text-(--sand) grid w-full">
-        <div class="flex flex-col px-12 space-y-8 md:flex-row md:justify-around md:items-end md:space-y-0 h-fit">
-            <div class="flex flex-col max-w-sm space-y-2" id="identitas">
+        <div class="flex md:flex-row flex-col md:justify-around md:items-end space-y-8 md:space-y-0 px-12 h-fit">
+            <div class="flex flex-col space-y-2 max-w-sm" id="identitas">
                 <a href="/index.html" class="flex items-center">
                     <img  width="32" height="32" src="/assets/icon.svg"  class="flex self-center" alt="logo">
                     <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
                 </a>
                 <p class="pl-2 text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi reward </p>
                 <hr>
-                <p class="mt-4 text-xl font-bold">Jelajahi Somia</p>
-                <a href="/views/logged/dashboard.html" class="p-2 py-2 mt-4 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <p class="mt-4 font-bold text-xl">Jelajahi Somia</p>
+                <a href="/views/logged/dashboard.html" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 fa-solid fa-home fa-lg"></i> Beranda
                 </a>
-                <a href="/views/logged/voucher.html" class="p-2 py-2 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <a href="/views/logged/voucher.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 -rotate-45 fa-solid fa-ticket fa-lg"></i> Voucher
                 </a>
-                <a href="/artikel.html" class="p-2 py-2 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <a href="/artikel.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 fa-solid fa-newspaper fa-lg"></i> Artikel
                 </a>
-                <a href="/views/logged/peta.html" class="p-2 py-2 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <a href="/views/logged/peta.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 fa-solid fa-dumpster fa-lg"></i> Bank Sampah
                 </a>
             </div>
             <div class="flex flex-col">
-                <p class="text-xl font-bold">Ikuti kami di</p>
-                <a href="#" class="p-2 py-2 mt-4 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <p class="font-bold text-xl">Ikuti kami di</p>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 fa-brands fa-instagram fa-xl"></i> Instagram
                 </a>
 
-                <a href="#" class="p-2 py-2 mt-4 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 fa-brands fa-facebook fa-xl"></i> Facebook
                 </a>
 
-                <a href="#" class="p-2 py-2 mt-4 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 fa-brands fa-tiktok fa-xl"></i> Tiktok
                 </a>
 
-                <a href="#" class="p-2 py-2 mt-4 transition duration-500 ease-in-out rounded cursor-pointer hover:bg-emerald-900 h-fit">
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
                     <i class="mr-4 fa-brands fa-youtube fa-xl"></i> Youtube
                 </a>
             </div>
@@ -185,7 +185,7 @@
     </sidebar>
 
     <!-- ================ MODAL SIGNOUT ================ -->
-    <div id="modal-out" class="hidden z-50 fixed content-center inset-0 bg-stone-900/30 backdrop-blur-md"
+    <div id="modal-out" class="hidden z-50 fixed inset-0 content-center bg-stone-900/30 backdrop-blur-md"
         onclick="a.toggleModal(modalSignOut)">
         <div id="modal" class="z-[51] relative self-center grid bg-white mx-auto p-4 rounded-lg w-sm"
             onclick="event.stopPropagation();">

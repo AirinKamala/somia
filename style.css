@@ -57,7 +57,7 @@ button {
     overflow: hidden;
     border-radius: 12px;
     width: 100%;
-    background-color: var(--moss);
+    background-color: white;
     color: white;
     z-index: 9;
     height: 12rem;
