@@ -17,31 +17,31 @@
 </head>
 
 <body>
-    <main class="flex max-w-6xl min-h-screen p-6 mx-auto md:p-12">
-        <div data-aos="fade-up" class="grid items-center self-center mx-auto overflow-hidden bg-white shadow-xl md:grid-cols-2 rounded-xl md:w-full">
+    <main class="flex mx-auto p-6 md:p-12 max-w-6xl min-h-screen">
+        <div data-aos="fade-up" class="items-center self-center grid md:grid-cols-2 bg-white shadow-xl mx-auto rounded-xl md:w-full overflow-hidden">
             <!-- ================ FORM ================ -->
             <div id="form-login" class="bg-(--ink) text-(--sand) py-24 px-8 h-full lg:px-12 grid max-w-md md:max-w-full ">
                 <div>
-                    <h1 class="text-xl font-bold">MASUK</h1>
+                    <h1 class="font-bold text-xl">MASUK</h1>
                     <p class="mt-2 font-semibold text-white/70 text-xs tracking-[.1rem]">Silahkan masuk dengan akun Somia.</p>
                 </div>
-                <form class="mt-8 space-y-4">
-                    <label for="email" class="text-sm font-semibold tracking-wider">Email</label>
+                <form class="space-y-4 mt-8">
+                    <label for="email" class="font-semibold text-sm tracking-wider">Email</label>
                     <input type="email"
-                        class="w-full px-4 py-2 mt-1 text-sm text-black bg-white rounded focus:shadow-lg focus:shadow-white/40"
+                        class="bg-white focus:shadow-lg focus:shadow-white/40 mt-1 px-4 py-2 rounded w-full text-black text-sm"
                         placeholder="Masukkan email anda." required id="email">
-                    <label for="password" class="text-sm font-semibold tracking-wider">Password</label>
+                    <label for="password" class="font-semibold text-sm tracking-wider">Password</label>
                     <input type="password"
-                        class="w-full px-4 py-2 mt-1 text-sm text-black bg-white rounded focus:shadow-lg focus:shadow-white/40"
+                        class="bg-white focus:shadow-lg focus:shadow-white/40 mt-1 px-4 py-2 rounded w-full text-black text-sm"
                         placeholder="Masukkan password anda." required id="password">
-                    <p id="error-msg" class="text-xs font-semibold text-red-400"></p>
+                    <p id="error-msg" class="font-semibold text-red-400 text-xs"></p>
 
-                    <div class="flex flex-wrap items-center justify-between text-sm font-semibold">
+                    <div class="flex flex-wrap justify-between items-center font-semibold text-sm">
                         <label><input type="checkbox" name=""> Remember me</label>
                         <p class="text-amber-400">Lupa password?</p>
                     </div>
                 </form>
-                <div class="grid self-end h-fit">
+                <div class="self-end grid h-fit">
                     <button type="button" class=" w-full bg-(--moss) font-bold h-fit tracking-widest" id="submit-btn">Masuk</button>
                     <p class="text-sm text-center text-pretty">Belum memiliki akun? 
                         <a class="text-(--turmeric) font-semibold underline" href="/views/register.html">Daftar disini.</a>
@@ -50,8 +50,8 @@
             </div>
             
             <!-- ================ IMAGE ================ -->
-            <div id="form-img" class="hidden px-4 py-24 md:block">
-                <div class="flex"><img src="/assets/icon.svg" alt="" class="flex self-center" alt="logo">
+            <div id="form-img" class="hidden md:block px-4 py-24">
+                <div class="flex"><img  width="32"  height="32" src="/assets/icon.svg" alt="" class="flex self-center" alt="logo">
                     <p class="ml-2 font-accent font-bold text-[20pt] text-amber-500">Somia</p>
                 </div>
                 <img width="400" height="300" src="/assets/login.svg" alt="">

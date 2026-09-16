@@ -5,147 +5,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jelajahi artikel dan panduan DIY Somia: cara memilah sampah, membuat kompos, dan mengubah barang bekas jadi karya bermanfaat.">
-    <script src="/js/tl.js"></script>
+    <script src="/js/tailwind.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/lib/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="/lib/aos/aos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
-        <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x-icon">
     <title>Pojok Artikel - Somia</title>
 </head>
 
-<body class="">
-    <nav
-        class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
+<body>
+    <!-- ================ NAVIGASI ================ -->
+    <nav class="top-0 z-[999] sticky flex justify-between items-center bg-white shadow-lg px-8 py-2 rounded-b-lg w-full h-fit">
         <a href="/index.html" class="flex items-center">
-            <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-            <p class="ml-2 text-amber-600 font-bold font-accent text-[20pt]">Somia</p>
+            <img width="32"  height="32" src="/assets/icon.svg" alt="" class="flex self-center" alt="logo">
+            <p class="ml-2 font-accent font-bold text-[20pt] text-amber-600">Somia</p>
         </a>
-        <div class="gap-4 md:w-64 md:justify-around flex h-12" id="wrap-auth">
-            <a href="/views/register.html"><button
-                    class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
+        <div class="flex md:justify-around gap-4 md:w-64 h-12" id="wrap-auth">
+            <a href="/views/register.html">
+                <button class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button>
+            </a>
             <a href="/views/login.html"><button class="md:w-32 border text-(--moss)">Masuk</button></a>
         </div>
     </nav>
-    <div id="container-article" class="w-full bg-(--sand) min-h-screen p-6 md:p-12 min-h-screen max-w-6xl mx-auto ">
-        <div class="swiper mySwiper mb-8 !h-96">
-            <div class="swiper-wrapper w-full ">
-                <div class="swiper-slide overflow-hidden rounded-2xl">
-                    <div class="swipper-zoom-container overflow-hidden w-full h-full bg-white"><img
-                            src="/assets/artikel/diy1.webp" class="mx-auto block object-cover h-full w-full" alt="">
+
+    <div id="container-article" class="w-full bg-(--sand) p-6 md:p-12 min-h-screen max-w-6xl mx-auto ">
+        <!-- ================ CAROUSEL ================ -->
+        <div class="mb-8 !h-96 swiper mySwiper" data-aos="fade-down">
+            <div class="w-full swiper-wrapper">
+                <div class="rounded-2xl overflow-hidden swiper-slide">
+                    <div class="bg-white w-full h-full overflow-hidden swipper-zoom-container">
+                        <img src="/assets/artikel/diy1.webp" class="block mx-auto w-full h-full object-cover" alt="">
                     </div>
                 </div>
-                <div class="swiper-slide overflow-hidden rounded-2xl ">
-                    <div class="swipper-zoom-container overflow-hidden w-full h-full bg-white"><img
-                            src="/assets/artikel/diy2.webp" class="mx-auto block object-cover h-full w-full " alt="">
+                <div class="rounded-2xl overflow-hidden swiper-slide">
+                    <div class="bg-white w-full h-full overflow-hidden swipper-zoom-container">
+                        <img src="/assets/artikel/diy2.webp" class="block mx-auto w-full h-full object-cover" alt="">
                     </div>
                 </div>
-                <div class="swiper-slide overflow-hidden rounded-2xl ">
-                    <div class="swipper-zoom-container overflow-hidden w-full h-full bg-white"><img
-                            src="/assets/artikel/diy3.webp" class="mx-auto block object-cover h-full w-full " alt="">
+                <div class="rounded-2xl overflow-hidden swiper-slide">
+                    <div class="bg-white w-full h-full overflow-hidden swipper-zoom-container">
+                        <img src="/assets/artikel/diy3.webp" class="block mx-auto w-full h-full object-cover" alt="">
                     </div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
-
-        <div id="container-cards" class="swiper h-64">
-            <div class=" swiper-wrapper gap-4" id="card-recomend">
+        
+        <!-- ================ RECOMENDATION ARTICLE ================ -->
+        <div data-aos="fade-down">
+            <h2 class="my-2 font-bold text-xl">Rekomendasi artikel</h2>
+             <div class="h-64 swiper" id="container-cards">
+                <div class="gap-4 swiper-wrapper" id="card-recomend"></div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
 
-        <section class="flex flex-col md:flex-row mt-8 gap-8">
-            <div id="drawers" class="bg-white h-fit md:shrink-0 rounded-xl px-4 py-8">
-                <h2 class="font-bold text-lg m-2">Filters</h2>
+        <section class="flex md:flex-row flex-col gap-8 mt-8">
+        <!-- ================ FILTER SECTION ================ -->
+            <div id="filter-container" class="bg-white px-4 py-8 rounded-xl h-fit md:shrink-0" data-aos="fade-left">
+                <h2 class="m-2 font-bold text-lg">Filters</h2>
                 <div class="relative w-full">
-                    <input class="border rounded-2xl p-2 pr-10 w-full" placeholder="Cari...">
-                    <i class="fa-solid fa-search absolute right-3 top-1/2 -translate-y-1/2 text-stone-400"></i>
+                    <input class="p-2 pr-10 border rounded-2xl w-full" placeholder="Cari..." id="searchbar">
+                    <i class="top-1/2 right-3 absolute text-stone-400 -translate-y-1/2 fa-solid fa-search"></i>
                 </div>
-                <div id="result" class=" grid mt-4 space-y-4">
-                    <div class="">
-                        <p class="font-semibold mb-2">Berdasarkan waktu</p>
-                        <label class="cursor-pointer" for="asc"><input checked type="radio" name="order" id="asc"
-                                class="mr-2 w-4 h-4 accent-(--moss)  " />
-                            Terbaru</label> <br>
+                <div id="filter" class="space-y-4 grid mt-4">
+                    <div>
+                        <p class="mb-2 font-semibold">Berdasarkan waktu</p>
+                        <label class="cursor-pointer" for="asc">
+                            <input checked type="radio" name="order" id="asc" class="sort-radio mr-2 w-4 h-4 accent-(--moss) " />
+                            Terbaru
+                        </label> 
+                        <br>
                         <label class="cursor-pointer" for="desc">
-                            <input type="radio" name="order" id="desc" class="mr-2 w-4 h-4 accent-(--moss)  " />
-                            Terlama</label>
+                            <input type="radio" name="order" id="desc" class="sort-radio mr-2 w-4 h-4 accent-(--moss)  " />
+                            Terlama
+                        </label>
                     </div>
-                    <div class="">
-                        <p class="font-semibold mb-2">Berdasarkan kategori</p>
-                        <label class="cursor-pointer" for="">
-                            <input type="checkbox" name="" id=""
-                                class="mr-2 w-4 h-4 accent-(--moss)  " />Upacara</label> <br>
-                        <label class="cursor-pointer" for="">
-                            <input type="checkbox" name="" id="" class="mr-2 w-4 h-4 accent-(--moss)  " />Rumah
-                            tangga</label> <br>
-                        <label class="cursor-pointer" for="">
-                            <input type="checkbox" name="" id=""
-                                class="mr-2 w-4 h-4 accent-(--moss)  " />Pertanian</label>
+                    <div>
+                        <p class="mb-2 font-semibold">Berdasarkan kategori</p>
+                        <label class="cursor-pointer" for="organik">
+                            <input type="checkbox" name="organik" id="organik"
+                                class="mr-2 w-4 h-4 accent-(--moss)  " />Organik</label> <br>
+                        <label class="cursor-pointer" for="berkebun">
+                            <input type="checkbox" name="berkebun" id="berkebun"
+                                class="mr-2 w-4 h-4 accent-(--moss)  " />Berkebun</label> <br>
+                        <label class="cursor-pointer" for="kerajinan">
+                            <input type="checkbox" name="kerajinan" id="kerajinan"
+                                class="mr-2 w-4 h-4 accent-(--moss)  " />Kerajinan</label> <br>
+                        <label class="cursor-pointer" for="daurulang">
+                            <input type="checkbox" name="daurulang" id="daurulang"
+                                class="mr-2 w-4 h-4 accent-(--moss)  " />Daur ulang</label>
                     </div>
                 </div>
-                <button class="bg-(--turmeric) w-full font-bold mt-4  mx-auto">Terapkan filter</button>
+                <button class="bg-(--turmeric) w-full font-bold mt-4  mx-auto" id="filter-btn" onclick="doFilter()">Terapkan filter</button>
             </div>
-
-            <div id="artikel-wrap" class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-4">
-            </div>
+            
+            <!-- ================ ARTICLE ================ -->
+            <div id="artikel-wrap" class="gap-4 grid lg:grid-cols-2 w-full"></div>
         </section>
     </div>
+    
+    <!-- ================ FOOTER ================ -->
     <footer class="bg-(--ink) py-4 text-(--sand) grid w-full">
-        <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
-            <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
+        <div class="flex md:flex-row flex-col md:justify-around md:items-end space-y-8 md:space-y-0 px-12 h-fit">
+            <div class="flex flex-col space-y-2 max-w-sm" id="identitas">
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-                    <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+                    <img  width="32" height="32" src="/assets/icon.svg"  class="flex self-center" alt="logo">
+                    <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
                 </a>
-                <p class="pl-2 text-pretty ">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
-                    jadi
-                    reward </p>
+                <p class="pl-2 text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi reward </p>
                 <hr>
-                <a href="/views/logged/dashboard.html"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
-                <a href="/views/logged/voucher.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
-                <a href="/artikel.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
-                <a href="/views/logged/peta.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
-
+                <p class="mt-4 font-bold text-xl">Jelajahi Somia</p>
+                <a href="/views/logged/dashboard.html" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-home fa-lg"></i> Beranda
+                </a>
+                <a href="/views/logged/voucher.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 -rotate-45 fa-solid fa-ticket fa-lg"></i> Voucher
+                </a>
+                <a href="/artikel.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-newspaper fa-lg"></i> Artikel
+                </a>
+                <a href="/views/logged/peta.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-dumpster fa-lg"></i> Bank Sampah
+                </a>
             </div>
-            <div class="flex flex-col ">
-                <h4 class="text-xl font-bold">Ikuti kami di</h4>
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-instagram fa-xl mr-4"></i> Instagram</a>
+            <div class="flex flex-col">
+                <p class="font-bold text-xl">Ikuti kami di</p>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-instagram fa-xl"></i> Instagram
+                </a>
 
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-facebook fa-xl mr-4"></i> Facebook</a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-facebook fa-xl"></i> Facebook
+                </a>
 
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-tiktok fa-xl mr-4"></i> Tiktok</a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-tiktok fa-xl"></i> Tiktok
+                </a>
 
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-youtube fa-xl mr-4"></i> Youtube</a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-youtube fa-xl"></i> Youtube
+                </a>
             </div>
         </div>
-        <p class="text-center mt-4">Somia &copy; 2026.All rights reserved.</p>
+        <p class="mt-4 text-center">Somia &copy; 2026.All rights reserved.</p>
     </footer>
+    <script src="/js/script.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/lib/aos/aos.js"></script>
     <script src="/lib/swiper/swiper-bundle.js"></script>
     <script>
-
-        let swiper = new Swiper('.mySwiper', {
+        // INISIALISASI VARIABEL
+        const searchbar = document.getElementById('searchbar')
+        const sortRadio = document.querySelectorAll('input[name="order"]')
+        const category = document.querySelectorAll('#filter input[type="checkbox"]')
+        const filterBtn = document.getElementById('filter-btn')
+        let swiper = new Swiper('.mySwiper', { //DEKLARASI SWIPER UNTUK CAROUSEL
             effect: 'fade',
             loop: true,
             autoplay: {
@@ -157,39 +176,83 @@
                 el: '.swiper-pagination'
             }
         })
-
-
-        const renderAllCard = () => {
-            return inven.articles.map(a => {
-                return `
-            <div onclick="window.open('/artikel-detail.html?q=${a.id}', '_self')" class="card">
-                    <img src="${a.thumbnail}">
-                    <div class="card-text">
-                        <h4 class="md:text-base font-extrabold text-sm ">${a.title}</h4>
-                        <p class="text-pretty line-clamp-1 opacity-90 text-xs md:text-sm">${a.excerpt}</p>
-                    </div>
-                </div>
-            `
+        
+        let cardSwiper = new Swiper('#container-cards', { // DEKLARASI SWIPER UNTUK RECOMEND CARD
+            slidesPerView: 2,
+            grabCursor: true
+        })
+        // RENDER CARD BERDASARKAN PARAMS
+        const renderAllCard = (i = 'all') => {
+            const data = i === 'all' ? inven.articles.reverse() : i 
+            return data.map((a, index) => {
+                return `<div onclick="window.open('/artikel-detail.html?q=${a.id}', '_self')" class="card" data-aos="fade-up" data-aos-delay="${index}00" >
+                            <img width="400" height="300" src="${a.thumbnail}" loading="lazy">
+                            <div class="card-text">
+                                <h4 class="font-extrabold text-sm md:text-base line-clamp-1">${a.title}</h4>
+                                <p class="opacity-90 text-xs md:text-sm line-clamp-1 text-pretty">${a.excerpt}</p>
+                            </div>
+                        </div> `
             }).join('')
         }
 
-        const renderCardRecomend = () => {
-            let result = inven.articles.slice(3,6)
+        const renderCardRecomend = () => { //RENDER RECOMEND CARD
+            let result = inven.articles.slice(3, 6)
             return result.map(f => `
-                   <div class="card swiper-slide cursor-pointer" onclick="window.open('/artikel-detail.html?q=${f.id}', '_self')" >
-                    <img class="" src="${f.thumbnail}" alt="">
-                    <h3 class="md:text-base font-semibold">
+                <div class="card swiper-slide" onclick="window.open('/artikel-detail.html?q=${f.id}', '_self')" >
+                    <img width="400" height="300" src="${f.thumbnail}" alt="">
+                    <h3 class="font-semibold md:text-base">
                     ${f.title}</h3>
-                </div>
-                `).join('')
+                </div>`)
+                .join('')
         }
-
+        
+        // MENJALANKAN FUNGSI RENDER
         document.getElementById("card-recomend").innerHTML = renderCardRecomend()
         document.getElementById("artikel-wrap").innerHTML = renderAllCard()
-        let cardSwiper = new Swiper('#container-cards', {
-            slidesPerView: 2
+        
+        const getFilter = () => { //MENDAPATKAN NILAI DARI FILTER
+            const query = searchbar.value.toLowerCase()
+            const sort = document.querySelector('input[name="order"]:checked')?.id || 'asc'
+            const selectedCat = []
+            category.forEach(cb => {
+                if (cb.checked) {
+                    selectedCat.push(cb.id)
+                }
+            })
+            return {
+                q: query,
+                sortby: sort,
+                categories: selectedCat
+            }
+        }
+        
+        const doFilter = () => { //FILTER BERDASARKAN VALUE getFilter()
+            const filter = getFilter()
+            let myData = inven.articles
+            const sorted = myData.sort((a, b) => { //SORT BERDASARAKAN TANGGAL
+                const dateA = new Date(a.date)
+                const dateB = new Date(b.date)
+                if (filter.sortby === 'desc') return dateA - dateB
+                else return dateB - dateA
+            })
+            
+            const searchResult = filter.q ? sorted.filter(a => a.title.toLowerCase().includes(filter.q.toLowerCase())) : sorted; //SORT BY QUERY
+            const resultCategory = filter.categories.length > 0 ? searchResult.filter(ar => filter.categories.includes(ar.category.toLowerCase())) : searchResult //SORT BY CATEGORIES
+            
+            let notFound = `<p class="font-semibold text-stone-500 text-2xl text-wrap">Artikel yang anda cari tidak ditemukan</p>` //RETURN notFound JIKA resCategory KOSONG
+            document.getElementById("artikel-wrap").innerHTML = resultCategory.length !== 0 ? renderAllCard(resultCategory ): notFound // APLIKASIKAN HASIL FILTER
+        }
+
+        let searchTimeout;        
+        searchbar.addEventListener('input', e =>{ //FUNCTION doFilter() DIJALANKAN KETIKA searchbar TIDAK INPUT SELAMA .5s
+            clearTimeout(searchTimeout)
+            searchTimeout = setTimeout(doFilter, 500)
         })
+        //MENJALANKAN doFilter() JIKA ADA PERUBAHAN PADA RADIO/CHECKBOX INPUT
+        sortRadio.forEach(el => el.addEventListener("change", doFilter)) 
+        category.forEach(el => el.addEventListener("change", doFilter))
     </script>
 </body>
 
+</html>
 </html>

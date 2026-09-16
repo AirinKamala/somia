@@ -1,202 +1,198 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tukarkan Eco-Poin kamu dengan voucher menarik dari UMKM mitra Somia.">
-
     <title>Voucher - Somia</title>
-
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
-    <script src="/js/tl.js"></script>
-
+    <script src="/js/tailwind.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <nav
-        class="w-full  bg-(--ink) text-(--sand) z-[49] sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
-        <div class="flex gap-4 items-center">
-            <i class="fa-solid fa-bars fa-xl text-white" onclick="a.toggleModal(sidebar)"></i>
+     <!-- ================ NAVIGASI ================ -->
+    <nav class="w-full bg-(--ink) text-(--sand) z-40 sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="px-2" onclick="a.toggleModal(sidebar)" onclick=""><i class="text-white fa-solid fa-bars fa-xl" ></i></div>
             <a href="/index.html" class="flex items-center">
-                <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-                <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+                <img  width="32"  height="32" src="/assets/icon.svg" class="flex self-center" alt="logo">
+                <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
             </a>
         </div>
-        <div class=" h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer"
-            onclick="a.toggleModal(modalSignOut)">
-            <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+        <div class="hover:bg-emerald-900 p-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer" onclick="a.toggleModal(modalSignOut)">
+            <i class="mr-4 fa-solid fa-sign-out fa-lg"></i>Keluar
         </div>
     </nav>
-    <main class="p-6 md:p-12 min-h-screen max-w-6xl mx-auto space-y-4">
-        <div
-            class="bg-white rounded-2xl w-full p-6 shadow-sm flex flex-col-reverse md:flex-row items-center gap-6 border border-stone-200">
-            <div class="flex-1 w-full space-y-4">
-                <!-- konten utama -->
+    <main class="space-y-4 mx-auto p-6 md:p-12 max-w-6xl min-h-screen">
+        <div class="flex md:flex-row flex-col-reverse items-center gap-6 bg-white shadow-sm p-6 border border-stone-200 rounded-2xl w-full">
+            <!-- ================ PROFILE ================ -->
+            <div class="flex-1 space-y-4 w-full">
+                 <!-- ================ PROFILE INFO ================ -->
                 <div>
                     <p class="text-xs uppercase tracking-wider text-(--stone) font-semibold">Total Eco-Poin Anda</p>
-                    <h1 class="text-3xl font-black text-(--ink) mt-0.5" id="point">400 <span
-                            class="text-lg font-medium text-stone-500">poin</span></h1>
+                    <h1 class="text-3xl font-black text-(--ink) mt-0.5" id="point">400 
+                        <span class="font-medium text-stone-500 text-lg">poin</span>
+                    </h1>
                 </div>
 
-                <!-- Progress bar  -->
+                 <!-- ================ PROFILE PROGRESS BAR ================ -->
                 <div class="bg-(--moss) text-white rounded-xl p-5 flex flex-col gap-3 shadow-inner">
                     <div class="flex justify-between items-end">
                         <div>
-                            <p class="text-[10px] uppercase tracking-wider text-emerald-200 font-bold">Peringkat Level
-                            </p>
-                            <strong class="text-lg font-bold tracking-wide" id="badge">Sang Pemilah</strong>
+                            <p class="font-bold text-[10px] text-emerald-200 uppercase tracking-wider">Peringkat Level </p>
+                            <strong class="font-bold text-lg tracking-wide" id="badge">Sang Pemilah</strong>
                         </div>
-                        <div class="text-right text-sm font-medium text-emerald-100">
-                            <span class="text-white font-bold text-base">400</span> / 450 Poin
+                        <div class="font-medium text-emerald-100 text-sm text-right">
+                            <span class="font-bold text-white text-base">400</span> / 450 Poin
                         </div>
                     </div>
                     <div class="w-full bg-(--ink)/30 rounded-full h-3 overflow-hidden p-[2px]">
-                        <div class="bg-(--turmeric) h-full rounded-full transition-all duration-500" style="width: 88%">
-                        </div>
+                        <div class="bg-(--turmeric) h-full rounded-full transition-all duration-500" style="width: 88%"></div>
                     </div>
-                    <div class="flex justify-between text-xs font-semibold text-emerald-100/80">
+                    <div class="flex justify-between font-semibold text-emerald-100/80 text-xs">
                         <span>Lvl 2 (200 pts)</span>
                         <span>Lvl 3 (450 pts)</span>
                     </div>
                 </div>
             </div>
-            <!-- Profile -->
-            <div class="flex-shrink-0 flex justify-center">
+            
+            <!-- ================ PROFILE PHOTO ================ -->
+            <div class="flex flex-shrink-0 justify-center">
                 <div class="relative p-1 bg-(--moss) rounded-full shadow-md">
-                    <img class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-stone-50 object-cover"
-                        src="/assets/avatar.png" alt="Avatar">
+                    <img width="400" height="300"  alt="Avatar"
+                        class="bg-stone-50 rounded-full w-24 md:w-28 h-24 md:h-28 object-cover" src="/assets/avatar.png">
                 </div>
             </div>
         </div>
 
-
-        <div class="flex overflow-x-auto w-full gap-4 py-4 ">
+        <!-- ================ FILTER CHIP ================ -->
+        <div class="flex gap-4 py-4 w-full overflow-x-auto">
             <button onclick="applyFilter('Semua')" data-filter='Semua'
-                class="filter-chip bg-(--ink) text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm ">Semua</button>
+                class="filter-chip bg-(--ink) text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm whitespace-nowrap transition">Semua
+            </button>
             <button onclick="applyFilter('UMKM')" data-filter='UMKM'
-                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">UMKM</button>
+                class="filter-chip bg-white text-(--ink) font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200 whitespace-nowrap hover:border-(--moss) transition">UMKM
+            </button>
             <button onclick="applyFilter('Pulsa')" data-filter='Pulsa'
-                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Pulsa</button>
+                class="filter-chip bg-white text-(--ink) font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200 whitespace-nowrap hover:border-(--moss) transition">Pulsa
+            </button>
             <button onclick="applyFilter('Voucher')" data-filter='Voucher'
-                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Voucher</button>
+                class="filter-chip bg-white text-(--ink) font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200 whitespace-nowrap hover:border-(--moss) transition">Voucher
+            </button>
             <button onclick="applyFilter('Lainnya')" data-filter='Lainnya'
-                class="filter-chip bg-white font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200">Lainnya</button>
+                class="filter-chip bg-white text-(--ink) font-semibold text-sm px-5 py-2.5 rounded-xl border border-stone-200 whitespace-nowrap hover:border-(--moss) transition">Lainnya
+            </button>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full justify-center md:justify-start mt-4"
-            id="container"></div>
+        <!-- ================ RESULT ================ -->
+        <div class="justify-center md:justify-start gap-6 grid md:grid-cols-2 lg:grid-cols-3 mt-4 w-full" id="container"></div>
 
         </div>
     </main>
+    <!-- ================FOOTER ================ -->
     <footer class="bg-(--ink) py-4 text-(--sand) grid w-full">
-        <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
-            <div class="flex flex-col space-y-2 max-w-sm  " id="identitas">
+        <div class="flex md:flex-row flex-col md:justify-around md:items-end space-y-8 md:space-y-0 px-12 h-fit">
+            <div class="flex flex-col space-y-2 max-w-sm" id="identitas">
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-                    <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+                    <img  width="32" height="32" src="/assets/icon.svg"  class="flex self-center" alt="logo">
+                    <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
                 </a>
-                <p class="pl-2 text-pretty ">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
-                    jadi
-                    reward </p>
+                <p class="pl-2 text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi reward </p>
                 <hr>
-                <a href="/views/logged/dashboard.html"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
-                <a href="/views/logged/voucher.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
-                <a href="/artikel.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
-                <a href="/views/logged/peta.html"
-                    class="h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
-
+                <p class="mt-4 font-bold text-xl">Jelajahi Somia</p>
+                <a href="/views/logged/dashboard.html" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-home fa-lg"></i> Beranda
+                </a>
+                <a href="/views/logged/voucher.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 -rotate-45 fa-solid fa-ticket fa-lg"></i> Voucher
+                </a>
+                <a href="/artikel.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-newspaper fa-lg"></i> Artikel
+                </a>
+                <a href="/views/logged/peta.html" class="hover:bg-emerald-900 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-dumpster fa-lg"></i> Bank Sampah
+                </a>
             </div>
-            <div class="flex flex-col ">
-                <h4 class="text-xl font-bold">Ikuti kami di</h4>
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-instagram fa-xl mr-4"></i> Instagram</a>
+            <div class="flex flex-col">
+                <p class="font-bold text-xl">Ikuti kami di</p>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-instagram fa-xl"></i> Instagram
+                </a>
 
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-facebook fa-xl mr-4"></i> Facebook</a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-facebook fa-xl"></i> Facebook
+                </a>
 
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-tiktok fa-xl mr-4"></i> Tiktok</a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-tiktok fa-xl"></i> Tiktok
+                </a>
 
-                <a href="#"
-                    class="h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-youtube fa-xl mr-4"></i> Youtube</a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-youtube fa-xl"></i> Youtube
+                </a>
             </div>
         </div>
-        <p class="text-center mt-4">Somia &copy; 2026.All rights reserved.</p>
+        <p class="mt-4 text-center">Somia &copy; 2026.All rights reserved.</p>
     </footer>
 
-    <div id="sidebar"
-        class="bg-stone-900/30 backdrop-blur-md z-[49] fixed inset-0 flex items-center justify-center hidden"
-        onclick="a.toggleModal(sidebar)">
-        <sidebar class="left-0 bg-(--ink) absolute  h-screen z-[55]  w-sm text-(--sand) flex flex-col py-2 px-4 "
+    <!-- ================ SIDEBAR ================ -->    
+    <sidebar id="sidebar" class="hidden z-[49] fixed inset-0 justify-center items-center bg-stone-900/30 backdrop-blur-md" onclick="a.toggleModal(sidebar)">
+        <div class="left-0 bg-(--ink) absolute  h-screen z-[55]  w-sm text-(--sand) flex flex-col py-2 px-4 "
             onclick="event.stopPropagation()">
-            <div onclick="window.open('/', '_self')"
-                class="flex items-center cursor-pointer border-b-2 border-white/20">
-                <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-                <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+            <div onclick="window.open('/', '_self')" class="flex items-center border-white/20 border-b-2 cursor-pointer">
+                <img src="/assets/icon.svg"  class="flex self-center" alt="logo" width="32" height="32">
+                <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
             </div>
-            <div class="grid gap-4">
-                <a href="/views/logged/dashboard.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
-                <a href="/views/logged/voucher.html"
-                    class="w-full h-fit py-2 bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
-                <a href="/artikel.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
-                <a href="/views/logged/peta.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
+            <div class="gap-4 grid">
+                <a href="/views/logged/dashboard.html" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-home fa-lg"></i> Beranda
+                </a>
+                <a href="/views/logged/voucher.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 -rotate-45 fa-solid fa-ticket fa-lg"></i> Voucher
+                </a>
+                <a href="/artikel.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-newspaper fa-lg"></i> Artikel
+                </a>
+                <a href="/views/logged/peta.html" class="bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-dumpster fa-lg"></i> Bank Sampah
+                </a>
             </div>
-            <div onclick=" a.toggleModal(modalSignOut)"
-                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out mt-auto border-t cursor-pointer">
-                <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+            <div onclick=" a.toggleModal(modalSignOut)" class="hover:bg-emerald-900 mt-auto p-2 py-2 border-t rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                <i class="mr-4 fa-solid fa-sign-out fa-lg"></i>Keluar
             </div>
+        </div>
+    </sidebar>
 
-        </sidebar>
-    </div>
-
-
-    <div id="modal-out" class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex hidden"
-        onclick="a.toggleModal(modalSignOut)">
-        <div id="modal" class="relative z-[51] bg-white rounded-lg p-4 w-sm grid mx-auto self-center"
-            onclick="event.stopPropagation();">
+    <!-- ================ MODAL SIGNOUT ================ -->    
+    <div id="modal-out" class="hidden z-50 fixed inset-0 content-center bg-stone-900/30 backdrop-blur-md" onclick="a.toggleModal(modalSignOut)">
+        <div id="modal" class="z-[51] relative self-center grid bg-white mx-auto p-4 rounded-lg w-sm" onclick="event.stopPropagation();">
             <h2 class="font-bold text-2xl">Anda yakin untuk keluar dari akun ini?</h2>
-            <div class="w-full grid md:grid-cols-2 mt-8 gap-4">
-                <button class="text-(--moss) border font-semibold "
-                    onclick="modalSignOut.classList.add('hidden')">Tidak</button>
+            <div class="gap-4 grid md:grid-cols-2 mt-8 w-full">
+                <button class="text-(--moss) border font-semibold" onclick="modalSignOut.classList.add('hidden')">Tidak</button>
                 <button class="bg-(--moss) font-semibold text-white" onclick="a.signout()">Ya, saya yakin.</button>
             </div>
         </div>
     </div>
+
+
     <script src="/js/main.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/lib/aos/aos.js"></script>
     <script>
+        // INISIALISASI VARIABEL
         const modalSignOut = document.getElementById('modal-out')
+        const modalVoucher = document.getElementById('modal-voucher')
         const sidebar = document.getElementById('sidebar')
+        //SET VALUE KE MASING-MASING ID
         document.getElementById('point').innerHTML = `${inven.user.point} <span class="text-lg">point</span>`
         document.getElementById('badge').innerHTML = inven.user.badge
 
-        const applyFilter = (category) => {
+        const applyFilter = (category) => {//FUNCTION FILTER VOUCHER
             currentFilter = category;
             document.querySelectorAll('.filter-chip').forEach(btn => {
                 const isActive = btn.dataset.filter === category;
@@ -208,34 +204,35 @@
             });
             renderVouchers(category);
         };
-        const renderCard = (item) => {
-            return ` <div class="grid col-span-1 bg-white rounded p-4 rounded-2xl overflow-hidden gap-y-4">
-                    <div class="flex">
-                    <div class="${item.bg} rounded flex items-center justify-center w-12 h-12">
-                    <i class="${item.image} fa-xl text-white"></i></div>
-                    <p class="font-bold ml-4">
-                        <span class="text-(--stone) text-sm font-semibold my-2">${item.category}</span>
-                        <br>
-                        ${item.title}
-                    </p>
-                </div>
-                    <div class="flex border-stone-900/40 items-center border-t pt-4 justify-between">
-                        <div class="text-left text-(--turmeric) font-semibold text-lg pb-2"><i class="fa-solid fa-star"></i>${item.point}</div>
-                        <div
-                            class="justify-center font-semibold text-white rounded-lg h-8 w-24 items-center flex hover:bg-emerald-800 bg-emerald-700 ">
-                            Claim</div>
-                    </div>
-                </div>
-                `
+
+        const renderCard = (item) => { //FUNCTION RENDER CARD VOUCHER
+            return ` <div class="gap-y-4 grid col-span-1 bg-white p-4 rounded rounded-2xl overflow-hidden">
+                        <div class="flex">
+                            <div class="${item.bg} rounded flex items-center justify-center w-12 h-12">
+                                <i class="${item.image} fa-xl text-white"></i></div>
+                                <p class="ml-4 font-bold">
+                                    <span class="text-(--stone) text-sm font-semibold my-2">${item.category}</span>
+                                    <br> ${item.title}
+                                </p>
+                            </div>
+                        <div class="flex justify-between items-center pt-4 border-stone-900/40 border-t">
+                            <div class="text-left text-(--turmeric) font-semibold text-lg pb-2">
+                                <i class="fa-solid fa-star"></i>${item.point}
+                            </div>
+                            <div onclick="claim(${item.point})" class="flex justify-center items-center bg-emerald-700 hover:bg-emerald-800 rounded-lg w-24 h-8 font-semibold text-white">
+                                Claim
+                            </div>
+                        </div>
+                    </div>`
         }
-        function renderVouchers(filter = 'Semua') {
+
+        function renderVouchers(filter = 'Semua') { //RENDER VOUCHER YANG SUDAH DIFILTER
             const list = filter === 'Semua' ? inven.voucher : inven.voucher.filter(v => v.category === filter)
             const container = document.getElementById('container')
             if (!list.length) {
                 container.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <i class="fa-solid fa-ticket text-stone-300 text-4xl mb-3"></i>
-                        <p class="text-stone-500">Belum ada voucher untuk kategori ini.</p>
+                    <div class="col-span-full py-12 text-center">
+                        <p class="font-semibold text-stone-500 text-xl">Belum ada voucher untuk kategori ini.</p>
                     </div>
                 `;
                 return;
@@ -243,8 +240,8 @@
 
             container.innerHTML = list.map(renderCard).join('');
         }
-        renderVouchers()
 
+        renderVouchers()
     </script>
 </body>
 

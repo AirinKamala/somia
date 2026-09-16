@@ -24,7 +24,7 @@ const inven = {
     ],
     date: "2026-08-15"
   },
-  {//cari gambar spesifik
+  {
     id: "diy2",
     title: "Pot Tanaman Self-Watering dari Botol Plastik",
     category: "Berkebun",
@@ -137,7 +137,7 @@ const inven = {
   {
     id: "diy7",
     title: "Tempat Lilin Aromaterapi dari Toples Kaca",
-    category: "Dekorasi",
+    category: "Kerajinan",
     excerpt: "Toples bekas selai atau saus bisa disulap menjadi tempat lilin estetik dan aman untuk menghias ruangan.",
     thumbnail: "/assets/artikel/diy7.webp",
     source: "etsy",
@@ -180,14 +180,8 @@ const inven = {
 }
   ],
 
-  colors: {
-    plastik: "red",
-    kertas: "amber",
-    organik: "emerald",
-    kaca: "teal"
-  },
 
-  wasteBanks : [ //jangan dirubah
+  wasteBanks : [ 
     {
       location: [-8.612883874536013, 115.21297598465651],
       name: "Bank Sampah Sarana Gathi",
@@ -198,6 +192,19 @@ const inven = {
       accepted:["plastik", "kertas", "kaca"],
       contact: {
         name: 'Ni Wayan Sari',
+        phone: '6212345678'
+      }
+    },
+    {
+      location: [-8.719004136290913, 115.2205865680685],
+      name: "TPA Suwung",
+      slug: 'tpa-suwung',
+      address: "Jl. TPA Suwung No.200, Sesetan, Denpasar Selatan, Kota Denpasar, Bali",
+      status: "Penuh",
+      schedule: "Senin-Jumat, 09:00 - 17:00 WITA",
+      accepted:["plastik", "kertas", "kaca"],
+      contact: {
+        name: 'Putu Merta',
         phone: '6212345678'
       }
     },
@@ -227,28 +234,15 @@ const inven = {
         phone: '6212345678'
       }
     },
-    {
-      location: [-8.719004136290913, 115.2205865680685],
-      name: "TPA Suwung",
-      slug: 'tpa-suwung',
-      address: "Jl. TPA Suwung No.200, Sesetan, Denpasar Selatan, Kota Denpasar, Bali",
-      status: "Penuh",
-      schedule: "Senin-Jumat, 09:00 - 17:00 WITA",
-      accepted:["plastik", "kertas", "kaca"],
-      contact: {
-        name: 'Putu Merta',
-        phone: '6212345678'
-      }
-    },
     
   ],
   
   bookmark: ['diy1', 'diy2', 'diy4'],
 
   user: {
-    name: 'Jane Doe',
+    name: 'Putu Asih',
     address: 'Br. Kaja',
-    email: 'janedoe@email.test',
+    email: 'putuasih@email.test',
     password: '12345678',
     totalWaste: 9.2,
     dayStreak: 10,
@@ -298,28 +292,5 @@ const inven = {
         bg: "bg-(--turmeric)"
     }
 ],
-
-  formmatedDate(date) {
-    if (!date) return;
-    const dates = date.split("-");
-    const month = [
-      "Januari",
-      "Februari",
-      "Maret",
-      "April",
-      "Mei",
-      "Juni",
-      "Juli",
-      "Agustus",
-      "September",
-      "Oktober",
-      "November",
-      "Desember",
-    ];
-
-    let bulan = month[Number(dates[1]) - 1];
-
-    return `${dates[2]} ${bulan} ${dates[0]}`;
-  },
 
 };

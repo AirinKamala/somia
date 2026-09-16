@@ -7,309 +7,277 @@
     <meta name="description" content="Dashboard Somia-mu. Lihat total sampah terpilah, hari beruntun, eco-poin, riwayat pemilahan, dan artikel favoritmu.">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/lib/aos/aos.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-    rel="stylesheet">
-    <script src="/js/tl.js"></script>
-    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <script src="/js/tailwind.js"></script>
+    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
     <title>Dashboard - Somia</title>
 </head>
 
 <body>
-
-    <div class="flex-wrap md:flex-nowrap flex min-h-screen relative z-1 ">
-        <nav
-            class="w-full md:hidden  bg-(--ink) text-(--sand) z-40 sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
-            <div class="flex gap-4 items-center">
-                <i class="fa-solid fa-bars fa-xl text-white"
-                    onclick="toggleNav(sidebar, document.getElementById('overlay'))"></i>
+    <div class="z-1 relative flex flex-wrap md:flex-nowrap min-h-screen">
+        <!-- ================ NAVIGASI MOBILE ================ -->
+        <nav class="w-full md:hidden  bg-(--ink) text-(--sand) z-40 sticky top-0 p-2 md:px-8 lg:px-12 rounded-b-lg shadow-lg flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="px-2" onclick="toggleNav(sidebar, document.getElementById('overlay'))" onclick=""><i class="text-white fa-solid fa-bars fa-xl" ></i></div>
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-                    <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+                    <img  width="32"  height="32" src="/assets/icon.svg" class="flex self-center" alt="logo">
+                    <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
                 </a>
             </div>
-            <div class=" h-fit hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer"
-                onclick="a.toggleModal(modalSignOut)">
-                <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+            <div class="hover:bg-emerald-900 p-2 rounded h-fit transition duration-500 ease-in-out cursor-pointer" onclick="a.toggleModal(modalSignOut)">
+                <i class="mr-4 fa-solid fa-sign-out fa-lg"></i>Keluar
             </div>
         </nav>
-        <div id="overlay"
-            class="inset-0 hidden fixed bg-stone-900/70 overflow-hidden z-50 backdrop-blur-md"
-            onclick="toggleNav(sidebar, document.getElementById('overlay'))"></div>
-        <sidebar id="sidebar"
-            class="top-0 bg-(--ink) fixed -translate-x-100 md:translate-none md:sticky h-screen z-50  max-w-sm md:w-sm text-(--sand) flex flex-col py-2 px-4 "
-            onclick="event.stopPropagation()">
-            <div onclick="window.open('/', '_self')"
-                class="flex items-center cursor-pointer border-b-2 border-white/20">
-                <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-                <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+        <div id="overlay" class="hidden z-50 fixed inset-0 bg-stone-900/70 backdrop-blur-md overflow-hidden" onclick="toggleNav(sidebar, document.getElementById('overlay'))"></div>
+        <!-- ================ SIDEBAR / NAVIGASI MEDIUM + ================ -->
+        <sidebar id="sidebar" class="top-0 bg-(--ink) fixed -translate-x-100 md:translate-none md:sticky h-screen z-50  max-w-sm md:w-sm text-(--sand) flex flex-col py-2 px-4 " onclick="event.stopPropagation()">
+            <div onclick="window.open('/', '_self')" class="flex items-center border-white/20 border-b-2 cursor-pointer">
+                <img  width="32"  height="32" src="/assets/icon.svg" class="flex self-center" alt="logo">
+                <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
             </div>
-            <div class="grid gap-4">
-                <a href="/views/logged/dashboard.html"
-                    class="w-full h-fit py-2 bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
-                <a href="/views/logged/voucher.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
-                <a href="/artikel.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
-                <a href="/views/logged/peta.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
+            <div class="gap-4 grid">
+                <a href="/views/logged/dashboard.html" class="bg-emerald-900 mt-4 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-home fa-lg"></i> Beranda
+                </a>
+                <a href="/views/logged/voucher.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 -rotate-45 fa-solid fa-ticket fa-lg"></i> Voucher
+                </a>
+                <a href="/artikel.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-newspaper fa-lg"></i> Artikel
+                </a>
+                <a href="/views/logged/peta.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-dumpster fa-lg"></i> Bank Sampah
+                </a>
             </div>
             <div onclick=" a.toggleModal(modalSignOut)"
-                class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out mt-auto border-t cursor-pointer">
-                <i class="fa-solid fa-sign-out fa-lg mr-4"></i>Keluar
+                class="hover:bg-emerald-900 mt-auto p-2 py-2 border-t rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                <i class="mr-4 fa-solid fa-sign-out fa-lg"></i>Keluar
             </div>
-
         </sidebar>
+
         <div class="bg-(--sand) w-full">
-            <main class="p-6 md:p-12 max-w-6xl mx-auto " id="main">
-                <!-- nama  -->
+            <main class="mx-auto p-6 md:p-12 max-w-6xl" id="main">
+                <!-- ================ PROFILE ================ -->
                 <div class="flex justify-between">
                     <div>
                         <p>Selamat datang kembali</p>
                         <h1 class="text-2xl" id="name"></h1>
                     </div>
-                    <img class="w-20 h-20 border-2 rounded-full border-(--moss)"
-                        src="/assets/avatar.png" alt="avatar">
+                    <img width="400" height="300" class="w-20 h-20 border-2 rounded-full border-(--moss)" src="/assets/avatar.png" alt="avatar">
                 </div>
 
-                <!-- info -->
+                <!-- ================ INFO PROFILE ================ -->
                 <div class="flex gap-4 mt-4">
-                    <p class="text-center flex-1 bg-white rounded-md h-28 py-4 shadow-lg text-[18pt] text-amber-800 italic font-semibold"
+                    <p class="flex-1 bg-white shadow-lg py-4 rounded-md h-28 font-semibold text-[18pt] text-amber-800 text-center italic" data-aos="fade-down" data-aos-delay="100"
                         id="totalWaste"></p>
-                    <p class="text-center flex-1 bg-white rounded-md h-28 py-4 shadow-lg text-[18pt] text-amber-800 italic font-semibold"
+                    <p class="flex-1 bg-white shadow-lg py-4 rounded-md h-28 font-semibold text-[18pt] text-amber-800 text-center italic" data-aos="fade-down" data-aos-delay="300"
                         id="dayStreak"></p>
-                    <p class="text-center flex-1 bg-white rounded-md h-28 py-4 shadow-lg text-[18pt] text-amber-800 italic font-semibold"
+                    <p class="flex-1 bg-white shadow-lg py-4 rounded-md h-28 font-semibold text-[18pt] text-amber-800 text-center italic" data-aos="fade-down" data-aos-delay="500"
                         id="point"></p>
-
                 </div>
 
-                <!-- wrapped -->
-                <div
-                    class="bg-(--ink) rounded-md p-8 min-w-64 flex justify-between items-center gap-4 mx-auto mt-8 h-fit">
+                <!-- ECO-WRAPPED -->
+                <div class="bg-(--ink) rounded-md p-8 min-w-64 flex justify-between items-center gap-4 mx-auto mt-8 h-fit" data-aos="fade-down">
                     <div class="mb-4">
-                        <p class="text-stone-400 font-bold ">ECO WRAPPED</p>
+                        <p class="font-bold text-stone-400">ECO WRAPPED</p>
                         <h2 class="text-(--sand) mt-2 font-bold text-xl">Bagikan progres bulanan kamu.</h2>
                     </div>
-                    <button class="bg-(--turmeric) h-fit font-semibold"
-                        onclick="window.open('wrapped.html', '_self')">Lihat Wrapped</button>
+                    <button class="bg-(--turmeric) h-fit font-semibold" onclick="window.open('wrapped.html', '_self')">Lihat Wrapped</button>
                 </div>
 
-                <!-- voucher -->
-                <div
-                    class="bg-(--moss) rounded-md p-8 min-w-64 flex justify-between items-center gap-4 mx-auto mt-4 h-fit">
+                <!-- VOUCHER -->
+                <div class="bg-(--moss) rounded-md p-8 min-w-64 flex justify-between items-center gap-4 mx-auto mt-4 h-fit" data-aos="fade-down">
                     <div class="mb-4">
-                        <p class="text-white font-bold ">ECO-POIN</p>
-                        <h2 class="text-(--sand) mt-2 font-bold text-xl">Tukarkan Eco-poin kamu dengan voucher menarik.
-                        </h2>
+                        <p class="font-bold text-white">ECO-POIN</p>
+                        <h2 class="text-(--sand) mt-2 font-bold text-xl">Tukarkan Eco-poin kamu dengan voucher menarik. </h2>
                     </div>
-                    <button class="bg-(--turmeric) h-fit font-semibold"
-                        onclick="window.open('voucher.html', '_self')">Tukar Poin</button>
+                    <button class="bg-(--turmeric) h-fit font-semibold" onclick="window.open('voucher.html', '_self')">Tukar Poin</button>
                 </div>
             </main>
 
-            <section class="p-4 md:px-[8%] lg:px-[12%]" id="riwayat">
-                <div class="flex justify-between w-full items-center">
-                    <h2 class="text-2xl font-bold">Riwayat pemilahan.</h2>
-
-                    <button type="button" onclick="window.open('peta.html', '_self')" class="bg-(--moss-light)">
+            <!-- ================ RIWAYAT PEMILAHAN ================ -->
+            <section class="p-4 md:px-[8%] lg:px-[12%]" id="riwayat" data-aos="fade-down">
+                <div class="flex justify-between items-center w-full">
+                    <h2 class="font-bold text-2xl">Riwayat pemilahan.</h2>
+                    <button onclick="window.open('peta.html', '_self')" class="bg-(--moss-light)">
                         <i class="fa-solid fa-add fa-xl"></i>
                     </button>
                 </div>
-                <div class="bg-white rounded-lg mt-4">
-                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+                <div class="bg-white mt-4 rounded-lg" data-aos="fade-down" >
+                    <div class="flex justify-between mb-2 px-4 md:px-12 py-4 border-stone-600 border-b">
                         <div class="flex items-center">
-                            <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-bag-shopping fa-xl text-white"></i></div>
+                            <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center">
+                                <i class="text-white fa-solid fa-bag-shopping fa-xl"></i>
+                            </div>
                             <div class="grid">
                                 <h4 class="font-semibold md:text-lg">Plastik</h4>
-                                <p class="text-xs md:text-sm text-stone-500">20 Agustus 2026</p>
+                                <p class="text-stone-500 text-xs md:text-sm">20 Agustus 2026</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 items-center">
+                        <div class="flex items-center gap-4">
                             <p class="font-semibold">4.3 kg</p>
-                            <div
-                                class="text-emerald-950 w-24 h-fit font-semibold bg-emerald-200 rounded-xl px-4 text-[10px] text-center md:text-xs py-2 ">
-                                Terverifikasi</div>
+                            <div class="bg-emerald-200 px-4 py-2 rounded-xl w-24 h-fit font-semibold text-[10px] text-emerald-950 md:text-xs text-center"> Terverifikasi</div>
                         </div>
                     </div>
 
-                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+                    <div class="flex justify-between mb-2 px-4 md:px-12 py-4 border-stone-600 border-b">
                         <div class="flex items-center">
-                            <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-leaf fa-xl text-white"></i></div>
+                            <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center">
+                                <i class="text-white fa-solid fa-leaf fa-xl"></i>
+                            </div>
                             <div class="grid">
                                 <h4 class="font-semibold md:text-lg">Organik</h4>
-                                <p class="text-xs md:text-sm text-stone-500">13 Agustus 2026</p>
+                                <p class="text-stone-500 text-xs md:text-sm">13 Agustus 2026</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 items-center">
+                        <div class="flex items-center gap-4">
                             <p class="font-semibold">2 kg</p>
-                            <div
-                                class="text-amber-950 w-24 h-fit font-semibold bg-amber-200 rounded-xl px-4 text-[10px] text-center md:text-xs py-2 ">
-                                Menunggu</div>
+                            <div class="bg-amber-200 px-4 py-2 rounded-xl w-24 h-fit font-semibold text-[10px] text-amber-950 md:text-xs text-center"> Menunggu</div>
                         </div>
                     </div>
-                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+
+                    <div class="flex justify-between mb-2 px-4 md:px-12 py-4 border-stone-600 border-b">
                         <div class="flex items-center">
-                            <div class="bg-(--turmeric) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-newspaper fa-xl text-white"></i></div>
+                            <div class="bg-(--turmeric) w-fit h-12 p-2 mr-4 rounded-md flex items-center">
+                                <i class="text-white fa-solid fa-newspaper fa-xl"></i>
+                            </div>
                             <div class="grid">
                                 <h4 class="font-semibold md:text-lg">Kertas</h4>
-                                <p class="text-xs md:text-sm text-stone-500">30 July 2026</p>
+                                <p class="text-stone-500 text-xs md:text-sm">30 July 2026</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 items-center">
+                        <div class="flex items-center gap-4">
                             <p class="font-semibold">4.3 kg</p>
-                            <div
-                                class="text-emerald-950 w-24 h-fit font-semibold bg-emerald-200 rounded-xl px-4 text-[10px] text-center md:text-xs py-2 ">
-                                Terverifikasi</div>
+                            <div class="bg-emerald-200 px-4 py-2 rounded-xl w-24 h-fit font-semibold text-[10px] text-emerald-950 md:text-xs text-center">Terverifikasi</div>
                         </div>
                     </div>
 
-                    <div class="mb-2 px-4 md:px-12 py-4 border-b border-stone-600 justify-between flex">
+                    <div class="flex justify-between mb-2 px-4 md:px-12 py-4 border-stone-600 border-b">
                         <div class="flex items-center">
-                            <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-leaf fa-xl text-white"></i></div>
+                            <div class="bg-(--moss) w-fit h-12 p-2 mr-4 rounded-md flex items-center">
+                                <i class="text-white fa-solid fa-leaf fa-xl"></i>
+                            </div>
                             <div class="grid">
                                 <h4 class="font-semibold md:text-lg">Organik</h4>
-                                <p class="text-xs md:text-sm text-stone-500">29 Juli 2026</p>
+                                <p class="text-stone-500 text-xs md:text-sm">29 Juli 2026</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 items-center">
+                        <div class="flex items-center gap-4">
                             <p class="font-semibold">1.5 kg</p>
-                            <div
-                                class="text-amber-950 w-24 h-fit font-semibold bg-amber-200 rounded-xl px-4 text-[10px] text-center md:text-xs py-2 ">
-                                Menunggu</div>
+                            <div class="bg-amber-200 px-4 py-2 rounded-xl w-24 h-fit font-semibold text-[10px] text-amber-950 md:text-xs text-center"> Menunggu</div>
                         </div>
                     </div>
 
-                    <div class="mb-2 px-4 md:px-12 py-4 justify-between flex">
+                    <div class="flex justify-between mb-2 px-4 md:px-12 py-4">
                         <div class="flex items-center">
-                            <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center"><i
-                                    class="fa-solid fa-bag-shopping fa-xl text-white"></i></div>
+                            <div class="bg-(--clay) w-fit h-12 p-2 mr-4 rounded-md flex items-center">
+                                <i class="text-white fa-solid fa-bag-shopping fa-xl"></i>
+                                </div>
                             <div class="grid">
                                 <h4 class="font-semibold md:text-lg">Plastik</h4>
-                                <p class="text-xs md:text-sm text-stone-500">29 Juli 2026</p>
+                                <p class="text-stone-500 text-xs md:text-sm">29 Juli 2026</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 items-center">
+                        <div class="flex items-center gap-4">
                             <p class="font-semibold">2.3 kg</p>
-                            <div
-                                class="text-emerald-950 w-24 h-fit font-semibold bg-emerald-200 rounded-xl px-4 text-[10px] text-center md:text-xs py-2 ">
-                                Terverifikasi</div>
+                            <div class="bg-emerald-200 px-4 py-2 rounded-xl w-24 h-fit font-semibold text-[10px] text-emerald-950 md:text-xs text-center"> Terverifikasi</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="p-4 md:px-[8%] lg:px-[12%] mt-8 gap-4" id="favorit">
-                <h2 class="text-2xl w-full font-bold">Artikel favorit</h2>
-                <div id="container" class="flex flex-wrap gap-4 justify-center md:justify-start mt-4">
-
-                </div>
+            <!-- ================ BOOKMARK ================ -->
+            <section class="gap-4 mt-8 p-4 md:px-[8%] lg:px-[12%]" id="favorit">
+                <h2 class="w-full font-bold text-2xl">Artikel favorit</h2>
+                <div id="container" class="flex flex-wrap justify-center md:justify-start gap-4 mt-4"></div>
             </section>
 
-            <section class="p-4 md:px-[8%] lg:px-[12%] mt-8" id="profil">
-                <h2 class="text-2xl font-bold">Profil</h2>
-                <div class="bg-white flex mt-2 p-4 rounded-lg gap-4 items-center">
-                    <img class="w-20 h-20 border-2 rounded-full border-(--moss)"
-                        src="/assets/avatar.png" alt="avatar">
-                    <h3 class="md:text-lg font-semibold">John Doe <br><span class="text-xs font-medium">bergabung sejak
-                            1 Juli 2026</span></h3>
-                    <button class="border rounded h-fit ml-auto text-sm md:text-base"
-                        onclick="modal.classList.remove('hidden')">Edit profil</button>
+            <!-- ================ DETAIL + EDIT PROFILE ================ -->
+            <section class="mt-8 p-4 md:px-[8%] lg:px-[12%]" id="profil"  data-aos="fade-down">
+                <h2 class="font-bold text-2xl">Profil</h2>
+                <div class="flex items-center gap-4 bg-white mt-2 p-4 rounded-lg">
+                    <img width="400" height="300" class="w-20 h-20 border-2 rounded-full border-(--moss)" src="/assets/avatar.png" alt="avatar">
+                    <h3 class="font-semibold md:text-lg">Putu Asih <br>
+                        <span class="font-medium text-xs">bergabung sejak 1 Juli 2026</span>
+                    </h3>
+                    <button class="ml-auto border rounded h-fit text-sm md:text-base" onclick="modal.classList.remove('hidden')">Edit profil</button>
                 </div>
             </section>
         </div>
-
-        <div id="modal-out" class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex hidden"
-            onclick="a.toggleModal(modalSignOut)">
-            <div class="relative z-60 bg-white rounded-lg p-4 w-sm grid mx-auto self-center"
-                onclick="event.stopPropagation();">
+        
+        <!-- ================ MODAL SIGNOUT ================ -->
+        <div id="modal-out" class="hidden z-50 fixed inset-0 bg-stone-900/30 backdrop-blur-md" onclick="a.toggleModal(modalSignOut)">
+            <div class="z-[60] relative self-center grid bg-white mx-auto p-4 rounded-lg w-sm" onclick="event.stopPropagation();">
                 <h2 class="font-bold text-2xl">Anda yakin untuk keluar dari akun ini?</h2>
-                <div class="w-full grid md:grid-cols-2 mt-8 gap-4">
+                <div class="gap-4 grid md:grid-cols-2 mt-8 w-full">
                     <button class="text-(--moss) border font-semibold "
                         onclick="modalSignOut.classList.add('hidden')">Tidak</button>
                     <button class="bg-(--moss) font-semibold text-white" onclick="a.signout()">Ya, saya yakin.</button>
                 </div>
             </div>
         </div>
-        <div id="modal-overlay"
-            class="bg-stone-900/30 backdrop-blur-md z-50 fixed inset-0 flex items-center justify-center hidden"
-            onclick="a.toggleModal(modal)">
-            <div id="modal" class="absolute z-60 bg-white rounded-lg p-4 flex w-sm grid "
-                onclick="event.stopPropagation()">
+        <!-- ================ MODAL EDIT PROFILE ================ -->
+        <div id="modal-overlay" class="hidden z-50 fixed content-center inset-0 bg-stone-900/30 backdrop-blur-md" onclick="a.toggleModal(modal)">
+            <div id="modal" class="z-[60] mx-auto grid bg-white p-4 rounded-lg w-sm" onclick="event.stopPropagation()">
                 <h2 class="font-bold text-2xl">Edit Profile</h2>
-                <label for="inpNama" class="font-semibold mt-2">Nama</label>
-                <input id="inpNama" type="text" class="w-full px-4 py-2 border rounded-md"
-                    placeholder="Masukkan nama anda." required>
-                <label for="inpAlamat" class="font-semibold mt-2">Alamat</label>
-                <input id="inpAlamat" type="text" class="w-full px-4 py-2 border rounded-md"
-                    placeholder="Masukkan alamat anda." required>
-                <label for="inpEmail" class="font-semibold mt-2">Email</label>
-                <input id="inpEmail" type="email" class="w-full px-4 py-2 border rounded-md"
-                    placeholder="Masukkan email anda." required>
-                <button class="bg-(--moss) font-semibold text-white mt-8"
-                    onclick="window.location.reload()">Simpan</button>
+                <label for="inpNama" class="mt-2 font-semibold">Nama</label>
+                <input id="inpNama" type="text" class="px-4 py-2 border rounded-md w-full" placeholder="Masukkan nama anda." required>
 
+                <label for="inpAlamat" class="mt-2 font-semibold">Alamat</label>
+                <input id="inpAlamat" type="text" class="px-4 py-2 border rounded-md w-full" placeholder="Masukkan alamat anda." required>
+
+                <label for="inpEmail" class="mt-2 font-semibold">Email</label>
+                <input id="inpEmail" type="email" class="px-4 py-2 border rounded-md w-full" placeholder="Masukkan email anda." required>
+
+                <button class="bg-(--moss) font-semibold text-white mt-8" onclick="window.location.reload()">Simpan</button>
             </div>
         </div>
 
         <script src="/js/main.js"></script>
         <script src="/js/script.js"></script>
+        <script src="/lib/aos/aos.js" defer ></script>
         <script>
+            //INI SIALISASI VARIABEL
             const sidebar = document.getElementById('sidebar')
             const modal = document.getElementById('modal-overlay')
             const modalSignOut = document.getElementById('modal-out')
-            let modalShow = false
+            // SET VALUE PADA MASING-MASING ID
             document.getElementById('name').innerHTML = `${inven.user.name} . <span class="text-amber-800">${inven.user.badge}</span>`
             document.getElementById('totalWaste').innerHTML = `${inven.user.totalWaste ?? 0} <br> <span class="text-(--ink) text-sm md:text-lg font-medium">kg terpilah.</span>`
             document.getElementById('dayStreak').innerHTML = `${inven.user.dayStreak} <br> <span class="text-(--ink) text-sm md:text-lg font-medium">hari beruntun.</span>`
             document.getElementById('point').innerHTML = `${inven.user.point} <br> <span class="text-(--ink) text-sm md:text-lg font-medium">eco-poin.</span>`
-            const deleteBookmark = (id) => {
+            
+            const deleteBookmark = (id) => { //FUNCTION DELETE BOOKMARK
                 inven.bookmark = inven.bookmark.filter(i => i !== id)
                 document.getElementById('container').innerHTML = ''
                 document.getElementById('container').innerHTML = renderCard()
             }
-            const renderCard = () => {
+
+            const renderCard = () => { //FUNCTION RENDER CARD OF BOOKMARK
                 let result = inven.articles.filter(i => inven.bookmark.includes(i.id)).slice(0, 3)
                 if (!result.length) return `<p class="text-stone-500 italic">Belum ada artikel favorit. Simpan artikel untuk melihatnya di sini.</p>`
-                return result.map(f => `
-                    <div class="rounded-xl overflow-hidden w-full md:w-sm ">
-                        <img src="${f.thumbnail}" class="bg-(--moss) w-full object-cover h-24" alt="">
-                        <div class="bg-white min-h-24 px-4 py-2 flex flex-col">
-                            <h3 class="font-semibold cursor-pointer" onclick="window.open('/artikel-detail.html?q=${f.id}', '_self')">${f.title}</h3>
-                            <p class="text-(--clay) text-sm underline mt-auto mb-2 cursor-pointer" onclick="deleteBookmark('${f.id}')">Hapus dari favorit</p>
-                        </div>
-                    </div>
-                `).join('')
+                return result.map((f, index) => ` <div class="rounded-xl w-full md:w-sm overflow-hidden" data-aos="fade-right" data-aos-delay="${index+1}00">
+                                            <img width="400" height="300" src="${f.thumbnail}" class="bg-(--moss) w-full object-cover h-24" alt="${f.title}">
+                                            <div class="flex flex-col bg-white px-4 py-2 min-h-24">
+                                                <h3 class="font-semibold cursor-pointer" onclick="window.open('/artikel-detail.html?q=${f.id}', '_self')">${f.title}</h3>
+                                                <p class="text-(--clay) text-sm underline mt-auto mb-2 cursor-pointer" onclick="deleteBookmark('${f.id}')">Hapus dari favorit</p>
+                                            </div>
+                                        </div> `).join('')
             }
-            let isShow = false
-            const toggleNav = (ins, over) => {
-                isShow = !isShow;
-                if (isShow) {
-                    ins.classList.remove("-translate-x-100");
-                    over.classList.remove("hidden");
-
-                } else {
-                    over.classList.add("hidden");
-                    ins.classList.add("-translate-x-100");
-                }
-            }
-
             document.getElementById('container').innerHTML = renderCard()
+
+            const toggleNav = (ins, over) => { //FUNCTION UNTUK SIDEBAR
+                    ins.classList.toggle("-translate-x-100");
+                    over.classList.toggle("hidden");
+            }
+
+            // SET VALUE PADA FROM EDIT PROFILE
             document.getElementById('inpNama').value = inven.user.name
             document.getElementById('inpAlamat').value = inven.user.address
             document.getElementById('inpEmail').value = inven.user.email
-
         </script>
 </body>
 

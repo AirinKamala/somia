@@ -4,99 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/lib/swiper/swiper-bundle.css">
-    <script src="/js/tl.js"></script>
-    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x-icon">
+    <meta name="description" content="Tukarkan Eco-Poin kamu dengan voucher menarik dari UMKM mitra Somia.">
     <title> Eco-wrapped - Somia </title>
-
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/lib/aos/aos.css">
+    <script src="/js/tailwind.js"></script>
+    <link rel="stylesheet" href="/lib/swiper/swiper-bundle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div class="w-full h-screen bg-stone-950 relative justify-center flex items-center">
-        <div class="absolute top-2 right-2 ">
-            <button onclick="swiper.slideTo(5)"
-                class="btn bg-(--turmeric) w-24 text-(--ink) text-sm font-semibold z-50">Lewati</button>
-            <button type="button" onclick="window.history.go(-1)"
-                class=" !shadow-none right-2 hover:bg-stone-700/20 transition transition-all duration-500"><i
-                    class="fa-solid fa-x text-stone-300"></i></button>
+    <div class="relative flex justify-center items-center bg-stone-950 w-full h-screen">
+     <!-- ================ SKIP BUTTON & X BUTTON ================ -->
+        <div class="top-2 right-2 absolute">
+            <button onclick="swiper.slideTo(5)" class="btn bg-(--turmeric) w-24 text-(--ink) text-sm font-semibold z-50">Lewati</button>
+            <button type="button" onclick="window.history.go(-1)" class="right-2 hover:bg-stone-700/20 !shadow-none transition-all duration-500">
+                <i class="text-stone-300 fa-solid fa-x"></i>
+            </button>
         </div>
-        <main class=" w-sm md:w-md max-w-[90vw] max-h-[90vh] aspect-[9/20]">
-            <div class="swiper w-full h-full">
+     <!-- ================ SWIPER/ECO-WRAPPED ================ -->
+        <main class="w-sm md:w-md max-w-[90vw] max-h-[90vh] aspect-[9/20]">
+            <div class="w-full h-full swiper">
+                <!-- ================ CONTENT ================ -->
                 <div class="swiper-wrapper text-(--sand) ">
-                    <div
-                        class="swiper-slide bg-(--ink) !flex flex-col items-center text-center  justify-center space-y-4">
-                        <h2 class="text-[24pt] font-accent font-bold tracking-widest">Wrapped kamu <br> September 2026
+                    <!-- ================ PAGE 1 : PEMBUKA================ -->
+                    <div class="swiper-slide bg-(--ink) !flex flex-col items-center text-center justify-center space-y-4">
+                        <h2 class="font-accent font-bold text-[24pt] tracking-widest" data-aos="fade-up">
+                            Wrapped kamu <br> September 2026
                         </h2>
-                        <p class="opacity-70 mt-2 text-sm tracking-wide">Geser untuk melihat lebih lanjut &rarr;</p>
+                        <p class="opacity-70 mt-2 text-sm tracking-wide" data-aos="fade-up" data-aos-delay="100">Geser untuk melihat lebih lanjut &rarr;</p>
                     </div>
 
-                    <div
-                        class="swiper-slide bg-(--moss) !flex flex-col items-center text-center  justify-center swiper-totalwaste">
-                        <h2 class="text-2xl font-accent md:text-[20pt] text-center">Bulan ini kamu berhasil
-                            memilah
-                        </h2>
-                        <p class="text-5xl md:text-6xl font-accent font-bold tracking-widest"
-                            id="totalWaste">
-                        </p>
-                        <p class="opacity-80 mt-2 font-semibold text-lg tracking-wide">Kg terpilah</p>
-
+                    <!-- ================ PAGE 2 : TOTAL TERPILAH================ -->
+                    <div class="swiper-slide bg-(--moss) !flex flex-col items-center text-center  justify-center swiper-totalwaste">
+                        <h2 class="font-accent md:text-[20pt] text-2xl text-center" >Bulan ini kamu berhasil memilah</h2>
+                        <p class="font-accent font-bold text-5xl md:text-6xl tracking-widest" id="totalWaste" ></p>
+                        <p class="opacity-80 mt-2 font-semibold text-lg tracking-wide" >Kg terpilah</p>
                     </div>
 
-                    <div
-                        class="swiper-slide bg-amber-800 !flex flex-col items-center text-center  justify-center swiper-daystreak">
-                        <h2 class="text-2xl font-accent md:text-[20pt] text-center">Kamu berhasil
-                            memilah selama
-                        </h2>
-                        <p class="text-5xl md:text-6xl font-accent font-bold tracking-widest"
-                            id="streak">
-                        </p>
+                    <!-- ================ PAGE 3 : STREAK/ HARI BERUNTUN================ -->
+                    <div class="!flex flex-col justify-center items-center bg-yellow-800 text-center swiper-slide swiper-daystreak">
+                        <h2 class="font-accent md:text-[20pt] text-2xl text-center">Kamu berhasil memilah selama</h2>
+                        <p class="font-accent font-bold text-5xl md:text-6xl tracking-widest" id="streak"></p>
                         <p class="opacity-80 mt-2 font-semibold text-lg tracking-wide">Hari beruntun</p>
                     </div>
 
-                    <div
-                        class="swiper-slide bg-(--ink) !flex flex-col items-center text-center  justify-center swiper-badge">
-                        <h2 class="text-2xl font-accent md:text-[20pt] text-center">Kamu adalah
-                        </h2>
-                        <p class="text-[28pt] font-accent font-bold tracking-widest items-center">
+                    <!-- ================ PAGE 4 : BADGE/GELAR ================ -->
+                    <div class="swiper-slide bg-(--ink) !flex flex-col items-center text-center  justify-center swiper-badge">
+                        <h2 class="font-accent md:text-[20pt] text-2xl text-center">Kamu adalah</h2>
+                        <p class="items-center font-accent font-bold text-[28pt] tracking-widest">
                             <i class="fa-solid fa-crown text-(--turmeric) "></i>
                             <span id="badge"></span>
                         </p>
                     </div>
 
-                    <div
-                        class="swiper-slide bg-(--clay) !flex flex-col items-center text-center  justify-center space-y-8">
-                        <p class="text-xl font-accent font-semibold tracking-tight">Terima kasih sudah memilah! </p>
-                        <h2 class="text-2xl font-accent w-full font-bold tracking-widest" id="summary"></h2>
-                        <div class="flex gap-4">
-                            <button class="flex-1 bg-(--ink)"> <i class="fa-solid fa-share mr-2  "></i>Bagikan</button>
-                            <button class="flex-1 bg-(--ink)" onclick="window.open('dashboard.html', '_self')"> <i
-                                    class="fa-solid fa-arrow-right mr-2"></i>Kembali</button>
+                    <!-- ================ PAGE 5 : RINGKASAN ================ -->
+                    <div class="swiper-slide bg-(--clay) !flex flex-col items-center text-center  relative justify-center space-y-8">
+                        <p class="font-accent font-semibold text-xl tracking-tight">Terima kasih sudah memilah! </p>
+                        <h2 class="space-y-2 w-full font-accent font-bold text-2xl tracking-widest" id="summary"></h2>
+                        <div class="bottom-12 absolute gap-4 grid grid-cols-2 px-4 w-full font-accent">
+                            <button class="bg-emerald-700 hover:bg-emerald-800"> <i class="mr-2 fa-solid fa-share"></i>Bagikan</button>
+                            <button class=" bg-(--ink) hover:bg-stone-900 " onclick="window.open('dashboard.html', '_self')"> 
+                                <i class="fa-arrow-left mr-2 fa-solid"></i>Kembali
+                            </button>
                         </div>
                     </div>
-
                 </div>
+                    </div> 
 
-                <div class="swiper-button-prev !opacity-0 bg-white !h-full -translate-y-[50%]"></div>
-                <div class="swiper-button-next !opacity-0 bg-white !h-full -translate-y-[50%]"></div>
-                <div class="swiper-pagination "></div>
+                <!-- ================ SWIPER NAVIGATION ================ -->
+                <div class="bg-white !opacity-0 !h-full -translate-y-[50%] swiper-button-prev"></div>
+                <div class="bg-white !opacity-0 !h-full -translate-y-[50%] swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </main>
-
     </div>
     <script src="/lib/swiper/swiper-bundle.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/lib/aos/aos.js"></script>
     <script src="/lib/gsap/gsap.min.js"></script>
     <script src="/lib/gsap/ScrambleTextPlugin.min.js"></script>
     <script>
+        //INISIALISASI SWIPER
         let swiper = new Swiper('.swiper', {
             grabCursor: true,
-            loop: true,
+            // loop: true,
             pagination: {
                 el: '.swiper-pagination',
                 type: 'progressbar',
@@ -107,10 +104,10 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'
             },
-            on: {
-                slideChange: function () {
+            on: { 
+                slideChange: function () { 
                     let activeSlide = this.el.querySelectorAll('.swiper-slide')[this.activeIndex]
-                    if (activeSlide.classList.contains('swiper-totalwaste')) {
+                    if (activeSlide.classList.contains('swiper-totalwaste')) { // JALANKAN ANGKA BERJALAN TOTAL MEMILAH SAMPAH
                         let obj = { val: 0 }
                         gsap.to(obj, {
                             duration: 1.5,
@@ -123,10 +120,10 @@
                         })
                     }
 
-                    if (activeSlide.classList.contains('swiper-daystreak')) {
+                    if (activeSlide.classList.contains('swiper-daystreak')) { // JALANKAN ANGKA BERJALAN HARI BERUNTUN
                         let obj = { val: 0 }
                         gsap.to(obj, {
-                            duration: 1.5,
+                            duration: 2,
                             val: inven.user.dayStreak,
                             ease: 'power2.out',
                             snap: { val: 1 },
@@ -136,15 +133,14 @@
                         })
                     }
 
-                    if (activeSlide.classList.contains('swiper-badge')) {
+                    if (activeSlide.classList.contains('swiper-badge')) { // JALANKAN ScrambleText BADGE/GELAR
                         gsap.to('#badge', { duration: 2, scrambleText: inven.user.badge })
                     }
                 }
             }
         })
-        document.getElementById('summary').innerHTML = `${inven.user.totalWaste}kg &middot; ${inven.user.dayStreak} hari <br> <span> <i class="text-yellow-300 fa-solid fa-crown fa-lg"></i> ${inven.user.badge} </span>`
-
+        //SET VALUE RINGKASAN
+        document.getElementById('summary').innerHTML = `${inven.user.totalWaste}kg &middot; ${inven.user.dayStreak} hari <br> <span> <i class="text-yellow-300 fa-solid fa-crown fa-lg"></i> ${inven.user.badge} </span>` 
     </script>
 </body>
-
 </html>

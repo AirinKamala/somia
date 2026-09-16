@@ -8,134 +8,128 @@
     <meta name="description" content="Panduan dan tutorial ramah lingkungan dari Somia.">
     <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/lib/aos/aos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <script src="/js/tl.js"></script>
-    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-
+    <lin href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <script src="/js/tailwind.js"></script>
+    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x-icon">
 </head>
 
-<body class="">
-    <nav
-        class="w-full bg-white h-fit sticky top-0 py-2 px-8 z-999 rounded-b-lg shadow-lg flex justify-between items-center">
+<body>
+    <!-- ================ NAVIGASI ================ -->
+    <nav class="top-0 z-[999] sticky flex justify-between items-center bg-white shadow-lg px-8 py-2 rounded-b-lg w-full h-fit">
         <a href="/index.html" class="flex items-center">
-            <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-            <p class="ml-2 text-amber-600 font-bold font-accent text-[20pt]">Somia</p>
+            <img  width="32"  height="32" src="/assets/icon.svg" class="flex self-center" alt="logo">
+            <p class="ml-2 font-accent font-bold text-[20pt] text-amber-600">Somia</p>
         </a>
-        <div class="gap-4 md:w-64 md:justify-around flex h-12" id="wrap-auth">
-            <a href="/views/register.html"><button
-                    class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button></a>
-            <a href="/views/login.html"><button class="md:w-32 border text-(--moss)">Masuk</button></a>
+        <div class="flex md:justify-around gap-4 md:w-64 h-12" id="wrap-auth">
+            <a href="/views/register.html">
+                <button class="md:w-32 border-(--moss) border bg-(--moss) text-white">Daftar</button>
+            </a>
+            <a href="/views/login.html">
+                <button class="md:w-32 border text-(--moss)">Masuk</button>
+            </a>
         </div>
     </nav>
-    <div id="container"
-        class="w-full bg-(--sand) p-6 md:p-12 min-h-screen max-w-6xl mx-auto  min-h-screen md:flex-nowrap flex flex-wrap justify-center md:justify-evenly gap-8 md:gap-4">
-        <div class="min-w-sm flex flex-col gap-2">
-            <h1 id="title" class="text-2xl  font-bold text-pretty mb-4"></h1>
-            <div class="flex justify-between w-full">
-                <p id="meta" class="rounded-xl flex items-center text-sm text-stone-500 tracking-tight"></p>
-                <button type="button" id="bookmark"
-                    class="text-(--moss) border font-semibold w-fit py-2 items-center flex px-4 rounded-xl "
-                    onclick="toggleBookmark()"></button>
+
+    <div id="container" class="w-full bg-(--sand) p-6 md:p-12 max-w-6xl mx-auto  min-h-screen md:flex-nowrap flex flex-wrap justify-center md:justify-evenly gap-8 md:gap-4">
+        <div class="flex flex-col gap-2 min-w-sm" data-aos="fade-up">
+            <!-- ================ BREADCRUMB ================ -->
+            <div class="mb-4 text-stone-500 text-sm" id="breadcrumb">
+                <a href="/artikel.html" class="hover:underline hover:text-(--moss)">Artikel</a>
+                <span class="mx-1">/</span>
+                <span class="text-(--ink) font-medium" id="breadcrumbName">Detail</span>
             </div>
-            <figure class="h-64 md:h-96 w-full rounded-lg overflow-hidden flex shadow-xl">
-                <img src="" alt="" class="w-full h-full object-cover flex" id="thumbnail">
+            <!-- ================ ARTIKEL ================ -->
+            <h1 id="title" class="mb-4 font-bold text-2xl text-pretty"></h1>
+            <div class="flex justify-between w-full">
+                <p id="meta" class="flex items-center rounded-xl text-stone-500 text-sm tracking-tight"></p>
+                <button type="button" id="bookmark" class="text-(--moss) border font-semibold w-fit py-2 items-center flex px-4 rounded-xl " onclick="toggleBookmark()"></button>
+            </div>
+            
+            <figure class="flex shadow-xl rounded-lg w-full h-64 md:h-96 overflow-hidden">
+                <img width="400" height="300" src="" alt="" class="flex w-full h-full object-cover" id="thumbnail">
             </figure>
 
-            <p id="excerpt" class="max-w-prose mt-4"></p>
-            <div class="">
-                <h2 class="text-xl pl-4  font-semibold">Bahan-bahan:</h2>
-                <ul class="pl-8 list-disc space-y-2" id="materials"></ul>
+            <p id="excerpt" class="mt-4 max-w-prose"></p>
+            <div>
+                <h2 class="pl-4 font-semibold text-xl">Bahan-bahan:</h2>
+                <ul class="space-y-2 pl-8 list-disc" id="materials"></ul>
             </div>
             <div>
-                <h2 class="text-xl  pl-4 pt-2 font-semibold">Langkah kerja:</h2>
-                <ol class="pl-8 list-decimal space-y-2" id="steps"></ol>
+                <h2 class="pt-2 pl-4 font-semibold text-xl">Langkah kerja:</h2>
+                <ol class="space-y-2 pl-8 list-decimal" id="steps"></ol>
             </div>
         </div>
-
-        <div class=" bg-white p-4 rounded-md w-fit h-fit">
-            <h2 class="text-xl font-semibold text-center mb-4">Artikel lainnya</h2>
-            <div id="container-cards" class="grid gap-2">
-            </div>
+        
+        <!-- ================ REKOMENDASI ARTIKEL ================ -->
+        <div class="bg-white p-4 rounded-md w-fit h-fit">
+            <h2 class="mb-4 font-semibold text-xl text-center">Artikel lainnya</h2>
+            <div id="container-cards" class="gap-2 grid" > </div>
         </div>
-
     </div>
+    
+    <!-- ================ FOOTER ================ -->
     <footer class="bg-(--ink) py-4 text-(--sand) grid">
-        <div class="flex flex-col space-y-8 md:space-y-0 md:items-end md:flex-row md:justify-around px-12 h-fit">
-            <div class="grid space-y-2 w-sm  " id="identitas">
+        <div class="flex md:flex-row flex-col md:justify-around md:items-end space-y-8 md:space-y-0 px-12 h-fit">
+            <div class="space-y-2 grid w-sm" id="identitas">
                 <a href="/index.html" class="flex items-center">
-                    <img src="/assets/icon.svg" alt="" class="self-center flex" alt="logo">
-                    <p class="ml-2 text-amber-400 font-bold font-accent text-[20pt]">Somia</p>
+                    <img  width="32"  height="32" src="/assets/icon.svg" class="flex self-center" alt="logo">
+                    <p class="ml-2 font-accent font-bold text-[20pt] text-amber-400">Somia</p>
                 </a>
-                <p class="pl-2 text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi
-                    jadi reward </p>
+                <p class="pl-2 text-pretty">Memilah sampah, memantau bank sampah, dan mengubah kebiasaan baik menjadi jadi reward </p>
                 <hr>
-                <a href="/views/logged/dashboard.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-home fa-lg mr-4"></i> Beranda</a>
-                <a href="/views/logged/voucher.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-ticket fa-lg -rotate-45 mr-4"></i> Voucher</a>
-                <a href="/artikel.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-newspaper fa-lg mr-4"></i> Artikel</a>
-                <a href="/views/logged/peta.html"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-solid fa-dumpster fa-lg mr-4"></i> Bank Sampah</a>
-
+                <p class="mt-4 font-bold text-xl">Jelajahi Somia</p>
+                <a href="/views/logged/dashboard.html" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-home fa-lg"></i> Beranda
+                </a>
+                <a href="/views/logged/voucher.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 -rotate-45 fa-solid fa-ticket fa-lg"></i> Voucher
+                </a>
+                <a href="/artikel.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-newspaper fa-lg"></i> Artikel
+                </a>
+                <a href="/views/logged/peta.html" class="hover:bg-emerald-900 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-solid fa-dumpster fa-lg"></i> Bank Sampah
+                </a>
             </div>
-            <div class="flex flex-col ">
-                <h4 class="text-xl font-bold">Ikuti kami di</h4>
-                <a href="#"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-instagram fa-xl mr-4"></i> Instagram</a>
-
-                <a href="#"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-facebook fa-xl mr-4"></i> Facebook</a>
-
-                <a href="#"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-tiktok fa-xl mr-4"></i> Tiktok</a>
-
-                <a href="#"
-                    class="w-full h-fit py-2 hover:bg-emerald-900 mt-4 p-2 transition duration-500 rounded ease-in-out cursor-pointer ">
-                    <i class="fa-brands fa-youtube fa-xl mr-4"></i> Youtube</a>
+            <div class="flex flex-col">
+                <p class="font-bold text-xl">Ikuti kami di</p>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-instagram fa-xl"></i> Instagram
+                </a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-facebook fa-xl"></i> Facebook
+                </a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-tiktok fa-xl"></i> Tiktok
+                </a>
+                <a href="#" class="hover:bg-emerald-900 mt-4 p-2 py-2 rounded w-full h-fit transition duration-500 ease-in-out cursor-pointer">
+                    <i class="mr-4 fa-brands fa-youtube fa-xl"></i> Youtube
+                </a>
             </div>
         </div>
-        <p class="text-center mt-4">Somia &copy; 2026.All rights reserved.</p>
+        <p class="mt-4 text-center">Somia &copy; 2026.All rights reserved.</p>
     </footer>
 
 </body>
 <script src="/js/main.js"></script>
+<script src="/js/script.js"></script>
+<script src="/lib/aos/aos.js" defer></script>
+
 <script>
+    const url = window.location.search // MENDAPATKAN PARAM URL (?....)
+    const urlParams = new URLSearchParams(url) //MENDAPATKAN PARAMS URL
+    const pageId = urlParams.get('q') || inven.articles[0].id //JIKA TIDAK ADA PARAM MAKA MUNCUL ARTIKEL INDEX PERTAMA
 
-    const url = window.location.search
-    const urlParams = new URLSearchParams(url)
-    const pageId = urlParams.get('q') || inven.articles[0].id
-
-    let article = inven.articles.find(ar => ar.id === pageId)
-    if (!article) window.open('/artikel.html', '_self')
-    document.title = article.title + ' - Somia'
-    const renderlist = (data) => data.map(item => `
-        <li>${item}</li>
-    `).join('')
-    let isBookmark = inven.bookmark.some(i => i === article.id)
-    const renderAnother = () => {
-        let rec = inven.articles.filter(i => i.id !== pageId).slice(0, 3)
-        return rec.map(j => {
-            return `
-               <div class="card" onclick="window.open('artikel-detail.html?q=${j.id}', '_self')" role="link">
-                    <img src="${j.thumbnail}" alt="${j.title}">
-                    <h3 class="cursor-pointer font-semibold">${j.title}</h3>
-                </div>
-            `
-        }).join('')
-    }
-    const toggleBookmark = () => {
+    let article = inven.articles.find(ar => ar.id === pageId) //MENCARI ARTIKEL DENGAN ID YANG SAMA
+    if (!article) window.open('/artikel.html', '_self') //REDIRECT JIKA ID INVALID
+    document.title = article.title + ' - Somia' //SET TITLE DENGAN JUDUL ARTIKEL
+    
+    const renderlist = (data) => data.map(item => `<li>${item}</li>`).join('') //RENDER ARRAY KE HTML LIST
+    let isBookmark = inven.bookmark.some(i => i === article.id) //CEK MERUPAKAN ARTIKEL BOOKMARK
+    const toggleBookmark = () => { //TOGGLE MENAMBAHKAN/MENGHAPUS BOOKMARK
         if (!isBookmark) {
             isBookmark = true
             inven.bookmark.push(pageId)
@@ -146,9 +140,22 @@
         }
         document.getElementById('bookmark').innerHTML = `<i class="fa-${isBookmark ? 'solid' : 'regular'} fa-bookmark fa-lg"></i> ${isBookmark ? 'Tersimpan' : 'Simpan'}`
     }
+
+    const renderAnother = () => { //RENDER REKOMENDASI ARTIKEL
+        let rec = inven.articles.filter(i => i.id !== pageId).slice(0, 3)
+        return rec.map((j, index) => {
+            return `<div class="card" onclick="window.open('artikel-detail.html?q=${j.id}', '_self')" role="link" data-aos="fade-up" data-aos-delay="${index}00">
+                        <img width="400" height="300" src="${j.thumbnail}" alt="${j.title}">
+                        <h3 class="font-semibold cursor-pointer">${j.title}</h3>
+                    </div> `
+        }).join('')
+    }
+
+    //SET VALUE KE ID MASING-MASING
+    document.getElementById('breadcrumbName').textContent = article.title;
     document.getElementById('bookmark').innerHTML = `<i class="fa-${isBookmark ? 'solid' : 'regular'} fa-bookmark fa-lg"></i> ${isBookmark ? 'Tersimpan' : 'Simpan'}`
     document.getElementById('title').innerHTML = article.title
-    document.getElementById('meta').innerHTML = `<span class="font-semibold text-stone-700 pr-3 border-r border-stone-400  cursor-pointer">  ${article.category}</span><span class="pl-3 font-normal"> ${inven.formmatedDate(article.date)}</span></p>`
+    document.getElementById('meta').innerHTML = `<span class="pr-3 border-stone-400 border-r font-semibold text-stone-700 cursor-pointer">  ${article.category}</span><span class="pl-3 font-normal"> ${a.formatedDate(article.date)}</span></p>`
     document.getElementById('thumbnail').setAttribute('src', article.thumbnail);
     document.getElementById('thumbnail').setAttribute('alt', article.title);
     document.getElementById('excerpt').innerHTML = article.excerpt
@@ -158,4 +165,4 @@
 
 </script>
 
-</html>${inven.formmatedDate(article.date)}
+</html>
